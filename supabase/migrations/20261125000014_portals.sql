@@ -55,3 +55,16 @@ begin
     'employee_allowance', case when c.is_employee_account and v_area = 'portal' then app.employee_allowance(c.id) end
   );
 end $$;
+
+-- Status of a customer the caller may order for (agents cannot read app.customers directly).
+create or replace function app.customer_status_for(p_customer uuid) returns text
+language sql stable security definer set search_path = app, public as $$
+  select status from app.customers where id = p_customer and app.can_view_customer_checkout(p_customer)
+$$;
+
+-- Portal / agent users may read product ROWS so that order views (v_order_items: name, photo)
+-- work for them. Prices and cost stay hidden: the views mask them with app.field_on(), which is
+-- "off" for portal/agent roles, and app.products itself is never sent to a phone (schema "app"
+-- is not exposed by the REST API; only server code reads it).
+create policy products_portal_read on app.products for select to authenticated
+  using (app.my_area() in ('portal','agent') and deleted_at is null);

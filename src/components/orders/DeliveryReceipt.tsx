@@ -71,7 +71,7 @@ export async function DeliveryReceipt({ user, orderId, kind }: { user: SessionUs
             const itemPicks = picks.filter((p) => p.order_item_id === i.id);
             return (
               <tr key={String(i.id)} className="border-b border-gray-300 align-top">
-                <td className="py-1.5">{localName(i, locale, "product_name") || String(i.product_name)} {i.is_free ? <b>({t("freeItem")})</b> : null}<div className="text-xs text-gray-500">{String(i.sku ?? "")}</div></td>
+                <td className="py-1.5">{localName({ ...i, name: i.product_name }, locale)} {i.is_free ? <b>({t("freeItem")})</b> : null}<div className="text-xs text-gray-500">{String(i.sku ?? "")}</div></td>
                 <td className="py-1.5 text-right">{qty(i.qty as number)} {String(i.unit)}</td>
                 {kind === "picking" && <td className="py-1.5 text-xs">{itemPicks.map((p, k) => <div key={k}>{p.batch_no ? `${p.batch_no} · ${p.location} · ${qty(p.required_qty as number)}` : `— ${qty(p.required_qty as number)}`}</div>)}</td>}
                 {kind === "picking" && <td className="py-1.5 text-center">☐</td>}

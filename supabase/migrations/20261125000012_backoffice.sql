@@ -66,6 +66,13 @@ begin
   select v_id, 'product', s.product_id, s.batch_id, s.qty from app.v_batch_stock s
   join app.products p on p.id = s.product_id
   where s.item_type = 'product' and p.deleted_at is null and (s.qty <> 0 or p.active);
+  -- stock without a batch (or products that have no batch yet)
+  insert into app.stock_count_lines (count_id, item_type, product_id, batch_id, system_qty)
+  select v_id, 'product', p.id, null, app.product_stock(p.id) - coalesce((select sum(s.qty) from app.v_batch_stock s where s.product_id = p.id), 0)
+  from app.products p
+  where p.deleted_at is null and p.active
+    and (app.product_stock(p.id) - coalesce((select sum(s.qty) from app.v_batch_stock s where s.product_id = p.id), 0) <> 0
+         or not exists (select 1 from app.v_batch_stock s where s.product_id = p.id and s.qty > 0));
   insert into app.stock_count_lines (count_id, item_type, material_id, system_qty)
   select v_id, 'material', m.id, app.material_stock(m.id) from app.packaging_materials m
   where m.deleted_at is null and m.active;

@@ -2,7 +2,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import { requirePerm } from "@/lib/auth";
 import { readAs } from "@/lib/actions";
 import { fieldOn } from "@/lib/perms";
-import { date, localName, qty, todayManila } from "@/lib/format";
+import { date, localName, qty } from "@/lib/format";
 import { PageHeader, Empty } from "@/components/ui/PageHeader";
 import { InventoryTabs } from "../InventoryTabs";
 
@@ -18,16 +18,15 @@ export default async function BatchesPage({ searchParams }: PageProps<"/staff/in
   const showEmpty = sp.empty === "1";
   const showQty = fieldOn(user.perms, "stock_qty");
   const rows = await readAs(user, async (tx) => {
-    const [s] = await tx`select app.setting_num('expiry_alert_days', 14)::int as days`;
+    const [s] = await tx`select app.today()::text as today, (app.today() + app.setting_num('expiry_alert_days', 14)::int)::text as soon`;
     const list = await tx`select s.*, coalesce(p.name, m.name) as item_name, p.name_zh_hans, p.name_zh_hant, p.name_tl,
         coalesce(p.unit, m.unit) as unit
       from app.v_batch_stock s left join app.products p on p.id = s.product_id left join app.packaging_materials m on m.id = s.material_id
       where (${product} = '' or s.product_id::text = ${product}) and (${showEmpty} or s.qty > 0)
       order by s.item_type, s.expiry_date nulls last, s.batch_no`;
-    return { list, days: Number(s.days) };
+    return { list, today: String(s.today), soon: String(s.soon) };
   });
-  const today = todayManila();
-  const soon = new Date(Date.now() + rows.days * 86400000).toISOString().slice(0, 10);
+  const { today, soon } = rows;
   return (
     <>
       <PageHeader title={t("tabBatches")} />

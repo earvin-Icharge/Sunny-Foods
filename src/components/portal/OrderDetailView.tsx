@@ -35,7 +35,7 @@ export function OrderDetailView({ id, placed }: { id: string; placed?: boolean }
     const r = await api<Data>(`/api/portal/orders/${id}`);
     if (r.ok) setD(r.data); else setErr(r.error);
   }, [id]);
-  useEffect(() => { load(); }, [load]);
+  useEffect(() => { const t0 = setTimeout(load, 0); return () => clearTimeout(t0); }, [load]);
 
   async function act(action: string, extra: Record<string, unknown> = {}) {
     setBusy(true);

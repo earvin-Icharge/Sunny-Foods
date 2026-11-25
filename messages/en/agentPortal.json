@@ -1,0 +1,20 @@
+{
+  "lockedTitle": "Agent portal closed", "lockedText": "This agent account is closed. Please contact Sunny Foods for your statements.", "signOut": "Sign out",
+  "readOnlyBanner": "Your agent account is read-only: you can see your statements and payouts only.",
+  "newOrder": "New order", "hello": "Hello, {name}", "type_agent": "Agent", "type_broker": "Broker",
+  "monthSales": "Sales this month", "commissionEarned": "Commission earned", "commissionPending": "Commission pending", "nextPayout": "Next payout",
+  "monthlyTarget": "Monthly target", "myCustomersBtn": "My customers", "inviteBtn": "Invite a customer", "leaderboard": "Ranking this month", "anotherAgent": "Agent",
+  "myCustomers": "My customers", "customersCount": "{count} customers", "noCustomers": "No customers linked to you yet.",
+  "inactive30": "No order 30+ days", "lastOrder": "Last order", "unpaid": "Unpaid", "deliveryOn": "delivery",
+  "source_portal": "by customer", "source_agent": "by agent", "source_staff": "by Sunny Foods",
+  "orders": "Orders", "filter": "Show", "noOrders": "No orders.", "placed": "Order {no} placed for {name}.", "pickCustomer": "Choose a customer",
+  "commissions": "Commissions", "st_pending": "Pending", "st_earned": "Earned (to be paid)", "st_paid": "Paid", "st_voided": "Voided",
+  "commissionRule": "A commission becomes Earned when the order is delivered and fully paid.", "noCommissions": "No commissions for this period.",
+  "date": "Date", "order": "Order", "customer": "Customer", "base": "Base", "rate": "Rate", "commission": "Commission", "status": "Status",
+  "transferredIn": "transferred to you", "fixed": "Fixed", "adjustments": "Adjustments",
+  "payouts": "Payouts", "noPayouts": "No payouts yet.", "paidOn": "Paid", "gross": "Gross", "viewProof": "View proof",
+  "invite": "Invite customers", "inviteHelp": "Share your code, link or QR. New customers who sign up with it are linked to you after Sunny Foods approves them.",
+  "qrAlt": "QR code of your referral link", "referralCode": "Your referral code", "referralLink": "Sign-up link", "copyLink": "Share / copy link", "copied": "Copied!",
+  "account": "My account", "accountHelp": "To change your details or payout account, contact Sunny Foods.", "lastDay": "Last working day",
+  "request_copy": "Data copy", "request_deletion": "Account deletion"
+}

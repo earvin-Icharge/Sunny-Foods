@@ -26,6 +26,7 @@ export default async function ProductsPage({ searchParams }: PageProps<"/staff/p
   return (
     <>
       <PageHeader title={t("title")} actions={<>
+        <Link className="btn-secondary" href="/staff/products/categories">{t("categories")}</Link>
         <Link className="btn-secondary" href="/staff/products/materials">{t("materials")}</Link>
         {can(user.perms, "products", 2) && <Link className="btn-primary" href="/staff/products/new">+ {t("add")}</Link>}
       </>} />

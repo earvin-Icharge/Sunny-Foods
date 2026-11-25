@@ -1,0 +1,33 @@
+{
+  "title": "Cart & checkout", "loading": "Loading…", "emptyCart": "Your cart is empty.", "goShopping": "Go shopping",
+  "orderingFor": "Ordering for: {name}", "cart": "Items", "employeeRate": "Employee rate", "addMore": "Add more products",
+  "delivery": "Delivery", "noFee": "No fee", "pickupDate": "Pickup date", "deliveryDate": "Delivery date",
+  "noDeliveryDays": "No deliveries on Sundays and holidays.", "timeWindow": "Time", "deliveryAddress": "Deliver to",
+  "otherAddress": "Or type another address", "payment": "Payment",
+  "proofHint": "After paying, upload a screenshot in My Account → Upload payment proof.",
+  "employeeLimit": "Employee monthly limit: {left} left of {limit}",
+  "voucher": "Voucher", "voucherCode": "Voucher code", "removeVoucher": "Remove", "apply": "Apply", "voucherApplied": "Voucher applied",
+  "myVouchers": "My vouchers (tap to use)", "minSpend": "min. {amount}",
+  "notes": "Notes for Sunny Foods", "notesPlaceholder": "e.g. call before delivery, gate code…",
+  "summary": "Order summary", "placeOrder": "Place order",
+  "confirmNote": "Sunny Foods will confirm your order. You will be told if anything changes.",
+  "errors": {
+    "generic": "Something is not right. Please check your order.", "offline": "No internet connection. Please try again.",
+    "customer_not_approved": "Your account is not approved yet, so you cannot order.",
+    "min_order": "Minimum order is {amount}.", "payment_method_required": "Choose how you will pay.",
+    "payment_method_not_allowed": "This payment option is not available for your account.",
+    "delivery_date_required": "Choose a delivery date.", "date_in_past": "Choose a date from tomorrow onwards.",
+    "date_blocked": "No delivery on this day. Please choose another date.", "address_required": "Choose a delivery address.",
+    "employee_limit": "This order is over your monthly employee limit.", "employee_product_limit": "This is over your monthly limit for one product.",
+    "product_unavailable": "A product in your cart can no longer be ordered. Please remove it.", "no_items": "Your cart is empty.",
+    "customer_not_found": "Customer not found."
+  },
+  "voucherReasons": {
+    "invalid": "This voucher code is not valid.", "expired": "This voucher has expired.", "not_started": "This voucher is not active yet.",
+    "paused": "This voucher is paused right now.", "minimum_not_reached": "Minimum order of {amount} not reached for this voucher.",
+    "already_used": "You already used this voucher.", "used_up": "This voucher has been fully used.",
+    "not_for_these_products": "This voucher is not for the products in your cart.", "not_for_you": "This voucher is not for your account.",
+    "first_order_only": "This voucher is only for a first order.", "not_for_employees": "Employees cannot use this voucher.",
+    "buy_more": "Buy at least {qty} of the voucher product to use it.", "too_many_attempts": "Too many tries. Please wait 10 minutes."
+  }
+}

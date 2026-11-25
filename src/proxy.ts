@@ -21,7 +21,12 @@ export async function proxy(request: NextRequest) {
 
   if (hostArea) {
     const prefix = AREAS[hostArea].prefix;
-    if (pathArea && pathArea !== hostArea) {
+    // Owner's read-only "View as…" preview (Master Control): on the staff subdomain only,
+    // the portal/agent screens may open while the preview cookie is set. The server still
+    // checks the owner's permission before showing anything (getSession).
+    const viewAsPreview = hostArea === "internal" && Boolean(request.cookies.get("sf_view_as")?.value)
+      && (pathArea === "portal" || pathArea === "agent");
+    if (pathArea && pathArea !== hostArea && !viewAsPreview) {
       // e.g. order.sunnyfoods.com.ph/staff/... -> blocked
       url.pathname = "/not-found";
       return NextResponse.rewrite(url, { status: 404 });

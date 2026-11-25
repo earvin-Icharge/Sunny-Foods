@@ -85,7 +85,7 @@ export async function startViewAs(userId: string) {
 }
 
 /** View as a role: previews the first active person with that role. */
-export async function startViewAsRole(roleKey: string): Promise<{ ok: false; error: string } | never> {
+export async function startViewAsRole(roleKey: string): Promise<{ ok: false; error: string } | void> {
   const s = await getSession();
   if (!s || s.area !== "internal" || (s.perms.modules.settings?.level ?? 0) < 5) return { ok: false, error: "Not allowed" };
   const [p] = await asUser(s.id, (tx) => tx`select id from app.profiles where role_key = ${roleKey} and active and deleted_at is null and id <> ${s.realUserId} order by created_at limit 1`);

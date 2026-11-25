@@ -86,6 +86,8 @@ export const getSession = cache(async (): Promise<SessionUser | null> => {
 export async function requireArea(area: Area): Promise<SessionUser> {
   const s = await getSession();
   if (!s) redirect(`${AREAS[area].prefix}/login`);
+  // Owner previewing someone ("View as") opened a page of another area: end the preview.
+  if (s.viewAs && s.area !== area) redirect("/staff/settings/master-control/stop");
   if (s.area !== area) redirect(`${AREAS[area].prefix}/not-allowed`);
   return s;
 }

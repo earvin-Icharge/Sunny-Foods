@@ -1,0 +1,21 @@
+{
+  "title": "Reports", "excel": "Export to Excel", "from": "From", "to": "To", "groupBy": "Group by", "day": "Day", "week": "Week", "month": "Month",
+  "show": "Show", "noData": "No data for these dates.", "total": "Total", "noAccess": "Your role cannot see sales totals. Ask the owner.",
+  "k_sales_by_period": "Sales", "k_sales_by_product": "By product", "k_sales_by_customer": "By customer", "k_sales_by_agent": "By agent",
+  "k_discounts": "Discounts", "k_employee_purchases": "Employee purchases", "k_commissions": "Commissions", "k_unpaid": "Unpaid / overdue",
+  "k_stock": "Stock value", "k_spoilage": "Spoilage / waste",
+  "h_sales_by_period": "Sales per day, week or month (cancelled orders not counted).", "h_sales_by_product": "Quantity and net sales per product; cost and margin for the boss.",
+  "h_sales_by_customer": "Sales and unpaid amount per customer.", "h_sales_by_agent": "Sales per agent (net of discounts, without delivery fee).",
+  "h_discounts": "Every discount given, by voucher, employee rate, price list and manual discount, per month.",
+  "h_employee_purchases": "Employee purchases this period — use the salary deduction column for payroll.",
+  "h_commissions": "Commissions per agent by status.", "h_unpaid": "All orders not yet fully paid (today).",
+  "h_stock": "Stock on hand and stock value (today).", "h_spoilage": "Spoilage / waste recorded in this period.",
+  "c_period": "Period", "c_orders": "Orders", "c_subtotal": "Subtotal", "c_discounts": "Discounts", "c_delivery_fees": "Delivery fees", "c_vat": "VAT",
+  "c_total": "Total", "c_sku": "SKU", "c_product": "Product", "c_qty": "Qty", "c_net": "Net sales", "c_cost": "Cost", "c_margin": "Margin",
+  "c_customer": "Customer", "c_unpaid": "Unpaid", "c_agent": "Agent", "c_sales": "Sales", "c_month": "Month", "c_kind": "Type", "c_label": "Discount",
+  "c_code": "Code", "c_uses": "Uses", "c_amount": "Amount", "c_employee": "Employee", "c_staff_profile": "Staff", "c_salary_deduction": "Salary deduction",
+  "c_pending": "Pending", "c_earned": "Earned", "c_approved": "Approved", "c_paid": "Paid", "c_voided": "Voided", "c_order_no": "Order no.",
+  "c_paid_amount": "Paid", "c_balance": "Balance", "c_payment_status": "Status", "c_payment_method": "Payment", "c_due_date": "Due date",
+  "c_delivered": "Delivered", "c_type": "Type", "c_name": "Name", "c_unit": "Unit", "c_stock_value": "Stock value", "c_date": "Date",
+  "c_item": "Item", "c_reason": "Reason", "c_batch_no": "Batch", "c_value": "Value"
+}

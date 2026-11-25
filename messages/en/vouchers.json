@@ -1,0 +1,23 @@
+{
+  "title": "Vouchers", "add": "New voucher", "none": "No vouchers.", "showArchived": "Archived", "showCurrent": "Current vouchers",
+  "automatic": "Automatic (no code)", "timesUsed": "Times used", "discountGiven": "Discount given", "remainingUses": "Uses left", "daysLeft": "Days left",
+  "noEnd": "no end date", "pause": "Pause", "resume": "Resume", "archive": "Archive", "unarchive": "Unarchive",
+  "archiveConfirm": "Archive this voucher? It stops working; old orders keep showing it.",
+  "state_running": "Running", "state_paused": "Paused", "state_inactive": "Off", "state_expired": "Expired", "state_archived": "Archived",
+  "d_pct": "{n}% off order", "upTo": "(up to {amount})", "d_fixed": "{amount} off order", "d_prodPct": "{n}% off selected products",
+  "d_prodFixed": "{amount} off per unit of selected products", "d_freeDelivery": "Free delivery", "d_bxgy": "Buy {x} get {y} free", "d_freeItem": "Free item ×{n}",
+  "name": "Voucher name", "namePlaceholder": "e.g. Holiday 10% off", "code": "Code", "automaticHelp": "Automatic — no code needed (applies by itself when the rules match)",
+  "type": "Type", "type_pct_order": "% off the order", "type_fixed_order": "Fixed ₱ off the order", "type_product_discount": "% or ₱ off selected products / categories",
+  "type_free_delivery": "Free delivery", "type_buy_x_get_y": "Buy X get Y free", "type_free_item": "Free item (added at ₱0)",
+  "percentOff": "% off", "maxDiscount": "Maximum discount (₱)", "pesoOff": "₱ off", "discountKind": "Discount", "kindPercent": "% off",
+  "kindFixedPerUnit": "₱ off per unit", "value": "Value", "forCategories": "Categories", "forProducts": "Products",
+  "freeDeliveryHelp": "The delivery fee becomes ₱0 when this voucher is used.",
+  "buyProduct": "Product to buy", "buyQty": "Buy how many (X)", "getProduct": "Free product", "getProductHint": "Empty = same product",
+  "sameProduct": "Same product", "getQty": "Free how many (Y)", "freeProduct": "Free product", "freeQty": "How many free",
+  "rules": "Rules", "minOrder": "Minimum order (₱)", "whoCanUse": "Who can use it",
+  "aud_all": "All customers", "aud_selected": "Selected customers", "aud_tier": "Customers on a price list", "aud_first_order": "New customers' first order", "aud_employees": "Employees",
+  "priceList": "Price list", "chooseCustomers": "Choose customers", "totalLimit": "Total uses limit", "perCustomerLimit": "Uses per customer",
+  "emptyNoLimit": "Empty = no limit", "startAt": "Starts", "endAt": "Ends", "emptyNoEnd": "Empty = no end date",
+  "employeesAllowed": "Employees may also use it", "stackable": "Can be combined with other vouchers (default: no — 1 voucher per order)",
+  "activeLabel": "Active", "usage": "Used on orders", "notUsedYet": "Not used yet.", "when": "When", "order": "Order", "customer": "Customer", "discount": "Discount"
+}

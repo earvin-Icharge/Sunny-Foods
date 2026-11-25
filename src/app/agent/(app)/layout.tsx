@@ -27,6 +27,7 @@ export default async function AgentLayout({ children }: { children: React.ReactN
     { href: "/agent/commissions", label: t("commissions"), icon: "💰", tab: !ctx.canOrder },
     { href: "/agent/payouts", label: t("payouts"), icon: "🏦" },
     ctx.canRefer && { href: "/agent/invite", label: t("invite"), icon: "📨" },
+    { href: "/agent/account", label: t("account"), icon: "👤" },
   ].filter(Boolean) as NavItem[];
   return (
     <AppShell area="agent" user={ctx.user} nav={nav}>

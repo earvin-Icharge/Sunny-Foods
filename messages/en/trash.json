@@ -1,0 +1,12 @@
+{
+  "title": "Trash", "subtitle": "Deleted items stay here and can be restored anytime.", "deleteRequests": "Delete requests",
+  "all": "All", "empty": "Trash is empty.", "deletedBy": "deleted by {name}, {when}", "restore": "Restore", "restored": "Restored",
+  "emptyForever": "Empty forever", "emptyTitle": "Remove this item for good?", "emptyHelp": "This cannot be undone. Type “{name}” (or DELETE) to confirm.",
+  "emptied": "Removed for good", "noRequests": "No delete requests.", "requestedBy": "requested by {name}, {when}", "decidedBy": "decided by {name}",
+  "approve": "Approve delete", "reject": "Reject",
+  "table_products": "Product", "table_categories": "Category", "table_packaging_materials": "Packaging material", "table_product_packaging": "Packaging recipe line",
+  "table_tier_prices": "Tier price", "table_price_tiers": "Price tier", "table_customers": "Customer", "table_customer_addresses": "Customer address",
+  "table_customer_prices": "Special price", "table_employee_limits": "Employee limit", "table_blocked_delivery_dates": "Blocked delivery date",
+  "table_orders": "Order", "table_payments": "Payment", "table_batches": "Batch", "table_vouchers": "Voucher", "table_voucher_targets": "Voucher target",
+  "table_agents": "Agent", "table_commission_rules": "Commission rule", "table_agent_targets": "Agent target", "table_teams": "Team", "table_roles": "Role"
+}

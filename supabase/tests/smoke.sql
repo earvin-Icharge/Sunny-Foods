@@ -94,3 +94,10 @@ select set_config('request.jwt.claims','{"sub":"00000000-0000-0000-0000-00000000
 select app.decide_data_request((select id from app.data_requests limit 1), true);
 reset role;
 select name, phone, status from app.customers; select order_no, total from app.orders;
+-- order WITHOUT a voucher must be accepted (regression check)
+insert into app.customers (id, name, status) values ('c0000000-0000-0000-0000-000000000002','Resto Dos','approved');
+set role authenticated;
+select set_config('request.jwt.claims','{"sub":"00000000-0000-0000-0000-000000000002"}',false);
+select (app.place_order(jsonb_build_object('customer_id','c0000000-0000-0000-0000-000000000002','delivery_method','pickup',
+  'payment_method','cash','items', jsonb_build_array(jsonb_build_object('product_id',:'ribeye','qty',1)))) - 'quote') as no_voucher_order;
+reset role;

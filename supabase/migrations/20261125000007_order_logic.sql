@@ -650,7 +650,7 @@ begin
   select * into c from app.customers where id = v_customer;
   q := app.quote_order(p || jsonb_build_object('record_attempt', false));
   v_errors := coalesce(q -> 'errors', '[]'::jsonb) || app.validate_order_rules(p, q, v_source);
-  if q -> 'voucher' is not null and not coalesce((q -> 'voucher' ->> 'ok')::boolean, false) then
+  if jsonb_typeof(q -> 'voucher') = 'object' and not coalesce((q -> 'voucher' ->> 'ok')::boolean, false) then
     v_errors := v_errors || jsonb_build_object('code', 'voucher_' || (q -> 'voucher' ->> 'reason'));
   end if;
   if jsonb_array_length(v_errors) > 0 then

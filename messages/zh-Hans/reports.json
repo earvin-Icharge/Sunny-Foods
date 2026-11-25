@@ -1,0 +1,21 @@
+{
+  "title": "报表", "excel": "导出 Excel", "from": "从", "to": "到", "groupBy": "分组方式", "day": "日", "week": "周", "month": "月",
+  "show": "显示", "noData": "这些日期没有数据。", "total": "合计", "noAccess": "您的角色不能查看销售总额。请询问老板。",
+  "k_sales_by_period": "销售", "k_sales_by_product": "按产品", "k_sales_by_customer": "按客户", "k_sales_by_agent": "按代理",
+  "k_discounts": "折扣", "k_employee_purchases": "员工购买", "k_commissions": "佣金", "k_unpaid": "未付 / 逾期",
+  "k_stock": "库存价值", "k_spoilage": "变质 / 损耗",
+  "h_sales_by_period": "每日、每周或每月的销售额（不含已取消订单）。", "h_sales_by_product": "每个产品的数量和净销售额；成本和利润供老板查看。",
+  "h_sales_by_customer": "每位客户的销售额和未付金额。", "h_sales_by_agent": "每位代理的销售额（扣除折扣，不含运费）。",
+  "h_discounts": "每月给出的所有折扣，按优惠券、员工价、价格表和手动折扣分类。",
+  "h_employee_purchases": "本期员工购买——发薪时请用“工资扣款”一栏。",
+  "h_commissions": "按状态列出每位代理的佣金。", "h_unpaid": "所有尚未全额付款的订单（截至今天）。",
+  "h_stock": "现有库存和库存价值（截至今天）。", "h_spoilage": "本期记录的变质 / 损耗。",
+  "c_period": "期间", "c_orders": "订单", "c_subtotal": "小计", "c_discounts": "折扣", "c_delivery_fees": "运费", "c_vat": "增值税",
+  "c_total": "合计", "c_sku": "SKU", "c_product": "产品", "c_qty": "数量", "c_net": "净销售额", "c_cost": "成本", "c_margin": "利润",
+  "c_customer": "客户", "c_unpaid": "未付", "c_agent": "代理", "c_sales": "销售额", "c_month": "月份", "c_kind": "类型", "c_label": "折扣",
+  "c_code": "代码", "c_uses": "使用次数", "c_amount": "金额", "c_employee": "员工", "c_staff_profile": "职员", "c_salary_deduction": "工资扣款",
+  "c_pending": "待定", "c_earned": "已赚", "c_approved": "已批准", "c_paid": "已付", "c_voided": "已作废", "c_order_no": "订单号",
+  "c_paid_amount": "已付", "c_balance": "余额", "c_payment_status": "状态", "c_payment_method": "付款方式", "c_due_date": "到期日",
+  "c_delivered": "已送达", "c_type": "类型", "c_name": "名称", "c_unit": "单位", "c_stock_value": "库存价值", "c_date": "日期",
+  "c_item": "品项", "c_reason": "原因", "c_batch_no": "批次", "c_value": "价值"
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Mga report", "excel": "I-export sa Excel", "from": "Mula", "to": "Hanggang", "groupBy": "I-grupo ayon sa", "day": "Araw", "week": "Linggo", "month": "Buwan",
+  "show": "Ipakita", "noData": "Walang data para sa mga petsang ito.", "total": "Total", "noAccess": "Hindi nakikita ng role mo ang kabuuang benta. Magtanong sa may-ari.",
+  "k_sales_by_period": "Benta", "k_sales_by_product": "Ayon sa produkto", "k_sales_by_customer": "Ayon sa customer", "k_sales_by_agent": "Ayon sa agent",
+  "k_discounts": "Mga discount", "k_employee_purchases": "Bili ng empleyado", "k_commissions": "Mga komisyon", "k_unpaid": "Hindi pa bayad / overdue",
+  "k_stock": "Halaga ng stock", "k_spoilage": "Sira / sayang",
+  "h_sales_by_period": "Benta bawat araw, linggo o buwan (hindi kasama ang mga kinanselang order).", "h_sales_by_product": "Dami at net sales bawat produkto; cost at margin para sa boss.",
+  "h_sales_by_customer": "Benta at hindi pa bayad na halaga bawat customer.", "h_sales_by_agent": "Benta bawat agent (bawas na ang discount, walang delivery fee).",
+  "h_discounts": "Lahat ng discount na naibigay, ayon sa voucher, presyo pang-empleyado, price list at manual discount, bawat buwan.",
+  "h_employee_purchases": "Mga bili ng empleyado sa period na ito — gamitin ang column na kaltas sa sweldo para sa payroll.",
+  "h_commissions": "Mga komisyon bawat agent ayon sa status.", "h_unpaid": "Lahat ng order na hindi pa buong bayad (ngayong araw).",
+  "h_stock": "Kasalukuyang stock at halaga ng stock (ngayong araw).", "h_spoilage": "Sira / sayang na naitala sa period na ito.",
+  "c_period": "Period", "c_orders": "Mga order", "c_subtotal": "Subtotal", "c_discounts": "Mga discount", "c_delivery_fees": "Delivery fee", "c_vat": "VAT",
+  "c_total": "Total", "c_sku": "SKU", "c_product": "Produkto", "c_qty": "Dami", "c_net": "Net sales", "c_cost": "Cost", "c_margin": "Margin",
+  "c_customer": "Customer", "c_unpaid": "Hindi pa bayad", "c_agent": "Agent", "c_sales": "Benta", "c_month": "Buwan", "c_kind": "Uri", "c_label": "Discount",
+  "c_code": "Code", "c_uses": "Beses nagamit", "c_amount": "Halaga", "c_employee": "Empleyado", "c_staff_profile": "Staff", "c_salary_deduction": "Kaltas sa sweldo",
+  "c_pending": "Pending", "c_earned": "Kinita", "c_approved": "Aprubado", "c_paid": "Bayad na", "c_voided": "Na-void", "c_order_no": "Order no.",
+  "c_paid_amount": "Nabayaran", "c_balance": "Balance", "c_payment_status": "Status", "c_payment_method": "Bayad", "c_due_date": "Due date",
+  "c_delivered": "Na-deliver", "c_type": "Uri", "c_name": "Pangalan", "c_unit": "Unit", "c_stock_value": "Halaga ng stock", "c_date": "Petsa",
+  "c_item": "Item", "c_reason": "Dahilan", "c_batch_no": "Batch", "c_value": "Halaga"
+}

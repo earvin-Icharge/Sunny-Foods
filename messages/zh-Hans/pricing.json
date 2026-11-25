@@ -1,0 +1,8 @@
+{
+  "title": "价格表", "help": "只有老板可以定价。订单使用的价格：客户特价 → 客户的价格表 → 常规价。",
+  "addTier": "添加价格表", "inactive": "已停用", "regularHelp": "产品的常规价", "percentOff": "常规价减 {n}%",
+  "fixedPrices": "每个产品固定价格", "customersCount": "{n} 位客户", "fixedCount": "{n} 个固定价格", "productPrices": "产品价格",
+  "editTier": "编辑价格表", "kind": "类型", "kindPercent": "常规价减 %", "kindFixed": "每个产品固定价格", "percent": "减 %",
+  "active": "启用", "product": "产品", "regular": "常规价", "priceInList": "此价格表中的价格",
+  "gridHelpPercent": "常规价减 {n}%。只在需要单独设定某个产品时才输入固定价格。", "gridHelpFixed": "输入每个产品的价格。空 = 常规价。"
+}

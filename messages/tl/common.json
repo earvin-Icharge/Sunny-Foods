@@ -1,0 +1,17 @@
+{
+  "save": "I-save", "saved": "Na-save", "cancel": "Kanselahin", "delete": "Burahin", "remove": "Alisin", "add": "Idagdag", "edit": "I-edit",
+  "close": "Isara", "confirm": "Kumpirmahin", "back": "Bumalik", "search": "Hanapin", "home": "Home", "yes": "Oo", "no": "Hindi",
+  "undo": "I-undo", "more": "Iba pa", "signOut": "Mag-sign out", "loading": "Naglo-load…", "print": "I-print", "download": "I-download",
+  "notifications": "Mga notification", "markAllRead": "Markahang nabasa lahat", "noNotifications": "Wala pang notification",
+  "deleteTitle": "Burahin ang item na ito?", "deleteHelp": "I-type ang “{name}” (o DELETE) para kumpirmahin. Mapupunta ito sa Trash at puwede pang ibalik.",
+  "reasonOptional": "Dahilan (opsyonal)", "deletedOrRequested": "Tapos na — nailipat sa Trash o naipadala sa boss para aprubahan",
+  "takePhoto": "Kumuha o pumili ng litrato", "history": "History ng mga pagbabago",
+  "audit": { "insert": "ginawa", "update": "in-edit", "delete": "binura", "soft_delete": "inilipat sa Trash", "restore": "ibinalik", "purge": "tuluyang binura mula sa Trash", "rollback": "ibinalik sa dati", "undo": "na-undo" },
+  "updateAvailable": "May bagong version — I-tap para mag-update", "updateRequired": "Kailangan ng mahalagang update para makapagpatuloy.", "updateNow": "Mag-update ngayon",
+  "enableAlerts": "I-on ang alerts",
+  "viewingAs": "Preview: tinitingnan bilang {name} ({role}) — read-only", "stopViewAs": "Itigil ang preview",
+  "notAllowedTitle": "Hindi mo puwedeng buksan ang page na ito", "notAllowedText": "Walang access ang account mo sa bahaging ito. Magtanong sa may-ari kung kailangan mo ng access.",
+  "required": "Kailangan", "optional": "opsyonal", "all": "Lahat", "none": "Wala", "total": "Total", "status": "Status", "date": "Petsa",
+  "notes": "Notes", "reason": "Dahilan", "actions": "Aksyon", "name": "Pangalan", "phone": "Telepono", "email": "Email", "address": "Address",
+  "from": "Mula", "to": "Hanggang", "apply": "I-apply", "export": "I-export sa Excel", "today": "Ngayon", "qty": "Dami", "price": "Presyo", "amount": "Halaga"
+}

@@ -1,0 +1,12 @@
+{
+  "title": "回收站", "subtitle": "已刪除的項目會保留在這裡，隨時可以還原。", "deleteRequests": "刪除申請",
+  "all": "全部", "empty": "回收站是空的。", "deletedBy": "由 {name} 刪除，{when}", "restore": "還原", "restored": "已還原",
+  "emptyForever": "永久清除", "emptyTitle": "永久移除此項目？", "emptyHelp": "此操作無法復原。輸入「{name}」（或 DELETE）以確認。",
+  "emptied": "已永久移除", "noRequests": "沒有刪除申請。", "requestedBy": "由 {name} 申請，{when}", "decidedBy": "由 {name} 決定",
+  "approve": "核准刪除", "reject": "拒絕",
+  "table_products": "產品", "table_categories": "類別", "table_packaging_materials": "包裝材料", "table_product_packaging": "包裝配方項目",
+  "table_tier_prices": "價目表價格", "table_price_tiers": "價目表", "table_customers": "客戶", "table_customer_addresses": "客戶地址",
+  "table_customer_prices": "特別價格", "table_employee_limits": "員工額度", "table_blocked_delivery_dates": "停止送貨日期",
+  "table_orders": "訂單", "table_payments": "付款", "table_batches": "批次", "table_vouchers": "優惠券", "table_voucher_targets": "優惠券適用對象",
+  "table_agents": "代理", "table_commission_rules": "佣金規則", "table_agent_targets": "代理目標", "table_teams": "團隊", "table_roles": "角色"
+}

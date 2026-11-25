@@ -1,0 +1,11 @@
+{
+  "title": "Packing", "subtitle": "Nauuna ang pinakamaagang petsa ng delivery. I-tap ang order para i-pack ito.", "nothingToPack": "Walang ipa-pack ngayon. 🎉",
+  "start": "Simulan ang packing", "continue": "Ituloy ang packing", "readyToStart": "Handa nang i-pack ang order na ito.", "alreadyPacked": "Na-pack na ang order na ito.",
+  "noBatch": "walang batch — magtanong sa boss", "location": { "freezer_1": "Freezer 1", "freezer_2": "Freezer 2", "chiller": "Chiller", "shelf": "Estante" },
+  "expires": "mag-e-expire", "progress": "{done} sa {total} ang na-tsek", "storage": { "frozen": "Frozen", "chilled": "Chilled", "room": "Room temperature" },
+  "freeItem": "LIBRENG ITEM", "howToPack": "Paano i-pack", "take": "Kunin", "batch": "batch", "noChecks": "Walang ite-tsek para sa item na ito.",
+  "packedQty": "Dami na na-pack", "differentQty": "Iba sa order", "photoOptional": "Litrato ng na-pack na order (opsyonal)",
+  "markPacked": "Markahang Na-pack", "tickAll": "I-tsek muna lahat ng box ({left} pa)", "packedDone": "Na-pack na! Na-update ang stock.",
+  "qtyChangedTitle": "Iba ang dami", "qtyChangedHelp": "Hindi pareho ang na-pack na dami sa order. Sasabihan ang boss. Ituloy?",
+  "confirmQty": "Oo, kumpirmahin"
+}

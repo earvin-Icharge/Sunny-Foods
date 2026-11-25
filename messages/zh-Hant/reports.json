@@ -1,0 +1,21 @@
+{
+  "title": "報表", "excel": "匯出到 Excel", "from": "從", "to": "至", "groupBy": "分組方式", "day": "日", "week": "週", "month": "月",
+  "show": "顯示", "noData": "這些日期沒有資料。", "total": "總計", "noAccess": "您的角色無法查看銷售總額。請詢問老闆。",
+  "k_sales_by_period": "銷售額", "k_sales_by_product": "按產品", "k_sales_by_customer": "按客戶", "k_sales_by_agent": "按代理",
+  "k_discounts": "折扣", "k_employee_purchases": "員工購買", "k_commissions": "佣金", "k_unpaid": "未付／逾期",
+  "k_stock": "庫存價值", "k_spoilage": "變質／損耗",
+  "h_sales_by_period": "每日、每週或每月銷售額（不計已取消的訂單）。", "h_sales_by_product": "每項產品的數量和淨銷售額；成本和毛利僅供老闆查看。",
+  "h_sales_by_customer": "每位客戶的銷售額和未付金額。", "h_sales_by_agent": "每位代理的銷售額（已扣除折扣，不含運費）。",
+  "h_discounts": "每月給出的所有折扣，按優惠券、員工價、價目表和手動折扣分類。",
+  "h_employee_purchases": "本期間的員工購買，請使用「薪資扣款」欄計算薪資。",
+  "h_commissions": "按狀態列出每位代理的佣金。", "h_unpaid": "所有尚未全額付款的訂單（截至今天）。",
+  "h_stock": "現有庫存及庫存價值（截至今天）。", "h_spoilage": "本期間記錄的變質／損耗。",
+  "c_period": "期間", "c_orders": "訂單", "c_subtotal": "小計", "c_discounts": "折扣", "c_delivery_fees": "運費", "c_vat": "增值稅",
+  "c_total": "總計", "c_sku": "SKU", "c_product": "產品", "c_qty": "數量", "c_net": "淨銷售額", "c_cost": "成本", "c_margin": "毛利",
+  "c_customer": "客戶", "c_unpaid": "未付", "c_agent": "代理", "c_sales": "銷售額", "c_month": "月份", "c_kind": "類型", "c_label": "折扣",
+  "c_code": "代碼", "c_uses": "使用次數", "c_amount": "金額", "c_employee": "員工", "c_staff_profile": "員工資料", "c_salary_deduction": "薪資扣款",
+  "c_pending": "待定", "c_earned": "已賺取", "c_approved": "已核准", "c_paid": "已付", "c_voided": "已作廢", "c_order_no": "訂單編號",
+  "c_paid_amount": "已付", "c_balance": "餘額", "c_payment_status": "狀態", "c_payment_method": "付款方式", "c_due_date": "到期日",
+  "c_delivered": "已送達", "c_type": "類型", "c_name": "名稱", "c_unit": "單位", "c_stock_value": "庫存價值", "c_date": "日期",
+  "c_item": "品項", "c_reason": "原因", "c_batch_no": "批次", "c_value": "價值"
+}

@@ -1,0 +1,10 @@
+{
+  "title": "付款", "openBalance": "未付總額", "overdueBalance": "逾期總額", "overdueOrders": "逾期訂單",
+  "proofsToCheck": "待審核付款憑證", "noProofs": "沒有等待審核的憑證。", "balance": "餘額", "unpaidOrders": "未付訂單",
+  "allOpen": "所有未付", "search": "搜尋", "allPaid": "這裡沒有未付款項。", "due": "到期",
+  "recordPayment": "記錄付款", "paymentRecorded": "付款已記錄", "amount": "金額（₱）", "method": "方式", "paidOn": "付款日期",
+  "reference": "參考編號", "referenceHint": "銀行／GCash／Maya 參考編號、支票號碼", "proofOptional": "憑證照片（選填）", "notes": "備註",
+  "savePayment": "儲存付款", "cancel": "取消", "ref": "參考", "openFile": "開啟檔案", "forOrder": "對應哪張訂單？",
+  "chooseOrder": "選擇訂單…", "note": "給客戶的備註", "noteHint": "拒絕時必填", "reject": "拒絕", "rejected": "憑證已拒絕，已通知客戶",
+  "approve": "核准", "verified": "付款已核實並記錄"
+}

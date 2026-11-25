@@ -1,0 +1,11 @@
+{
+  "title": "包装", "subtitle": "送货日期最早的优先。点击订单开始包装。", "nothingToPack": "目前没有要包装的。🎉",
+  "start": "开始包装", "continue": "继续包装", "readyToStart": "此订单可以包装了。", "alreadyPacked": "此订单已包装好。",
+  "noBatch": "没有批次——请问老板", "location": { "freezer_1": "冷冻柜 1", "freezer_2": "冷冻柜 2", "chiller": "冷藏柜", "shelf": "货架" },
+  "expires": "到期", "progress": "已勾选 {done} / {total}", "storage": { "frozen": "冷冻", "chilled": "冷藏", "room": "常温" },
+  "freeItem": "赠品", "howToPack": "包装方法", "take": "拿取", "batch": "批次", "noChecks": "此品项无需勾选。",
+  "packedQty": "包装数量", "differentQty": "与订单不同", "photoOptional": "已包装订单的照片（可选）",
+  "markPacked": "标记已包装", "tickAll": "请先勾选所有项目（还剩 {left} 项）", "packedDone": "已包装！库存已更新。",
+  "qtyChangedTitle": "数量不同", "qtyChangedHelp": "包装数量与订单不同，会通知老板。继续吗？",
+  "confirmQty": "是，确认"
+}

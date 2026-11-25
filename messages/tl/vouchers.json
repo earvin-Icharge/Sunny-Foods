@@ -1,0 +1,23 @@
+{
+  "title": "Mga voucher", "add": "Bagong voucher", "none": "Walang voucher.", "showArchived": "Naka-archive", "showCurrent": "Mga kasalukuyang voucher",
+  "automatic": "Awtomatiko (walang code)", "timesUsed": "Ilang beses nagamit", "discountGiven": "Naibigay na discount", "remainingUses": "Natitirang gamit", "daysLeft": "Natitirang araw",
+  "noEnd": "walang end date", "pause": "I-pause", "resume": "Ituloy", "archive": "I-archive", "unarchive": "I-unarchive",
+  "archiveConfirm": "I-archive ang voucher na ito? Hihinto itong gumana; makikita pa rin ito sa mga lumang order.",
+  "state_running": "Tumatakbo", "state_paused": "Naka-pause", "state_inactive": "Naka-off", "state_expired": "Expired na", "state_archived": "Naka-archive",
+  "d_pct": "{n}% off sa order", "upTo": "(hanggang {amount})", "d_fixed": "{amount} off sa order", "d_prodPct": "{n}% off sa piling produkto",
+  "d_prodFixed": "{amount} off bawat unit ng piling produkto", "d_freeDelivery": "Libreng delivery", "d_bxgy": "Bumili ng {x}, libre ang {y}", "d_freeItem": "Libreng item ×{n}",
+  "name": "Pangalan ng voucher", "namePlaceholder": "hal. Holiday 10% off", "code": "Code", "automaticHelp": "Awtomatiko — hindi kailangan ng code (kusang naa-apply kapag tugma ang mga patakaran)",
+  "type": "Uri", "type_pct_order": "% off sa order", "type_fixed_order": "Fixed na ₱ off sa order", "type_product_discount": "% o ₱ off sa piling produkto / kategorya",
+  "type_free_delivery": "Libreng delivery", "type_buy_x_get_y": "Bumili ng X, libre ang Y", "type_free_item": "Libreng item (idadagdag sa ₱0)",
+  "percentOff": "% off", "maxDiscount": "Maximum na discount (₱)", "pesoOff": "₱ off", "discountKind": "Discount", "kindPercent": "% off",
+  "kindFixedPerUnit": "₱ off bawat unit", "value": "Halaga", "forCategories": "Mga kategorya", "forProducts": "Mga produkto",
+  "freeDeliveryHelp": "Magiging ₱0 ang delivery fee kapag ginamit ang voucher na ito.",
+  "buyProduct": "Produktong bibilhin", "buyQty": "Ilan ang bibilhin (X)", "getProduct": "Libreng produkto", "getProductHint": "Blangko = parehong produkto",
+  "sameProduct": "Parehong produkto", "getQty": "Ilan ang libre (Y)", "freeProduct": "Libreng produkto", "freeQty": "Ilan ang libre",
+  "rules": "Mga patakaran", "minOrder": "Minimum order (₱)", "whoCanUse": "Sino ang puwedeng gumamit",
+  "aud_all": "Lahat ng customer", "aud_selected": "Piling customer", "aud_tier": "Mga customer sa isang price list", "aud_first_order": "Unang order ng bagong customer", "aud_employees": "Mga empleyado",
+  "priceList": "Price list", "chooseCustomers": "Pumili ng customer", "totalLimit": "Limit ng kabuuang gamit", "perCustomerLimit": "Gamit bawat customer",
+  "emptyNoLimit": "Blangko = walang limit", "startAt": "Simula", "endAt": "Katapusan", "emptyNoEnd": "Blangko = walang end date",
+  "employeesAllowed": "Puwede ring gamitin ng mga empleyado", "stackable": "Puwedeng isabay sa ibang voucher (default: hindi — 1 voucher bawat order)",
+  "activeLabel": "Aktibo", "usage": "Nagamit sa mga order", "notUsedYet": "Hindi pa nagagamit.", "when": "Kailan", "order": "Order", "customer": "Customer", "discount": "Discount"
+}

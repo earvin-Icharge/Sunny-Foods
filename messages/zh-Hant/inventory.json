@@ -1,0 +1,22 @@
+{
+  "title": "庫存", "tabStock": "現有庫存", "tabBatches": "批次", "tabStockIn": "入庫", "tabAdjust": "調整", "tabMovements": "庫存異動", "tabCounts": "盤點",
+  "products": "肉品與醬料", "packaging": "包裝材料", "item": "品項", "storage": "儲存方式", "onHand": "現有", "reserved": "訂單已預留",
+  "lowLevel": "警示數量", "status": "狀態",
+  "storage_frozen": "冷凍", "storage_chilled": "冷藏", "storage_room": "常溫",
+  "pendingApproval": "等待您核准", "approve": "核准", "reject": "拒絕", "approved": "已核准", "rejected": "已拒絕",
+  "kind": "類型", "kind_stock_in": "入庫", "kind_order_out": "訂單出庫", "kind_adjustment": "調整", "kind_spoilage": "變質／損耗", "kind_return": "退貨", "kind_count": "盤點",
+  "st_pending_approval": "等待核准", "st_rejected": "已拒絕", "st_posted": "已入帳",
+  "batchNo": "批次編號", "batchNoHint": "留空則自動建立", "location": "位置",
+  "loc_freezer_1": "冷凍庫 1", "loc_freezer_2": "冷凍庫 2", "loc_chiller": "冷藏庫", "loc_shelf": "貨架",
+  "productionDate": "生產日期", "expiryDate": "到期日", "exp": "到期", "expired": "已過期", "expiresSoon": "即將到期",
+  "showEmptyBatches": "顯示已用完的批次", "filter": "篩選", "noBatches": "沒有仍有庫存的批次。",
+  "quantity": "數量", "chooseItem": "選擇品項…", "stockedIn": "已入庫", "adjustHelp": "每次變更都需要原因。大量調整需等候老闆核准。",
+  "direction": "增加或減少", "remove": "減少", "add": "增加", "batch": "批次", "noBatch": "不指定批次", "reasonRequired": "原因（必填）",
+  "waitingApproval": "已儲存，等待老闆核准", "searchMovements": "搜尋品項、批次或訂單編號", "allKinds": "所有類型",
+  "noMovements": "沒有庫存異動。", "when": "時間", "details": "詳細資料",
+  "countHelp": "清點冷凍庫和貨架上實際的數量。系統會顯示差異，由老闆核准。",
+  "newCount": "開始新盤點", "countStarted": "已開始盤點", "noCounts": "尚無盤點紀錄。", "differences": "{n} 項差異",
+  "count": "盤點", "count_draft": "盤點中", "count_submitted": "等待核准", "count_approved": "已核准", "count_rejected": "已拒絕",
+  "system": "系統", "counted": "實點", "stillMissing": "尚有 {n} 個品項未盤點", "submitCount": "提交盤點", "countSubmitted": "盤點已提交，等待核准",
+  "approveCount": "核准並修正庫存", "countApproved": "庫存已修正"
+}

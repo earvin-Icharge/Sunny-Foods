@@ -1,0 +1,7 @@
+{
+  "dashboard": "首页", "orders": "订单", "packing": "包装", "deliveries": "送货", "payments": "付款",
+  "customers": "客户", "products": "产品", "inventory": "库存", "vouchers": "优惠券", "pricing": "价格",
+  "agents": "代理", "reports": "报表", "trash": "回收站", "settings": "设置",
+  "catalog": "选购", "cart": "购物车", "myOrders": "我的订单", "account": "我的账户", "commissions": "佣金",
+  "payouts": "佣金发放", "invite": "邀请", "myCustomers": "我的客户"
+}

@@ -1,0 +1,20 @@
+{
+  "lockedTitle": "代理平台已關閉", "lockedText": "此代理帳戶已關閉。如需對帳單，請聯絡 Sunny Foods。", "signOut": "登出",
+  "readOnlyBanner": "您的代理帳戶為唯讀：只能查看對帳單和佣金發放紀錄。",
+  "newOrder": "新訂單", "hello": "您好，{name}", "type_agent": "代理", "type_broker": "經紀人",
+  "monthSales": "本月銷售額", "commissionEarned": "已賺取佣金", "commissionPending": "待定佣金", "nextPayout": "下次佣金發放",
+  "monthlyTarget": "每月目標", "myCustomersBtn": "我的客戶", "inviteBtn": "邀請客戶", "leaderboard": "本月排名", "anotherAgent": "代理",
+  "myCustomers": "我的客戶", "customersCount": "{count} 位客戶", "noCustomers": "目前還沒有客戶連結到您。",
+  "inactive30": "超過 30 天未下單", "lastOrder": "最近訂單", "unpaid": "未付款", "deliveryOn": "送貨",
+  "source_portal": "客戶下單", "source_agent": "代理下單", "source_staff": "Sunny Foods 下單",
+  "orders": "訂單", "filter": "顯示", "noOrders": "沒有訂單。", "placed": "已為 {name} 下單，訂單編號 {no}。", "pickCustomer": "選擇客戶",
+  "commissions": "佣金", "st_pending": "待定", "st_earned": "已賺取（待支付）", "st_paid": "已支付", "st_voided": "已作廢",
+  "commissionRule": "訂單送達並全額付款後，佣金即變為「已賺取」。", "noCommissions": "此期間沒有佣金。",
+  "date": "日期", "order": "訂單", "customer": "客戶", "base": "計算基數", "rate": "比率", "commission": "佣金", "status": "狀態",
+  "transferredIn": "已轉給您", "fixed": "固定", "adjustments": "調整",
+  "payouts": "佣金發放", "noPayouts": "尚無佣金發放。", "paidOn": "支付日期", "gross": "總額", "viewProof": "查看憑證",
+  "invite": "邀請客戶", "inviteHelp": "分享您的推薦碼、連結或 QR 碼。新客戶用它註冊，經 Sunny Foods 核准後，就會連結到您。",
+  "qrAlt": "您的推薦連結 QR 碼", "referralCode": "您的推薦碼", "referralLink": "註冊連結", "copyLink": "分享／複製連結", "copied": "已複製！",
+  "account": "我的帳戶", "accountHelp": "如需更改資料或佣金收款帳戶，請聯絡 Sunny Foods。", "lastDay": "最後工作日",
+  "request_copy": "資料副本", "request_deletion": "刪除帳戶"
+}

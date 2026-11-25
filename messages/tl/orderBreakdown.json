@@ -1,0 +1,11 @@
+{
+  "subtotal": "Subtotal", "deliveryFee": "Delivery fee", "free": "Libre", "total": "Total", "vatableSales": "VATable sales",
+  "vatExemptSales": "VAT-exempt sales", "vat": "VAT 12%", "vatIncluded": "kasama na", "paid": "Bayad na", "balance": "Balance", "voucher": "Voucher",
+  "receiptTitle": "Delivery Receipt", "pickingTitle": "Picking List", "orderNo": "Order no.", "customer": "Customer", "deliverTo": "Ide-deliver sa",
+  "deliveryDate": "Petsa ng delivery", "timeWindow": "Oras", "method": "Paraan ng delivery", "payment": "Bayad", "item": "Item", "qty": "Dami",
+  "unitPrice": "Presyo bawat unit", "amount": "Halaga", "receivedBy": "Tinanggap ni (pangalan at pirma)", "preparedBy": "Inihanda ni",
+  "birInvoice": "BIR invoice no.", "batch": "Batch / lokasyon", "checked": "Nakuha", "freeItem": "LIBRE",
+  "own_truck": "Truck ng Sunny Foods", "courier": "Courier", "pickup": "Pickup sa planta sa Carmona",
+  "cash": "Cash", "cod": "Cash on Delivery", "bank_transfer": "Bank transfer", "gcash": "GCash", "maya": "Maya", "cheque": "Tseke",
+  "credit_7": "Credit 7 araw", "credit_15": "Credit 15 araw", "credit_30": "Credit 30 araw", "salary_deduction": "Kaltas sa sweldo"
+}

@@ -1,0 +1,11 @@
+{
+  "title": "包裝", "subtitle": "送貨日期最早的優先。點選訂單開始包裝。", "nothingToPack": "目前沒有需要包裝的訂單。🎉",
+  "start": "開始包裝", "continue": "繼續包裝", "readyToStart": "此訂單可以開始包裝。", "alreadyPacked": "此訂單已包裝完成。",
+  "noBatch": "無批次，請詢問老闆", "location": { "freezer_1": "冷凍庫 1", "freezer_2": "冷凍庫 2", "chiller": "冷藏庫", "shelf": "貨架" },
+  "expires": "到期", "progress": "已勾選 {done}／{total}", "storage": { "frozen": "冷凍", "chilled": "冷藏", "room": "常溫" },
+  "freeItem": "免費贈品", "howToPack": "包裝方法", "take": "拿取", "batch": "批次", "noChecks": "此品項無需勾選。",
+  "packedQty": "包裝數量", "differentQty": "與訂單不同", "photoOptional": "已包裝訂單的照片（選填）",
+  "markPacked": "標記為已包裝", "tickAll": "請先勾選所有項目（尚餘 {left} 項）", "packedDone": "已包裝！庫存已更新。",
+  "qtyChangedTitle": "數量不同", "qtyChangedHelp": "包裝數量與訂單不同，系統會通知老闆。要繼續嗎？",
+  "confirmQty": "是，確認"
+}

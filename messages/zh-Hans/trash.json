@@ -1,0 +1,12 @@
+{
+  "title": "回收站", "subtitle": "已删除的项目会留在这里，随时可以恢复。", "deleteRequests": "删除申请",
+  "all": "全部", "empty": "回收站是空的。", "deletedBy": "由 {name} 删除，{when}", "restore": "恢复", "restored": "已恢复",
+  "emptyForever": "永久删除", "emptyTitle": "永久删除此项？", "emptyHelp": "此操作无法撤销。输入“{name}”（或 DELETE）以确认。",
+  "emptied": "已永久删除", "noRequests": "没有删除申请。", "requestedBy": "由 {name} 申请，{when}", "decidedBy": "由 {name} 决定",
+  "approve": "批准删除", "reject": "拒绝",
+  "table_products": "产品", "table_categories": "类别", "table_packaging_materials": "包装材料", "table_product_packaging": "包装配方明细",
+  "table_tier_prices": "价格表价格", "table_price_tiers": "价格表", "table_customers": "客户", "table_customer_addresses": "客户地址",
+  "table_customer_prices": "特价", "table_employee_limits": "员工限额", "table_blocked_delivery_dates": "不送货日期",
+  "table_orders": "订单", "table_payments": "付款", "table_batches": "批次", "table_vouchers": "优惠券", "table_voucher_targets": "优惠券适用对象",
+  "table_agents": "代理", "table_commission_rules": "佣金规则", "table_agent_targets": "代理目标", "table_teams": "团队", "table_roles": "角色"
+}

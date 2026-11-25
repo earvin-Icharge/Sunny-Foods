@@ -1,0 +1,33 @@
+{
+  "title": "購物車與結帳", "loading": "載入中…", "emptyCart": "您的購物車是空的。", "goShopping": "去購物",
+  "orderingFor": "代為下單：{name}", "cart": "商品", "employeeRate": "員工價", "addMore": "加購更多產品",
+  "delivery": "送貨", "noFee": "免運費", "pickupDate": "取貨日期", "deliveryDate": "送貨日期",
+  "noDeliveryDays": "週日及假日不送貨。", "timeWindow": "時段", "deliveryAddress": "送貨地址",
+  "otherAddress": "或輸入其他地址", "payment": "付款",
+  "proofHint": "付款後，請到「我的帳戶 → 上傳付款憑證」上傳截圖。",
+  "employeeLimit": "員工每月額度：{limit} 中尚餘 {left}",
+  "voucher": "優惠券", "voucherCode": "優惠券代碼", "removeVoucher": "移除", "apply": "套用", "voucherApplied": "已套用優惠券",
+  "myVouchers": "我的優惠券（點選使用）", "minSpend": "最低消費 {amount}",
+  "notes": "給 Sunny Foods 的備註", "notesPlaceholder": "例如：送貨前請來電、大門密碼…",
+  "summary": "訂單摘要", "placeOrder": "下單",
+  "confirmNote": "Sunny Foods 會確認您的訂單。如有任何變更，我們會通知您。",
+  "errors": {
+    "generic": "有些地方不對，請檢查您的訂單。", "offline": "沒有網路連線，請再試一次。",
+    "customer_not_approved": "您的帳戶尚未核准，暫時無法下單。",
+    "min_order": "最低訂購金額為 {amount}。", "payment_method_required": "請選擇付款方式。",
+    "payment_method_not_allowed": "您的帳戶不能使用此付款方式。",
+    "delivery_date_required": "請選擇送貨日期。", "date_in_past": "請選擇明天或之後的日期。",
+    "date_blocked": "這天不送貨，請選擇其他日期。", "address_required": "請選擇送貨地址。",
+    "employee_limit": "此訂單超過您的員工每月額度。", "employee_product_limit": "已超過您單一產品的每月額度。",
+    "product_unavailable": "購物車中有產品已無法訂購，請將其移除。", "no_items": "您的購物車是空的。",
+    "customer_not_found": "找不到客戶。"
+  },
+  "voucherReasons": {
+    "invalid": "此優惠券代碼無效。", "expired": "此優惠券已過期。", "not_started": "此優惠券尚未開始。",
+    "paused": "此優惠券目前暫停中。", "minimum_not_reached": "未達此優惠券的最低訂購金額 {amount}。",
+    "already_used": "您已使用過此優惠券。", "used_up": "此優惠券已用完。",
+    "not_for_these_products": "此優惠券不適用於購物車中的產品。", "not_for_you": "此優惠券不適用於您的帳戶。",
+    "first_order_only": "此優惠券只限首次訂單使用。", "not_for_employees": "員工不能使用此優惠券。",
+    "buy_more": "需購買至少 {qty} 件指定產品才能使用此優惠券。", "too_many_attempts": "嘗試次數太多，請等候 10 分鐘。"
+  }
+}

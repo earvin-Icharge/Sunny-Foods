@@ -1,0 +1,12 @@
+{
+  "title": "Trash", "subtitle": "Dito napupunta ang mga binurang item at puwedeng ibalik anumang oras.", "deleteRequests": "Mga request na magbura",
+  "all": "Lahat", "empty": "Walang laman ang Trash.", "deletedBy": "binura ni {name}, {when}", "restore": "Ibalik", "restored": "Naibalik na",
+  "emptyForever": "Burahin nang tuluyan", "emptyTitle": "Tuluyang burahin ang item na ito?", "emptyHelp": "Hindi na ito maibabalik. I-type ang “{name}” (o DELETE) para kumpirmahin.",
+  "emptied": "Tuluyang nabura", "noRequests": "Walang request na magbura.", "requestedBy": "hiniling ni {name}, {when}", "decidedBy": "pinagpasyahan ni {name}",
+  "approve": "Aprubahan ang pagbura", "reject": "Tanggihan",
+  "table_products": "Produkto", "table_categories": "Kategorya", "table_packaging_materials": "Packaging material", "table_product_packaging": "Linya ng packaging recipe",
+  "table_tier_prices": "Presyo sa price list", "table_price_tiers": "Price list", "table_customers": "Customer", "table_customer_addresses": "Address ng customer",
+  "table_customer_prices": "Special na presyo", "table_employee_limits": "Limit ng empleyado", "table_blocked_delivery_dates": "Naka-block na petsa ng delivery",
+  "table_orders": "Order", "table_payments": "Bayad", "table_batches": "Batch", "table_vouchers": "Voucher", "table_voucher_targets": "Target ng voucher",
+  "table_agents": "Agent", "table_commission_rules": "Patakaran sa komisyon", "table_agent_targets": "Target ng agent", "table_teams": "Team", "table_roles": "Role"
+}

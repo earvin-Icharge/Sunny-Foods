@@ -1,0 +1,8 @@
+{
+  "title": "Mga price list", "help": "Boss lang ang nagse-set ng presyo. Presyong ginagamit sa order: special na presyo ng customer → price list ng customer → regular na presyo.",
+  "addTier": "Magdagdag ng price list", "inactive": "Hindi aktibo", "regularHelp": "Regular na presyo ng produkto", "percentOff": "{n}% off sa regular na presyo",
+  "fixedPrices": "Fixed na presyo bawat produkto", "customersCount": "{n} customer", "fixedCount": "{n} fixed na presyo", "productPrices": "Presyo ng mga produkto",
+  "editTier": "I-edit ang price list", "kind": "Uri", "kindPercent": "% off sa regular na presyo", "kindFixed": "Fixed na presyo bawat produkto", "percent": "% off",
+  "active": "Aktibo", "product": "Produkto", "regular": "Regular", "priceInList": "Presyo sa list na ito",
+  "gridHelpPercent": "{n}% off sa regular na presyo. Maglagay lang ng fixed na presyo kung papalitan ang presyo ng isang produkto.", "gridHelpFixed": "Ilagay ang presyo ng bawat produkto. Blangko = regular na presyo."
+}

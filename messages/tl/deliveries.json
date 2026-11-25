@@ -1,0 +1,7 @@
+{
+  "title": "Mga delivery", "myDeliveries": "Mga delivery ko", "driverHelp": "Mga delivery ngayong araw, ayon sa oras. I-tap ang Tawagan o Mapa, tapos ang Markahang na-deliver kasama ang litrato.",
+  "show": "Ipakita", "none": "Walang delivery sa araw na ito.", "call": "Tawagan", "map": "Mapa", "collect": "Kolektahin", "noDriver": "Wala pang driver",
+  "dispatch": "Ipadala para i-deliver", "dispatched": "Nasa delivery na", "assignFirst": "Mag-assign muna ng driver",
+  "markPickedUp": "Markahang na-pick up", "markDelivered": "Markahang na-deliver", "proofRequired": "Litratong patunay (kailangan)", "proofOptional": "Litrato (opsyonal)",
+  "collected": "Nakolektang cash / COD (₱)", "notes": "Notes", "confirmDelivered": "Kumpirmahing na-deliver", "deliveredDone": "Na-deliver na — salamat!"
+}

@@ -1,0 +1,22 @@
+{
+  "title": "库存", "tabStock": "现有库存", "tabBatches": "批次", "tabStockIn": "入库", "tabAdjust": "调整", "tabMovements": "库存变动", "tabCounts": "盘点",
+  "products": "肉类和酱料", "packaging": "包装材料", "item": "品项", "storage": "储存", "onHand": "现有", "reserved": "已为订单预留",
+  "lowLevel": "提醒数量", "status": "状态",
+  "storage_frozen": "冷冻", "storage_chilled": "冷藏", "storage_room": "常温",
+  "pendingApproval": "等待您批准", "approve": "批准", "reject": "拒绝", "approved": "已批准", "rejected": "已拒绝",
+  "kind": "类型", "kind_stock_in": "入库", "kind_order_out": "订单出库", "kind_adjustment": "调整", "kind_spoilage": "变质 / 损耗", "kind_return": "退货", "kind_count": "盘点",
+  "st_pending_approval": "等待批准", "st_rejected": "已拒绝", "st_posted": "已入账",
+  "batchNo": "批次号", "batchNoHint": "留空则自动生成", "location": "位置",
+  "loc_freezer_1": "冷冻柜 1", "loc_freezer_2": "冷冻柜 2", "loc_chiller": "冷藏柜", "loc_shelf": "货架",
+  "productionDate": "生产日期", "expiryDate": "到期日", "exp": "到期", "expired": "已过期", "expiresSoon": "即将过期",
+  "showEmptyBatches": "显示已用完的批次", "filter": "筛选", "noBatches": "没有有库存的批次。",
+  "quantity": "数量", "chooseItem": "选择品项…", "stockedIn": "已入库", "adjustHelp": "每次修改都需要原因。大额调整要等老板批准。",
+  "direction": "增加或减少", "remove": "减少", "add": "增加", "batch": "批次", "noBatch": "不指定批次", "reasonRequired": "原因（必填）",
+  "waitingApproval": "已保存——等待老板批准", "searchMovements": "搜索品项、批次或订单号", "allKinds": "所有类型",
+  "noMovements": "没有库存变动。", "when": "时间", "details": "详情",
+  "countHelp": "清点冷冻柜和货架上的实际数量。应用会显示差异；由老板批准。",
+  "newCount": "开始新盘点", "countStarted": "盘点已开始", "noCounts": "暂无盘点。", "differences": "{n} 项差异",
+  "count": "盘点", "count_draft": "盘点中", "count_submitted": "等待批准", "count_approved": "已批准", "count_rejected": "已拒绝",
+  "system": "系统", "counted": "实盘", "stillMissing": "还有 {n} 项未盘点", "submitCount": "提交盘点", "countSubmitted": "盘点已提交，等待批准",
+  "approveCount": "批准并修正库存", "countApproved": "库存已修正"
+}

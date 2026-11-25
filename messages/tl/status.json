@@ -1,0 +1,9 @@
+{
+  "new": "Bago", "confirmed": "Nakumpirma", "packing": "Pina-pack", "packed": "Na-pack", "out_for_delivery": "Nasa delivery na",
+  "delivered": "Na-deliver", "completed": "Kumpleto na", "cancelled": "Kinansela", "received": "Natanggap",
+  "unpaid": "Hindi pa bayad", "partial": "Partial", "paid": "Bayad na", "overdue": "Overdue",
+  "available": "Available", "limited": "Limitado", "out": "Ubos na",
+  "pending": "Pending", "approved": "Aprubado", "rejected": "Tinanggihan", "suspended": "Naka-suspend",
+  "earned": "Kinita", "voided": "Na-void", "draft": "Draft", "agreed": "Napagkasunduan", "done": "Tapos na",
+  "active": "Aktibo", "inactive": "Hindi aktibo", "resigned": "Nag-resign", "verified": "Na-verify", "assigned": "Naka-assign", "failed": "Hindi natuloy"
+}

@@ -478,8 +478,12 @@ revoke execute on function app.notify_staff_once(text, text, text, text, text) f
 do $cron$
 begin
   if exists (select 1 from pg_available_extensions where name = 'pg_cron') then
-    create extension if not exists pg_cron;
-    perform cron.schedule('sunny-daily-jobs', '5 16 * * *', 'select app.run_daily_jobs()');        -- 00:05 Manila
-    perform cron.schedule('sunny-stock-alerts', '0 */4 * * *', 'select app.job_stock_alerts()');  -- every 4 hours
+    begin
+      create extension if not exists pg_cron with schema pg_catalog;
+      perform cron.schedule('sunny-daily-jobs', '5 16 * * *', 'select app.run_daily_jobs()');        -- 00:05 Manila
+      perform cron.schedule('sunny-stock-alerts', '0 */4 * * *', 'select app.job_stock_alerts()');  -- every 4 hours
+    exception when others then
+      raise notice 'Supabase Cron not set up (%). The Vercel daily job /api/cron/daily runs the same work.', sqlerrm;
+    end;
   end if;
 end $cron$;

@@ -1,0 +1,20 @@
+{
+  "lockedTitle": "代理门户已关闭", "lockedText": "此代理账户已关闭。如需对账单，请联系 Sunny Foods。", "signOut": "退出登录",
+  "readOnlyBanner": "您的代理账户为只读：只能查看对账单和佣金发放。",
+  "newOrder": "新订单", "hello": "您好，{name}", "type_agent": "代理", "type_broker": "经纪人",
+  "monthSales": "本月销售额", "commissionEarned": "已赚佣金", "commissionPending": "待定佣金", "nextPayout": "下次佣金发放",
+  "monthlyTarget": "月度目标", "myCustomersBtn": "我的客户", "inviteBtn": "邀请客户", "leaderboard": "本月排名", "anotherAgent": "代理",
+  "myCustomers": "我的客户", "customersCount": "{count} 位客户", "noCustomers": "还没有与您关联的客户。",
+  "inactive30": "30 天以上未下单", "lastOrder": "最近订单", "unpaid": "未付", "deliveryOn": "送货",
+  "source_portal": "客户下单", "source_agent": "代理下单", "source_staff": "Sunny Foods 下单",
+  "orders": "订单", "filter": "显示", "noOrders": "暂无订单。", "placed": "已为 {name} 下单，订单号 {no}。", "pickCustomer": "选择客户",
+  "commissions": "佣金", "st_pending": "待定", "st_earned": "已赚（待发放）", "st_paid": "已发放", "st_voided": "已作废",
+  "commissionRule": "订单送达并全额付款后，佣金才算“已赚”。", "noCommissions": "此期间没有佣金。",
+  "date": "日期", "order": "订单", "customer": "客户", "base": "基数", "rate": "费率", "commission": "佣金", "status": "状态",
+  "transferredIn": "已转给您", "fixed": "固定", "adjustments": "调整",
+  "payouts": "佣金发放", "noPayouts": "暂无佣金发放。", "paidOn": "已发放", "gross": "总额", "viewProof": "查看凭证",
+  "invite": "邀请客户", "inviteHelp": "分享您的推荐码、链接或 QR 码。新客户用它注册，经 Sunny Foods 批准后即与您关联。",
+  "qrAlt": "您的推荐链接 QR 码", "referralCode": "您的推荐码", "referralLink": "注册链接", "copyLink": "分享 / 复制链接", "copied": "已复制！",
+  "account": "我的账户", "accountHelp": "如需修改资料或佣金收款账户，请联系 Sunny Foods。", "lastDay": "最后工作日",
+  "request_copy": "数据副本", "request_deletion": "删除账户"
+}

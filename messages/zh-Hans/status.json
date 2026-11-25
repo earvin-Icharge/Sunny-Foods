@@ -1,0 +1,9 @@
+{
+  "new": "新", "confirmed": "已确认", "packing": "包装中", "packed": "已包装", "out_for_delivery": "送货中",
+  "delivered": "已送达", "completed": "已完成", "cancelled": "已取消", "received": "已收到",
+  "unpaid": "未付", "partial": "部分付款", "paid": "已付", "overdue": "逾期",
+  "available": "有货", "limited": "少量", "out": "缺货",
+  "pending": "待处理", "approved": "已批准", "rejected": "已拒绝", "suspended": "已暂停",
+  "earned": "已赚", "voided": "已作废", "draft": "草稿", "agreed": "已同意", "done": "完成",
+  "active": "启用", "inactive": "已停用", "resigned": "已离职", "verified": "已核实", "assigned": "已指派", "failed": "失败"
+}

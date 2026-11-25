@@ -1,0 +1,33 @@
+{
+  "title": "Cart at checkout", "loading": "Naglo-load…", "emptyCart": "Walang laman ang cart mo.", "goShopping": "Mamili",
+  "orderingFor": "Umo-order para sa: {name}", "cart": "Mga item", "employeeRate": "Presyo pang-empleyado", "addMore": "Magdagdag pa ng produkto",
+  "delivery": "Delivery", "noFee": "Walang bayad", "pickupDate": "Petsa ng pickup", "deliveryDate": "Petsa ng delivery",
+  "noDeliveryDays": "Walang delivery tuwing Linggo at holiday.", "timeWindow": "Oras", "deliveryAddress": "Ide-deliver sa",
+  "otherAddress": "O mag-type ng ibang address", "payment": "Bayad",
+  "proofHint": "Pagkatapos magbayad, mag-upload ng screenshot sa Account Ko → Mag-upload ng proof of payment.",
+  "employeeLimit": "Buwanang limit ng empleyado: {left} na lang ang natitira sa {limit}",
+  "voucher": "Voucher", "voucherCode": "Voucher code", "removeVoucher": "Alisin", "apply": "I-apply", "voucherApplied": "Na-apply ang voucher",
+  "myVouchers": "Mga voucher ko (i-tap para gamitin)", "minSpend": "min. {amount}",
+  "notes": "Notes para sa Sunny Foods", "notesPlaceholder": "hal. tumawag bago mag-deliver, gate code…",
+  "summary": "Buod ng order", "placeOrder": "Mag-order",
+  "confirmNote": "Kukumpirmahin ng Sunny Foods ang order mo. Sasabihan ka kung may magbabago.",
+  "errors": {
+    "generic": "May mali. Pakitingnan ang order mo.", "offline": "Walang internet connection. Subukan ulit.",
+    "customer_not_approved": "Hindi pa aprubado ang account mo, kaya hindi ka pa makakapag-order.",
+    "min_order": "Ang minimum order ay {amount}.", "payment_method_required": "Piliin kung paano ka magbabayad.",
+    "payment_method_not_allowed": "Hindi available ang paraan ng pagbabayad na ito para sa account mo.",
+    "delivery_date_required": "Pumili ng petsa ng delivery.", "date_in_past": "Pumili ng petsa simula bukas.",
+    "date_blocked": "Walang delivery sa araw na ito. Pumili ng ibang petsa.", "address_required": "Pumili ng delivery address.",
+    "employee_limit": "Lampas ang order na ito sa buwanang limit mo bilang empleyado.", "employee_product_limit": "Lampas ito sa buwanang limit mo para sa isang produkto.",
+    "product_unavailable": "May produkto sa cart mo na hindi na puwedeng i-order. Pakitanggal ito.", "no_items": "Walang laman ang cart mo.",
+    "customer_not_found": "Hindi nakita ang customer."
+  },
+  "voucherReasons": {
+    "invalid": "Hindi valid ang voucher code na ito.", "expired": "Expired na ang voucher na ito.", "not_started": "Hindi pa aktibo ang voucher na ito.",
+    "paused": "Naka-pause ang voucher na ito ngayon.", "minimum_not_reached": "Hindi pa naaabot ang minimum order na {amount} para sa voucher na ito.",
+    "already_used": "Nagamit mo na ang voucher na ito.", "used_up": "Ubos na ang voucher na ito.",
+    "not_for_these_products": "Hindi para sa mga produkto sa cart mo ang voucher na ito.", "not_for_you": "Hindi para sa account mo ang voucher na ito.",
+    "first_order_only": "Para lang sa unang order ang voucher na ito.", "not_for_employees": "Hindi puwedeng gamitin ng empleyado ang voucher na ito.",
+    "buy_more": "Bumili ng hindi bababa sa {qty} ng produkto ng voucher para magamit ito.", "too_many_attempts": "Masyadong maraming subok. Maghintay ng 10 minuto."
+  }
+}

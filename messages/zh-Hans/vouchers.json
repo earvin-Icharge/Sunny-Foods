@@ -1,0 +1,23 @@
+{
+  "title": "优惠券", "add": "新建优惠券", "none": "没有优惠券。", "showArchived": "已归档", "showCurrent": "当前优惠券",
+  "automatic": "自动（无需代码）", "timesUsed": "使用次数", "discountGiven": "已给折扣", "remainingUses": "剩余次数", "daysLeft": "剩余天数",
+  "noEnd": "无结束日期", "pause": "暂停", "resume": "恢复", "archive": "归档", "unarchive": "取消归档",
+  "archiveConfirm": "归档此优惠券？它将停止生效；旧订单仍会显示它。",
+  "state_running": "进行中", "state_paused": "已暂停", "state_inactive": "关闭", "state_expired": "已过期", "state_archived": "已归档",
+  "d_pct": "订单减 {n}%", "upTo": "（最多 {amount}）", "d_fixed": "订单减 {amount}", "d_prodPct": "指定产品减 {n}%",
+  "d_prodFixed": "指定产品每件减 {amount}", "d_freeDelivery": "免运费", "d_bxgy": "买 {x} 送 {y}", "d_freeItem": "赠品 ×{n}",
+  "name": "优惠券名称", "namePlaceholder": "例如：节日减 10%", "code": "代码", "automaticHelp": "自动——无需代码（符合规则时自动使用）",
+  "type": "类型", "type_pct_order": "订单减 %", "type_fixed_order": "订单固定减 ₱", "type_product_discount": "指定产品 / 类别减 % 或 ₱",
+  "type_free_delivery": "免运费", "type_buy_x_get_y": "买 X 送 Y", "type_free_item": "赠品（以 ₱0 加入）",
+  "percentOff": "减 %", "maxDiscount": "最高折扣（₱）", "pesoOff": "减 ₱", "discountKind": "折扣", "kindPercent": "减 %",
+  "kindFixedPerUnit": "每件减 ₱", "value": "数值", "forCategories": "类别", "forProducts": "产品",
+  "freeDeliveryHelp": "使用此优惠券时，运费变为 ₱0。",
+  "buyProduct": "要购买的产品", "buyQty": "买几件（X）", "getProduct": "赠送产品", "getProductHint": "空 = 同一产品",
+  "sameProduct": "同一产品", "getQty": "送几件（Y）", "freeProduct": "赠送产品", "freeQty": "赠送数量",
+  "rules": "规则", "minOrder": "最低订单金额（₱）", "whoCanUse": "谁可以使用",
+  "aud_all": "所有客户", "aud_selected": "指定客户", "aud_tier": "使用某价格表的客户", "aud_first_order": "新客户首单", "aud_employees": "员工",
+  "priceList": "价格表", "chooseCustomers": "选择客户", "totalLimit": "总使用次数上限", "perCustomerLimit": "每位客户使用次数",
+  "emptyNoLimit": "空 = 无限制", "startAt": "开始", "endAt": "结束", "emptyNoEnd": "空 = 无结束日期",
+  "employeesAllowed": "员工也可以使用", "stackable": "可与其他优惠券同时使用（默认：否——每单 1 张优惠券）",
+  "activeLabel": "启用", "usage": "使用记录", "notUsedYet": "尚未使用。", "when": "时间", "order": "订单", "customer": "客户", "discount": "折扣"
+}

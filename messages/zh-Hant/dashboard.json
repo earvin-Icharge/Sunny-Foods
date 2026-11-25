@@ -1,0 +1,7 @@
+{
+  "hello": "您好，{name}", "myDeliveries": "我今天的送貨", "newOrders": "新訂單", "toPack": "待包裝訂單",
+  "toDeliver": "待送貨訂單", "unpaid": "未付金額", "todaySales": "今日銷售額", "approvals": "等待核准",
+  "pendingCustomers": "新客戶註冊", "pendingProofs": "待審核付款憑證", "pendingDeletes": "刪除申請",
+  "flaggedDiscounts": "待審核手動折扣", "lowStock": "庫存不足", "expiring": "即將到期的批次", "overdue": "逾期付款",
+  "allGood": "這裡沒有待辦事項，一切正常。", "low": "不足", "seeBatches": "查看所有批次"
+}

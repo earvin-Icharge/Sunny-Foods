@@ -1,0 +1,10 @@
+{
+  "title": "Mga bayad", "openBalance": "Kabuuang hindi pa bayad", "overdueBalance": "Kabuuang overdue", "overdueOrders": "Mga overdue na order",
+  "proofsToCheck": "Mga proof of payment na titingnan", "noProofs": "Walang proof na naghihintay.", "balance": "balance", "unpaidOrders": "Mga order na hindi pa bayad",
+  "allOpen": "Lahat ng hindi pa bayad", "search": "Hanapin", "allPaid": "Walang hindi pa bayad dito.", "due": "due",
+  "recordPayment": "I-record ang bayad", "paymentRecorded": "Na-record ang bayad", "amount": "Halaga (₱)", "method": "Paraan", "paidOn": "Petsa ng bayad",
+  "reference": "Reference no.", "referenceHint": "Ref ng bangko / GCash / Maya, cheque no.", "proofOptional": "Litratong patunay (opsyonal)", "notes": "Notes",
+  "savePayment": "I-save ang bayad", "cancel": "Kanselahin", "ref": "Ref", "openFile": "Buksan ang file", "forOrder": "Para sa aling order?",
+  "chooseOrder": "Pumili ng order…", "note": "Mensahe sa customer", "noteHint": "Kailangan kapag tinanggihan", "reject": "Tanggihan", "rejected": "Tinanggihan ang proof — naabisuhan ang customer",
+  "approve": "Aprubahan", "verified": "Na-verify at na-record ang bayad"
+}

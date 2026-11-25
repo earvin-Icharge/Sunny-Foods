@@ -1,0 +1,8 @@
+{
+  "title": "價目表", "help": "只有老闆可以設定價格。訂單使用的價格順序：客戶特別價格 → 客戶的價目表 → 一般價格。",
+  "addTier": "新增價目表", "inactive": "停用", "regularHelp": "產品的一般價格", "percentOff": "一般價格減 {n}%",
+  "fixedPrices": "每項產品固定價格", "customersCount": "{n} 位客戶", "fixedCount": "{n} 個固定價格", "productPrices": "產品價格",
+  "editTier": "編輯價目表", "kind": "類型", "kindPercent": "一般價格減 %", "kindFixed": "每項產品固定價格", "percent": "減 %",
+  "active": "啟用", "product": "產品", "regular": "一般", "priceInList": "此價目表的價格",
+  "gridHelpPercent": "一般價格減 {n}%。只在需要覆寫某項產品時才輸入固定價格。", "gridHelpFixed": "輸入每項產品的價格。留空 = 一般價格。"
+}

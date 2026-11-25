@@ -1,0 +1,25 @@
+{
+  "updated": "Huling update: 25 Nobyembre 2026 (draft — ire-review ng abogado ng Sunny Foods bago gamitin nang live)",
+  "privacy": {
+    "title": "Privacy Policy",
+    "sections": [
+      { "h": "Sino kami", "p": "Ang Sunny Foods Inc. (Carmona, Cavite) ang nagpapatakbo ng ordering app na ito. Sinusunod namin ang Data Privacy Act of 2012 (RA 10173)." },
+      { "h": "Ano ang kinokolekta namin", "p": "Mga detalye ng negosyo at contact (pangalan, contact person, telepono, email, delivery address at map pin), ang iyong mga order at bayad, mga in-upload na proof of payment at business permit, at basic na impormasyon ng device para sa seguridad at mga notification." },
+      { "h": "Bakit namin ito ginagamit", "p": "Para tanggapin at i-deliver ang iyong mga order, mag-bill at mangolekta ng bayad, ibigay sa iyo ang iyong mga presyo at voucher, bayaran ang komisyon ng mga agent, magtago ng mga record na hinihingi ng batas, at panatilihing secure ang app." },
+      { "h": "Sino ang makakakita nito", "p": "Ang mga staff lang ng Sunny Foods na nangangailangan nito para sa kanilang trabaho, ang agent na naka-assign sa iyo (limitadong detalye lang), at ang mga service provider na nagpapatakbo ng app (hosting at email). Hindi namin kailanman ibinebenta ang iyong data." },
+      { "h": "Gaano katagal namin ito itinatago", "p": "Habang aktibo ang iyong account, at ang mga record ng order/bayad sa loob ng panahong hinihingi ng batas sa buwis ng Pilipinas. Pagkatapos nito, buburahin ang mga ito o gagawing anonymous." },
+      { "h": "Ang iyong mga karapatan", "p": "Maaari kang humingi ng kopya ng iyong data, ipatama ito, o ipabura ito, mula sa Account Ko → Privacy. Kapag binura namin ang iyong account, aalisin ang iyong pangalan at contact details; mananatili ang mga total ng order (nang wala ang iyong personal na detalye) para sa legal na record-keeping." },
+      { "h": "Makipag-ugnayan", "p": "Data Protection Officer, Sunny Foods Inc., Carmona, Cavite. Email: privacy@sunnyfoods.com.ph" }
+    ]
+  },
+  "terms": {
+    "title": "Mga Tuntunin ng Paggamit",
+    "sections": [
+      { "h": "Mga account", "p": "Ang mga account ay para sa mga aprubadong business customer, mga empleyado ng Sunny Foods at mga itinalagang agent. Panatilihing pribado ang iyong password. Ikaw ang responsable sa mga order na ginawa mula sa iyong account." },
+      { "h": "Mga order at presyo", "p": "Ang mga presyong ipinapakita ay ang napagkasunduang presyo mo sa oras ng pag-order. Kinukumpirma ng Sunny Foods ang bawat order at maaari nitong baguhin ang dami o petsa; aabisuhan ka sa anumang pagbabago." },
+      { "h": "Pagbabayad", "p": "Magbayad gamit ang mga paraang pinapayagan para sa iyong account. Sinusuri ng aming staff ang mga in-upload na proof of payment. Ang mga delivery receipt mula sa app na ito ay hindi BIR invoice." },
+      { "h": "Pagkansela", "p": "Maaari mong kanselahin ang order habang Bago pa ang status nito. Pagkatapos noon, gamitin ang “Humiling ng pagbabago”." },
+      { "h": "Mga voucher", "p": "Sinusunod ng mga voucher ang mga patakarang nakasaad sa bawat voucher, at maaaring i-pause o tapusin ng Sunny Foods ang mga ito anumang oras." }
+    ]
+  }
+}

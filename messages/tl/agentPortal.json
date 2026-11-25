@@ -1,0 +1,20 @@
+{
+  "lockedTitle": "Sarado na ang agent portal", "lockedText": "Sarado na ang agent account na ito. Makipag-ugnayan sa Sunny Foods para sa mga statement mo.", "signOut": "Mag-sign out",
+  "readOnlyBanner": "Read-only na ang agent account mo: statements at payouts lang ang makikita mo.",
+  "newOrder": "Bagong order", "hello": "Hello, {name}", "type_agent": "Agent", "type_broker": "Broker",
+  "monthSales": "Benta ngayong buwan", "commissionEarned": "Kinitang komisyon", "commissionPending": "Pending na komisyon", "nextPayout": "Susunod na payout",
+  "monthlyTarget": "Buwanang target", "myCustomersBtn": "Mga customer ko", "inviteBtn": "Mag-imbita ng customer", "leaderboard": "Ranking ngayong buwan", "anotherAgent": "Agent",
+  "myCustomers": "Mga customer ko", "customersCount": "{count} customer", "noCustomers": "Wala pang customer na naka-link sa iyo.",
+  "inactive30": "Walang order nang 30+ araw", "lastOrder": "Huling order", "unpaid": "Hindi pa bayad", "deliveryOn": "delivery",
+  "source_portal": "mula sa customer", "source_agent": "mula sa agent", "source_staff": "mula sa Sunny Foods",
+  "orders": "Mga order", "filter": "Ipakita", "noOrders": "Walang order.", "placed": "Na-place ang order {no} para sa {name}.", "pickCustomer": "Pumili ng customer",
+  "commissions": "Mga komisyon", "st_pending": "Pending", "st_earned": "Kinita (babayaran pa)", "st_paid": "Bayad na", "st_voided": "Na-void",
+  "commissionRule": "Nagiging Kinita ang komisyon kapag na-deliver na ang order at buo na itong nabayaran.", "noCommissions": "Walang komisyon sa period na ito.",
+  "date": "Petsa", "order": "Order", "customer": "Customer", "base": "Base", "rate": "Rate", "commission": "Komisyon", "status": "Status",
+  "transferredIn": "inilipat sa iyo", "fixed": "Fixed", "adjustments": "Mga adjustment",
+  "payouts": "Mga payout", "noPayouts": "Wala pang payout.", "paidOn": "Binayaran", "gross": "Gross", "viewProof": "Tingnan ang proof",
+  "invite": "Mag-imbita ng customer", "inviteHelp": "I-share ang code, link o QR mo. Ang mga bagong customer na mag-sign up gamit ito ay mali-link sa iyo kapag inaprubahan na sila ng Sunny Foods.",
+  "qrAlt": "QR code ng referral link mo", "referralCode": "Referral code mo", "referralLink": "Sign-up link", "copyLink": "I-share / kopyahin ang link", "copied": "Nakopya na!",
+  "account": "Account ko", "accountHelp": "Para palitan ang detalye mo o ang payout account, makipag-ugnayan sa Sunny Foods.", "lastDay": "Huling araw ng trabaho",
+  "request_copy": "Kopya ng data", "request_deletion": "Pagbura ng account"
+}

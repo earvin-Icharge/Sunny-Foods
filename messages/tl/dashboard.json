@@ -1,0 +1,7 @@
+{
+  "hello": "Hello, {name}", "myDeliveries": "Mga delivery ko ngayong araw", "newOrders": "Mga bagong order", "toPack": "Mga order na ipa-pack",
+  "toDeliver": "Mga order na ide-deliver", "unpaid": "Halagang hindi pa bayad", "todaySales": "Benta ngayong araw", "approvals": "Naghihintay ng approval",
+  "pendingCustomers": "Mga bagong sign-up ng customer", "pendingProofs": "Mga proof of payment na titingnan", "pendingDeletes": "Mga request na magbura",
+  "flaggedDiscounts": "Mga manual discount na ire-review", "lowStock": "Mababa ang stock", "expiring": "Mga batch na malapit nang ma-expire", "overdue": "Mga overdue na bayad",
+  "allGood": "Walang laman — ayos lahat.", "low": "Mababa", "seeBatches": "Tingnan lahat ng batch"
+}

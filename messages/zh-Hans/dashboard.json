@@ -1,0 +1,7 @@
+{
+  "hello": "您好，{name}", "myDeliveries": "我今天的送货", "newOrders": "新订单", "toPack": "待包装订单",
+  "toDeliver": "待送货订单", "unpaid": "未付金额", "todaySales": "今日销售额", "approvals": "等待批准",
+  "pendingCustomers": "新客户注册", "pendingProofs": "待核对的付款凭证", "pendingDeletes": "删除申请",
+  "flaggedDiscounts": "待审核的手动折扣", "lowStock": "库存不足", "expiring": "即将过期的批次", "overdue": "逾期付款",
+  "allGood": "这里没有事项——一切正常。", "low": "不足", "seeBatches": "查看所有批次"
+}

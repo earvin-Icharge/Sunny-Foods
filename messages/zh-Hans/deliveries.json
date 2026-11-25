@@ -1,0 +1,7 @@
+{
+  "title": "送货", "myDeliveries": "我的送货", "driverHelp": "今天的送货，按时间排序。点“打电话”或“地图”，送到后拍照并点“标记已送达”。",
+  "show": "显示", "none": "这天没有送货。", "call": "打电话", "map": "地图", "collect": "收款", "noDriver": "尚未安排司机",
+  "dispatch": "发出送货", "dispatched": "送货中", "assignFirst": "请先指派司机",
+  "markPickedUp": "标记已取货", "markDelivered": "标记已送达", "proofRequired": "凭证照片（必填）", "proofOptional": "照片（可选）",
+  "collected": "已收现金 / 货到付款（₱）", "notes": "备注", "confirmDelivered": "确认已送达", "deliveredDone": "已送达——谢谢！"
+}

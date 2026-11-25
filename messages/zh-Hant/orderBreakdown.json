@@ -1,0 +1,11 @@
+{
+  "subtotal": "小計", "deliveryFee": "運費", "free": "免費", "total": "總計", "vatableSales": "應課增值稅銷售額",
+  "vatExemptSales": "免增值稅銷售額", "vat": "增值稅 12%", "vatIncluded": "已含", "paid": "已付", "balance": "餘額", "voucher": "優惠券",
+  "receiptTitle": "送貨單", "pickingTitle": "揀貨單", "orderNo": "訂單編號", "customer": "客戶", "deliverTo": "送貨地址",
+  "deliveryDate": "送貨日期", "timeWindow": "時段", "method": "送貨方式", "payment": "付款", "item": "品項", "qty": "數量",
+  "unitPrice": "單價", "amount": "金額", "receivedBy": "簽收人（姓名及簽名）", "preparedBy": "製單人",
+  "birInvoice": "BIR 發票號碼", "batch": "批次／位置", "checked": "已揀", "freeItem": "免費",
+  "own_truck": "Sunny Foods 貨車", "courier": "快遞", "pickup": "到 Carmona 工廠自取",
+  "cash": "現金", "cod": "貨到付款（COD）", "bank_transfer": "銀行轉帳", "gcash": "GCash", "maya": "Maya", "cheque": "支票",
+  "credit_7": "賒帳 7 天", "credit_15": "賒帳 15 天", "credit_30": "賒帳 30 天", "salary_deduction": "薪資扣款"
+}

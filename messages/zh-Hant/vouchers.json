@@ -1,0 +1,23 @@
+{
+  "title": "優惠券", "add": "新增優惠券", "none": "沒有優惠券。", "showArchived": "已封存", "showCurrent": "目前的優惠券",
+  "automatic": "自動（無需代碼）", "timesUsed": "使用次數", "discountGiven": "已給折扣", "remainingUses": "剩餘次數", "daysLeft": "剩餘天數",
+  "noEnd": "無結束日期", "pause": "暫停", "resume": "恢復", "archive": "封存", "unarchive": "取消封存",
+  "archiveConfirm": "封存此優惠券？它將停止生效；舊訂單仍會顯示。",
+  "state_running": "進行中", "state_paused": "已暫停", "state_inactive": "關閉", "state_expired": "已過期", "state_archived": "已封存",
+  "d_pct": "訂單減 {n}%", "upTo": "（最多 {amount}）", "d_fixed": "訂單減 {amount}", "d_prodPct": "指定產品減 {n}%",
+  "d_prodFixed": "指定產品每件減 {amount}", "d_freeDelivery": "免運費", "d_bxgy": "買 {x} 送 {y}", "d_freeItem": "免費贈品 ×{n}",
+  "name": "優惠券名稱", "namePlaceholder": "例如：節日減 10%", "code": "代碼", "automaticHelp": "自動：無需代碼（符合規則時會自動套用）",
+  "type": "類型", "type_pct_order": "訂單減 %", "type_fixed_order": "訂單減固定 ₱", "type_product_discount": "指定產品／類別減 % 或 ₱",
+  "type_free_delivery": "免運費", "type_buy_x_get_y": "買 X 送 Y", "type_free_item": "免費贈品（以 ₱0 加入）",
+  "percentOff": "減 %", "maxDiscount": "最高折扣（₱）", "pesoOff": "減 ₱", "discountKind": "折扣", "kindPercent": "減 %",
+  "kindFixedPerUnit": "每件減 ₱", "value": "數值", "forCategories": "類別", "forProducts": "產品",
+  "freeDeliveryHelp": "使用此優惠券時，運費變為 ₱0。",
+  "buyProduct": "購買產品", "buyQty": "購買數量（X）", "getProduct": "贈送產品", "getProductHint": "留空 = 同一產品",
+  "sameProduct": "同一產品", "getQty": "贈送數量（Y）", "freeProduct": "贈送產品", "freeQty": "贈送數量",
+  "rules": "規則", "minOrder": "最低訂購金額（₱）", "whoCanUse": "誰可以使用",
+  "aud_all": "所有客戶", "aud_selected": "指定客戶", "aud_tier": "使用某價目表的客戶", "aud_first_order": "新客戶的首次訂單", "aud_employees": "員工",
+  "priceList": "價目表", "chooseCustomers": "選擇客戶", "totalLimit": "總使用次數上限", "perCustomerLimit": "每位客戶使用次數",
+  "emptyNoLimit": "留空 = 無上限", "startAt": "開始", "endAt": "結束", "emptyNoEnd": "留空 = 無結束日期",
+  "employeesAllowed": "員工也可使用", "stackable": "可與其他優惠券合併使用（預設：否，每張訂單限用 1 張優惠券）",
+  "activeLabel": "啟用", "usage": "已用於訂單", "notUsedYet": "尚未使用。", "when": "時間", "order": "訂單", "customer": "客戶", "discount": "折扣"
+}

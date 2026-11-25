@@ -1,0 +1,22 @@
+{
+  "title": "Stock", "tabStock": "Kasalukuyang stock", "tabBatches": "Mga batch", "tabStockIn": "Stock in", "tabAdjust": "I-adjust", "tabMovements": "Galaw ng stock", "tabCounts": "Stock count",
+  "products": "Karne at sauce", "packaging": "Packaging", "item": "Item", "storage": "Storage", "onHand": "Nasa stock", "reserved": "Naka-reserve para sa order",
+  "lowLevel": "Alert level", "status": "Status",
+  "storage_frozen": "Frozen", "storage_chilled": "Chilled", "storage_room": "Room temp",
+  "pendingApproval": "Naghihintay ng approval mo", "approve": "Aprubahan", "reject": "Tanggihan", "approved": "Aprubado", "rejected": "Tinanggihan",
+  "kind": "Uri", "kind_stock_in": "Stock in", "kind_order_out": "Labas para sa order", "kind_adjustment": "Adjustment", "kind_spoilage": "Sira / sayang", "kind_return": "Ibinalik", "kind_count": "Stock count",
+  "st_pending_approval": "Naghihintay ng approval", "st_rejected": "Tinanggihan", "st_posted": "Na-post",
+  "batchNo": "Batch no.", "batchNoHint": "Iwanang blangko para kusang gumawa ng isa", "location": "Lokasyon",
+  "loc_freezer_1": "Freezer 1", "loc_freezer_2": "Freezer 2", "loc_chiller": "Chiller", "loc_shelf": "Estante",
+  "productionDate": "Petsa ng production", "expiryDate": "Expiry date", "exp": "exp.", "expired": "EXPIRED NA", "expiresSoon": "malapit nang ma-expire",
+  "showEmptyBatches": "Ipakita ang mga ubos nang batch", "filter": "I-filter", "noBatches": "Walang batch na may stock.",
+  "quantity": "Dami", "chooseItem": "Pumili ng item…", "stockedIn": "Naidagdag ang stock", "adjustHelp": "Kailangan ng dahilan sa bawat pagbabago. Ang malalaking adjustment ay maghihintay ng approval ng boss.",
+  "direction": "Magdagdag o magbawas", "remove": "Bawasan", "add": "Idagdag", "batch": "Batch", "noBatch": "Walang tiyak na batch", "reasonRequired": "Dahilan (kailangan)",
+  "waitingApproval": "Na-save — naghihintay ng approval ng boss", "searchMovements": "Hanapin ang item, batch o order no.", "allKinds": "Lahat ng uri",
+  "noMovements": "Walang galaw ng stock.", "when": "Kailan", "details": "Detalye",
+  "countHelp": "Bilangin ang aktuwal na laman ng mga freezer at estante. Ipapakita ng app ang diperensya; ang boss ang mag-aapruba.",
+  "newCount": "Magsimula ng bagong bilang", "countStarted": "Nagsimula na ang bilang", "noCounts": "Wala pang stock count.", "differences": "{n} diperensya",
+  "count": "Stock count", "count_draft": "Nagbibilang", "count_submitted": "Naghihintay ng approval", "count_approved": "Aprubado", "count_rejected": "Tinanggihan",
+  "system": "System", "counted": "Nabilang", "stillMissing": "{n} item ang hindi pa nabibilang", "submitCount": "I-submit ang bilang", "countSubmitted": "Na-submit ang bilang para sa approval",
+  "approveCount": "Aprubahan at itama ang stock", "countApproved": "Naitama na ang stock"
+}

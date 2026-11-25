@@ -1,5 +1,7 @@
 # SPEC.md — Sunny Foods Order & Inventory App
 
+**Version 2.2 — 2026-11-25.** Changes since v2.1: build details — area folders, message files per section, private `app` database schema, weekly backup + push sending via Vercel Cron, store app reads data through the server API.
+
 **Version 2.1 — 2026-11-25.** Changes since v2: data-deletion rule (8.13), email-only login lines, Node.js 24, backup not emailed, 6 new tables, deletion acceptance check.
 
 **Version 2 — 2026-11-25.** Changes since v1: Next.js 16 (`proxy.ts`), new Supabase API keys, custom email sender, scheduled jobs, safety base moved to Phase 2, BIR receipt wording, Data Privacy Act items, store-app build approach, open decisions (Section 14).
@@ -21,7 +23,7 @@ A simple web app (works on computer + phone) that replaces manual order and stoc
 | Login | Staff accounts made by boss | Sign up → boss/staff approves | Boss creates agent account |
 - All are PWAs (own home-screen icon and name: "Sunny Foods Staff", "Sunny Foods Order", "Sunny Foods Agent").
 - Customers and agents can NEVER open internal pages. Each user sees only their own area.
-- Route groups: `app/(internal)/...`, `app/(portal)/...`, `app/(agent)/...`; `proxy.ts` (Next.js 16 name for middleware) routes by subdomain and checks role.
+- Area folders: `app/staff/...`, `app/portal/...`, `app/agent/...`; `proxy.ts` (Next.js 16 name for middleware) sends each subdomain to its folder and blocks the other areas; each area's layout checks the role.
 - Local testing addresses: `app.localhost:3000`, `order.localhost:3000`, `agent.localhost:3000`.
 
 ## 2. Tech stack
@@ -29,7 +31,7 @@ A simple web app (works on computer + phone) that replaces manual order and stoc
 - Supabase: Postgres database, Auth, Storage (photos), Row Level Security, Realtime (new-order alerts), Cron (scheduled jobs)
 - **Supabase API keys**: use the new **publishable key** (`sb_publishable_…`, browser/app) and **secret key** (`sb_secret_…`, server only, never in browser code). The old `anon` / `service_role` keys are being retired by Supabase — do not use them.
 - **Email sender**: Supabase's built-in email is test-only (about 2 emails per hour). Connect a custom SMTP sender (e.g., Brevo or Resend free tier) from a `no-reply@sunnyfoods.com.ph` address before any customer signs up.
-- **Scheduled jobs** (Supabase Cron): mark payments Overdue, batch-expiry and low-stock alerts, voucher expiry/run-out alerts, agent portal lock 60 days after resignation, weekly Excel backup.
+- **Scheduled jobs** (Supabase Cron): mark payments Overdue, batch-expiry and low-stock alerts, voucher expiry/run-out alerts, agent portal lock 60 days after resignation. (Vercel Cron: weekly Excel backup and sending phone alerts, because they need the app server.)
 - PWA: installable icon on phone/desktop, offline-safe read of today's orders
 - Hosting: Vercel (auto-deploys on every push to `main` = instant OTA update)
 - **Server location (closest to Metro Manila)**: Supabase project region = **Southeast Asia (Singapore, `ap-southeast-1`)**; Vercel Functions region = **`sin1` (Singapore)** set in `vercel.json` → `"regions": ["sin1"]`. App server and database must be in the same region.
@@ -98,7 +100,7 @@ One screen in the internal app (`Settings → Master Control`) where the owner d
 
 ## 4. Languages
 English, 简体中文, 繁體中文, Tagalog. One-tap switcher in the header.
-- All UI text in `/messages/{en,zh-Hans,zh-Hant,tl}.json`.
+- All UI text in `/messages/{en,zh-Hans,zh-Hant,tl}/<section>.json` (one file per screen section; missing words fall back to English).
 - Product names and packaging notes have fields for each language (fallback to English if empty).
 
 ## 5. Design (copy from sunnyfoods.com.ph)
@@ -284,7 +286,7 @@ English, 简体中文, 繁體中文, Tagalog. One-tap switcher in the header.
 ## 9a. App Store & Google Play (customer portal only)
 - Only the **Customer portal** ("Sunny Foods Order") goes on the public stores. Staff and Agent apps stay as installable PWAs (home-screen icon from the browser link) — no store review needed. Optional later: Agent app as an Apple **Unlisted** app.
 - Wrap the customer portal with **Capacitor** (iOS + Android) — same code as the web app.
-- **Build approach**: the store app must contain its own screens (bundled build), not just open the website — Capacitor says loading the live site (`server.url`) is for development only, and Apple may reject it. So build the customer portal screens (Phases 10–11) so they can be exported as a static bundle: they read data through Supabase (RLS + portal-safe views) and call the server API routes on `order.sunnyfoods.com.ph` for prices, vouchers and checkout.
+- **Build approach**: the store app must contain its own screens (bundled build), not just open the website — Capacitor says loading the live site (`server.url`) is for development only, and Apple may reject it. So build the customer portal screens (Phases 10–11) so they can be exported as a static bundle: they read and write data only through the server API routes on `order.sunnyfoods.com.ph` (which apply RLS + portal-safe views), including prices, vouchers and checkout.
 - **Updates for the store app**: Vercel deploys do not update the bundled app. Use store updates for native changes, plus a Capacitor live-update service for screen changes (choose in Phase 18).
 - **Accounts needed**: Apple Developer Program (yearly fee; company account needs a D-U-N-S number) and Google Play Console (one-time fee), both under Sunny Foods Inc.
 - Must add real native features (Apple guideline 4.2 rejects plain website wrappers):
@@ -298,6 +300,8 @@ English, 简体中文, 繁體中文, Tagalog. One-tap switcher in the header.
 
 ## 10. Database tables (Supabase)
 `profiles` (user, role, language, `customer_id` for portal users, `agent_id` for agents, `is_employee`, `team_id`), `roles`, `permissions`, `role_permissions` (level + scope), `field_visibility`, `user_permission_overrides`, `approval_rules`, `teams`, `customer_users`, `customer_addresses`, `cart_items`, `payment_proofs`, `price_tiers`, `tier_prices`, `employee_limits`, `vouchers`, `voucher_targets`, `voucher_redemptions`, `order_discounts`, `agents`, `agent_customers`, `commission_rules`, `commissions`, `commission_adjustments`, `commission_payouts`, `commission_transfers`, `agent_settlements`, `categories`, `products`, `packaging_materials`, `product_packaging` (recipe), `batches`, `stock_movements`, `customers`, `customer_prices`, `orders`, `order_items`, `order_packing_checks`, `payments`, `deliveries`, `delete_requests`, `audit_log`, `app_settings`, `notifications`, `push_subscriptions`, `privacy_consents`, `data_requests`, `blocked_delivery_dates`, `agent_targets`.
+- Also: `stock_counts`, `stock_count_lines`, `voucher_attempts`.
+- All tables live in a private schema `app` that the Supabase API does not expose; only the app server reads it, as the logged-in user, so RLS applies.
 - All business tables: `id`, `created_at`, `created_by`, `updated_at`, `deleted_at`, `deleted_by`.
 - Stock on hand = sum of `stock_movements` (never edit a number directly).
 

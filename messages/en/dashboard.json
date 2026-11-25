@@ -1,0 +1,7 @@
+{
+  "hello": "Hello, {name}", "myDeliveries": "My deliveries today", "newOrders": "New orders", "toPack": "Orders to pack",
+  "toDeliver": "Orders to deliver", "unpaid": "Unpaid amount", "todaySales": "Today's sales", "approvals": "Waiting for approval",
+  "pendingCustomers": "New customer sign-ups", "pendingProofs": "Payment proofs to check", "pendingDeletes": "Delete requests",
+  "flaggedDiscounts": "Manual discounts to review", "lowStock": "Low stock", "expiring": "Batches expiring soon", "overdue": "Overdue payments",
+  "allGood": "Nothing here — all good.", "low": "Low", "seeBatches": "See all batches"
+}

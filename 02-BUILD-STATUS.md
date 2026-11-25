@@ -8,8 +8,10 @@ Last updated: 2026-11-25 · build v0.1.0 · branch `build/v1`
 | Phases 1–17 (all app features) | **Built**. Code checks pass, full production build passes (112 routes). |
 | Phase 18 (store app) | **Scaffold only** in `/mobile` — needs Apple/Google accounts (D6) and Firebase for phone push. |
 | Database logic | Checked on a local test database (`supabase/tests/smoke.sql`). |
-| Screens in a browser / real logins | **Not tested yet** — next step, needs the Supabase project connected. |
-| Languages | English done; 简体中文 / 繁體中文 / Tagalog being added. |
+| Supabase project "Sunny Foods" (Singapore) | All 15 database files loaded; security check clean; Supabase Cron jobs running. |
+| Vercel project `sunny-foods` | Created, linked to GitHub, settings added. Needs `SUPABASE_SECRET_KEY` + `DATABASE_URL` from Earvin. |
+| Screens in a browser / real logins | **Not tested yet** — next step. |
+| Languages | English, 简体中文, 繁體中文, Tagalog — all screens. |
 
 ## Screens
 | Area | Address | Screens |

@@ -1,0 +1,11 @@
+{
+  "title": "Packing", "subtitle": "Oldest delivery date first. Tap an order to pack it.", "nothingToPack": "Nothing to pack right now. 🎉",
+  "start": "Start packing", "continue": "Continue packing", "readyToStart": "This order is ready to pack.", "alreadyPacked": "This order is already packed.",
+  "noBatch": "no batch — ask the boss", "location": { "freezer_1": "Freezer 1", "freezer_2": "Freezer 2", "chiller": "Chiller", "shelf": "Shelf" },
+  "expires": "expires", "progress": "{done} of {total} ticked", "storage": { "frozen": "Frozen", "chilled": "Chilled", "room": "Room temperature" },
+  "freeItem": "FREE ITEM", "howToPack": "How to pack", "take": "Take", "batch": "batch", "noChecks": "Nothing to tick for this item.",
+  "packedQty": "Packed quantity", "differentQty": "Different from the order", "photoOptional": "Photo of the packed order (optional)",
+  "markPacked": "Mark Packed", "tickAll": "Tick all boxes first ({left} left)", "packedDone": "Packed! Stock updated.",
+  "qtyChangedTitle": "Quantity is different", "qtyChangedHelp": "The packed quantity is not the same as the order. The boss will be told. Continue?",
+  "confirmQty": "Yes, confirm"
+}

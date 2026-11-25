@@ -1,0 +1,15 @@
+import Image from "next/image";
+import Link from "next/link";
+import { getTranslations } from "next-intl/server";
+export const metadata = { title: "Account pending" };
+// Shown after sign-up: email confirmation + approval by Sunny Foods.
+export default async function Page() {
+  const t = await getTranslations("portal.signup");
+  return (
+    <main className="mx-auto flex min-h-screen max-w-md flex-col justify-center gap-4 p-6 text-center">
+      <Image src="/logo.png" alt="Sunny Foods" width={160} height={80} className="mx-auto" />
+      <div className="card"><h1 className="text-2xl font-bold">{t("doneTitle")}</h1><p className="mt-2">{t("doneText")}</p>
+        <Link href="/portal/login" className="btn-primary mt-4 w-full">{t("goLogin")}</Link></div>
+    </main>
+  );
+}

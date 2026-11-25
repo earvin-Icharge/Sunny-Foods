@@ -1,0 +1,7 @@
+{
+  "title": "Deliveries", "myDeliveries": "My deliveries", "driverHelp": "Today's deliveries, in time order. Tap Call or Map, then Mark delivered with a photo.",
+  "show": "Show", "none": "No deliveries for this day.", "call": "Call", "map": "Map", "collect": "Collect", "noDriver": "No driver yet",
+  "dispatch": "Send out for delivery", "dispatched": "Out for delivery", "assignFirst": "Assign a driver first",
+  "markPickedUp": "Mark picked up", "markDelivered": "Mark delivered", "proofRequired": "Proof photo (required)", "proofOptional": "Photo (optional)",
+  "collected": "Cash / COD collected (₱)", "notes": "Notes", "confirmDelivered": "Confirm delivered", "deliveredDone": "Delivered — thank you!"
+}

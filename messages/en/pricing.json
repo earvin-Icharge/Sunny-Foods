@@ -1,0 +1,8 @@
+{
+  "title": "Price lists", "help": "Only the boss sets prices. Price used on an order: customer special price → customer's price list → regular price.",
+  "addTier": "Add price list", "inactive": "Inactive", "regularHelp": "The product's regular price", "percentOff": "{n}% off regular price",
+  "fixedPrices": "Fixed price per product", "customersCount": "{n} customers", "fixedCount": "{n} fixed prices", "productPrices": "Product prices",
+  "editTier": "Edit price list", "kind": "Type", "kindPercent": "% off regular price", "kindFixed": "Fixed price per product", "percent": "% off",
+  "active": "Active", "product": "Product", "regular": "Regular", "priceInList": "Price in this list",
+  "gridHelpPercent": "{n}% off regular price. Enter a fixed price only to override a product.", "gridHelpFixed": "Enter the price for each product. Empty = regular price."
+}

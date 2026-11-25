@@ -117,7 +117,7 @@ export default async function OrderPage({ params }: PageProps<"/staff/orders/[id
           {(can(p, "deliveries", 3) && p.modules.deliveries.scope === "all" && ["confirmed", "packing", "packed", "out_for_delivery"].includes(status) && o.delivery_method !== "pickup") || o.driver_name || proofPhoto || packPhoto ? (
             <section className="card grid gap-3">
               <h2 className="text-lg font-bold">{t("delivery")}</h2>
-              {o.driver_name ? <p>🚚 {String(o.driver_name)}{o.scheduled_date ? ` · ${date(o.scheduled_date as string, locale)}` : ""}{o.delivery_status ? ` · ${ts(String(o.delivery_status))}` : ""}</p> : null}
+              {o.driver_name ? <p>🚚 {String(o.driver_name)}{o.scheduled_date ? ` · ${date(o.scheduled_date as string, locale)}` : ""}{o.delivery_status ? ` · ${t(`deliveryStatus.${o.delivery_status}`)}` : ""}</p> : null}
               {o.cod_collected !== null && o.cod_collected !== undefined && showMoney ? <p>{t("codCollected")}: {peso(o.cod_collected as number)}</p> : null}
               {drivers.length > 0 && ["confirmed", "packing", "packed", "out_for_delivery"].includes(status) && o.delivery_method !== "pickup" && (
                 <AssignDriverForm orderId={id} drivers={drivers.map((d) => ({ id: String(d.id), name: String(d.full_name) }))}

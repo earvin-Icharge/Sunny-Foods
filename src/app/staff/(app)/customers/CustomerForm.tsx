@@ -45,8 +45,8 @@ export function CustomerForm({ customer, tiers, canEdit, canSetTier, showContact
         {showAddress && (
           <div className="card grid gap-4 sm:grid-cols-2">
             <Field label={tc("address")} className="sm:col-span-2"><Textarea name="address" defaultValue={v("address")} /></Field>
-            <Field label={t("lat")}><Input ref={lat} name="lat" type="number" step="0.0000001" defaultValue={v("lat")} /></Field>
-            <Field label={t("lng")}><Input ref={lng} name="lng" type="number" step="0.0000001" defaultValue={v("lng")} /></Field>
+            <Field label={t("lat")}><input ref={lat} className="input" name="lat" type="number" step="0.0000001" defaultValue={v("lat")} /></Field>
+            <Field label={t("lng")}><input ref={lng} className="input" name="lng" type="number" step="0.0000001" defaultValue={v("lng")} /></Field>
             <div className="flex flex-wrap gap-2 sm:col-span-2">
               <button type="button" className="btn-secondary btn-sm" onClick={() => navigator.geolocation?.getCurrentPosition((p) => {
                 if (lat.current) lat.current.value = p.coords.latitude.toFixed(7);

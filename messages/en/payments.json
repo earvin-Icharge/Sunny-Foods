@@ -1,0 +1,10 @@
+{
+  "title": "Payments", "openBalance": "Unpaid total", "overdueBalance": "Overdue total", "overdueOrders": "Overdue orders",
+  "proofsToCheck": "Payment proofs to check", "noProofs": "No proofs waiting.", "balance": "balance", "unpaidOrders": "Unpaid orders",
+  "allOpen": "All unpaid", "search": "Search", "allPaid": "Nothing unpaid here.", "due": "due",
+  "recordPayment": "Record payment", "paymentRecorded": "Payment recorded", "amount": "Amount (₱)", "method": "Method", "paidOn": "Paid on",
+  "reference": "Reference no.", "referenceHint": "Bank / GCash / Maya ref, cheque no.", "proofOptional": "Proof photo (optional)", "notes": "Notes",
+  "savePayment": "Save payment", "cancel": "Cancel", "ref": "Ref", "openFile": "Open file", "forOrder": "For which order?",
+  "chooseOrder": "Choose order…", "note": "Note to customer", "noteHint": "Required when rejecting", "reject": "Reject", "rejected": "Proof rejected — customer notified",
+  "approve": "Approve", "verified": "Payment verified and recorded"
+}

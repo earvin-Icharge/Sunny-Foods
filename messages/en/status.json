@@ -1,0 +1,9 @@
+{
+  "new": "New", "confirmed": "Confirmed", "packing": "Packing", "packed": "Packed", "out_for_delivery": "Out for Delivery",
+  "delivered": "Delivered", "completed": "Completed", "cancelled": "Cancelled", "received": "Received",
+  "unpaid": "Unpaid", "partial": "Partial", "paid": "Paid", "overdue": "Overdue",
+  "available": "Available", "limited": "Limited", "out": "Out of stock",
+  "pending": "Pending", "approved": "Approved", "rejected": "Rejected", "suspended": "Suspended",
+  "earned": "Earned", "voided": "Voided", "draft": "Draft", "agreed": "Agreed", "done": "Done",
+  "active": "Active", "inactive": "Inactive", "resigned": "Resigned", "verified": "Verified", "assigned": "Assigned", "failed": "Failed"
+}

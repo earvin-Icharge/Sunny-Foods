@@ -1,0 +1,11 @@
+{
+  "subtotal": "Subtotal", "deliveryFee": "Delivery fee", "free": "Free", "total": "Total", "vatableSales": "VATable sales",
+  "vatExemptSales": "VAT-exempt sales", "vat": "VAT 12%", "vatIncluded": "included", "paid": "Paid", "balance": "Balance", "voucher": "Voucher",
+  "receiptTitle": "Delivery Receipt", "pickingTitle": "Picking List", "orderNo": "Order no.", "customer": "Customer", "deliverTo": "Deliver to",
+  "deliveryDate": "Delivery date", "timeWindow": "Time", "method": "Delivery method", "payment": "Payment", "item": "Item", "qty": "Qty",
+  "unitPrice": "Unit price", "amount": "Amount", "receivedBy": "Received by (name & signature)", "preparedBy": "Prepared by",
+  "birInvoice": "BIR invoice no.", "batch": "Batch / location", "checked": "Picked", "freeItem": "FREE",
+  "own_truck": "Sunny Foods truck", "courier": "Courier", "pickup": "Pickup at Carmona plant",
+  "cash": "Cash", "cod": "Cash on Delivery", "bank_transfer": "Bank transfer", "gcash": "GCash", "maya": "Maya", "cheque": "Cheque",
+  "credit_7": "Credit 7 days", "credit_15": "Credit 15 days", "credit_30": "Credit 30 days", "salary_deduction": "Salary deduction"
+}

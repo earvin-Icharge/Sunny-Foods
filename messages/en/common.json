@@ -1,0 +1,17 @@
+{
+  "save": "Save", "saved": "Saved", "cancel": "Cancel", "delete": "Delete", "remove": "Remove", "add": "Add", "edit": "Edit",
+  "close": "Close", "confirm": "Confirm", "back": "Back", "search": "Search", "home": "Home", "yes": "Yes", "no": "No",
+  "undo": "Undo", "more": "More", "signOut": "Sign out", "loading": "Loading…", "print": "Print", "download": "Download",
+  "notifications": "Notifications", "markAllRead": "Mark all read", "noNotifications": "No notifications yet",
+  "deleteTitle": "Delete this item?", "deleteHelp": "Type “{name}” (or DELETE) to confirm. It will go to Trash and can be restored.",
+  "reasonOptional": "Reason (optional)", "deletedOrRequested": "Done — moved to Trash or sent to the boss for approval",
+  "takePhoto": "Take or choose a photo", "history": "Change history",
+  "audit": { "insert": "created", "update": "edited", "delete": "deleted", "soft_delete": "moved to Trash", "restore": "restored", "purge": "emptied from Trash", "rollback": "rolled back", "undo": "undone" },
+  "updateAvailable": "New version available — Tap to update", "updateRequired": "An important update is needed to continue.", "updateNow": "Update now",
+  "enableAlerts": "Turn on alerts",
+  "viewingAs": "Preview: viewing as {name} ({role}) — read-only", "stopViewAs": "Stop preview",
+  "notAllowedTitle": "You can't open this page", "notAllowedText": "Your account does not have access to this area. Ask the owner if you need access.",
+  "required": "Required", "optional": "optional", "all": "All", "none": "None", "total": "Total", "status": "Status", "date": "Date",
+  "notes": "Notes", "reason": "Reason", "actions": "Actions", "name": "Name", "phone": "Phone", "email": "Email", "address": "Address",
+  "from": "From", "to": "To", "apply": "Apply", "export": "Export to Excel", "today": "Today", "qty": "Qty", "price": "Price", "amount": "Amount"
+}

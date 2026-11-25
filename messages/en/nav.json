@@ -1,0 +1,7 @@
+{
+  "dashboard": "Home", "orders": "Orders", "packing": "Packing", "deliveries": "Deliveries", "payments": "Payments",
+  "customers": "Customers", "products": "Products", "inventory": "Stock", "vouchers": "Vouchers", "pricing": "Prices",
+  "agents": "Agents", "reports": "Reports", "trash": "Trash", "settings": "Settings",
+  "catalog": "Shop", "cart": "Cart", "myOrders": "My Orders", "account": "My Account", "commissions": "Commissions",
+  "payouts": "Payouts", "invite": "Invite", "myCustomers": "My Customers"
+}

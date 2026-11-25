@@ -1,0 +1,25 @@
+{
+  "updated": "Last updated: 25 November 2026 (draft — to be reviewed by Sunny Foods' lawyer before go-live)",
+  "privacy": {
+    "title": "Privacy policy",
+    "sections": [
+      { "h": "Who we are", "p": "Sunny Foods Inc. (Carmona, Cavite) runs this ordering app. We follow the Data Privacy Act of 2012 (RA 10173)." },
+      { "h": "What we collect", "p": "Business and contact details (name, contact person, phone, email, delivery address and map pin), your orders and payments, uploaded payment proofs and business permits, and basic device information for security and notifications." },
+      { "h": "Why we use it", "p": "To take and deliver your orders, bill and collect payments, give you your prices and vouchers, pay agent commissions, keep records required by law, and keep the app secure." },
+      { "h": "Who can see it", "p": "Only Sunny Foods staff who need it for their work, your assigned agent (limited details only), and service providers that run the app (hosting and email). We never sell your data." },
+      { "h": "How long we keep it", "p": "While your account is active, and order/payment records for the period required by Philippine tax law. After that they are deleted or made anonymous." },
+      { "h": "Your rights", "p": "You may ask for a copy of your data, ask us to correct it, or ask us to delete it, from My Account → Privacy. When we delete your account, your name and contact details are removed; order totals stay (without your personal details) for legal record-keeping." },
+      { "h": "Contact", "p": "Data Protection Officer, Sunny Foods Inc., Carmona, Cavite. Email: privacy@sunnyfoods.com.ph" }
+    ]
+  },
+  "terms": {
+    "title": "Terms of use",
+    "sections": [
+      { "h": "Accounts", "p": "Accounts are for approved business customers, Sunny Foods employees and appointed agents. Keep your password private. You are responsible for orders placed from your account." },
+      { "h": "Orders and prices", "p": "Prices shown are your agreed prices at the time of ordering. Sunny Foods confirms every order and may adjust quantities or dates; you will be notified of any change." },
+      { "h": "Payment", "p": "Pay using the options allowed for your account. Uploaded payment proofs are checked by our staff. Delivery receipts from this app are not BIR invoices." },
+      { "h": "Cancellations", "p": "You may cancel an order while it is still New. After that, use “Request change”." },
+      { "h": "Vouchers", "p": "Vouchers follow the rules shown on each voucher and may be paused or ended by Sunny Foods at any time." }
+    ]
+  }
+}

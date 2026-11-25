@@ -1,26 +1,51 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Sunny Foods brand (copied from sunnyfoods.com.ph) — Spec 5 */
+@theme {
+  --color-sunny: #B81C21;
+  --color-sunny-dark: #961419;
+  --color-cream: #F5EDE4;
+  --color-cream-light: #FAF6F1;
+  --color-brown: #3B2F2F;
+  --color-charcoal: #262220;
+  --color-gold: #C8A175;
+  --color-st-new: #6B7280;
+  --color-st-confirmed: #2563EB;
+  --color-st-packing: #EA580C;
+  --color-st-ok: #16A34A;
+  --color-st-problem: #DC2626;
+  --font-heading: var(--font-lora), var(--font-noto-sc), var(--font-noto-tc), Georgia, serif;
+  --font-sans: var(--font-nunito), var(--font-noto-sc), var(--font-noto-tc), system-ui, sans-serif;
+  --radius-card: 1rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+html { font-size: 16px; }
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream-light);
+  color: var(--color-brown);
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+}
+h1, h2, h3 { font-family: var(--font-heading); color: var(--color-brown); }
+
+/* big touch targets (min 48px) */
+@utility btn { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-xl px-5 text-base font-semibold transition disabled:cursor-not-allowed disabled:opacity-50; }
+@utility btn-primary { @apply btn bg-sunny text-white hover:bg-sunny-dark; }
+@utility btn-secondary { @apply btn border border-brown/20 bg-white text-brown hover:bg-cream; }
+@utility btn-ghost { @apply btn text-brown hover:bg-cream; }
+@utility btn-danger { @apply btn bg-st-problem text-white hover:opacity-90; }
+@utility btn-sm { @apply min-h-10 px-3 text-sm; }
+@utility card { @apply rounded-[var(--radius-card)] bg-white p-4 shadow-sm ring-1 ring-brown/5 sm:p-5; }
+@utility input { @apply min-h-12 w-full rounded-xl border border-brown/20 bg-white px-4 text-base text-brown placeholder:text-brown/40 focus:border-sunny focus:outline-none focus:ring-2 focus:ring-sunny/20; }
+@utility label { @apply mb-1 block text-sm font-semibold text-brown/80; }
+@utility table-wrap { @apply -mx-4 overflow-x-auto sm:mx-0; }
+@utility table { @apply w-full min-w-[600px] text-left text-sm; }
+.table th { @apply border-b border-brown/10 px-3 py-2 font-semibold text-brown/70; }
+.table td { @apply border-b border-brown/5 px-3 py-3 align-top; }
+
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; }
+  .card { box-shadow: none; }
+  @page { size: A4; margin: 12mm; }
 }

@@ -1,0 +1,22 @@
+{
+  "title": "Stock", "tabStock": "Stock on hand", "tabBatches": "Batches", "tabStockIn": "Stock in", "tabAdjust": "Adjust", "tabMovements": "Movements", "tabCounts": "Stock count",
+  "products": "Meat & sauces", "packaging": "Packaging", "item": "Item", "storage": "Storage", "onHand": "On hand", "reserved": "Reserved for orders",
+  "lowLevel": "Alert level", "status": "Status",
+  "storage_frozen": "Frozen", "storage_chilled": "Chilled", "storage_room": "Room temp",
+  "pendingApproval": "Waiting for your approval", "approve": "Approve", "reject": "Reject", "approved": "Approved", "rejected": "Rejected",
+  "kind": "Type", "kind_stock_in": "Stock in", "kind_order_out": "Order out", "kind_adjustment": "Adjustment", "kind_spoilage": "Spoilage / waste", "kind_return": "Return", "kind_count": "Stock count",
+  "st_pending_approval": "Waiting for approval", "st_rejected": "Rejected", "st_posted": "Posted",
+  "batchNo": "Batch no.", "batchNoHint": "Leave empty to create one automatically", "location": "Location",
+  "loc_freezer_1": "Freezer 1", "loc_freezer_2": "Freezer 2", "loc_chiller": "Chiller", "loc_shelf": "Shelf",
+  "productionDate": "Production date", "expiryDate": "Expiry date", "exp": "exp.", "expired": "EXPIRED", "expiresSoon": "expires soon",
+  "showEmptyBatches": "Show used-up batches", "filter": "Filter", "noBatches": "No batches with stock.",
+  "quantity": "Quantity", "chooseItem": "Choose item…", "stockedIn": "Stock added", "adjustHelp": "Every change needs a reason. Big adjustments wait for the boss's approval.",
+  "direction": "Add or remove", "remove": "Remove", "add": "Add", "batch": "Batch", "noBatch": "No specific batch", "reasonRequired": "Reason (required)",
+  "waitingApproval": "Saved — waiting for the boss's approval", "searchMovements": "Search item, batch or order no.", "allKinds": "All types",
+  "noMovements": "No stock movements.", "when": "When", "details": "Details",
+  "countHelp": "Count what is physically in the freezers and shelves. The app shows the difference; the boss approves.",
+  "newCount": "Start new count", "countStarted": "Count started", "noCounts": "No stock counts yet.", "differences": "{n} differences",
+  "count": "Stock count", "count_draft": "Counting", "count_submitted": "Waiting for approval", "count_approved": "Approved", "count_rejected": "Rejected",
+  "system": "System", "counted": "Counted", "stillMissing": "{n} items not counted yet", "submitCount": "Submit count", "countSubmitted": "Count submitted for approval",
+  "approveCount": "Approve & correct stock", "countApproved": "Stock corrected"
+}

@@ -35,7 +35,7 @@ Last updated: 2026-11-25 · build v0.1.0 · branch `build/v1`
 | G4 | Email sender (custom SMTP) + DNS for `app.` / `order.` / `agent.` (D3) | Earvin, then Claude | Phase 10 / 17 |
 | G5 | Store app: accounts (D6), Firebase for phone push, base-path for links | Earvin, then Claude | Phase 18 |
 | G6 | Privacy policy & terms reviewed by a lawyer; record-keeping period from accountant | Earvin | Before go-live |
-| G7 | Supabase Pro + Vercel Pro, spend alerts, Point-in-Time Recovery | Earvin | Go-live |
+| G7 | Supabase Pro + Vercel Pro, spend alerts, Point-in-Time Recovery. On Vercel Pro, add back the 5-minute push job in `vercel.json` (`/api/cron/push`, `*/5 * * * *`) so scheduled alerts reach phones quickly | Earvin, then Claude | Go-live |
 
 ## Checking the database on this computer
 ```bash

@@ -2,31 +2,24 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { api } from "@/lib/portal-client";
+import { afterLogin } from "@/app/actions/auth";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { PhotoInput } from "@/components/ui/PhotoInput";
 
-/** Customer sign-up (Spec 7.10). Status stays Pending until Sunny Foods approves. */
-export function SignupForm({ refCode }: { refCode?: string }) {
+/**
+ * Business details, once, after a new customer's first login (Google, Facebook, phone or
+ * email code — decision D1, 2026-11-26). Status stays Pending until Sunny Foods approves (Spec 7.10).
+ */
+export function WelcomeForm({ name, email, phone, refCode }: { name?: string; email?: string; phone?: string; refCode?: string }) {
   const t = useTranslations("portal.signup");
+  const router = useRouter();
   const [busy, setBusy] = useState(false);
   const [errors, setErrors] = useState<string[]>([]);
-  const [done, setDone] = useState(false);
   const [lat, setLat] = useState("");
   const [lng, setLng] = useState("");
-
-  if (done) return (
-    <main className="mx-auto flex min-h-screen max-w-md flex-col justify-center gap-4 p-6 text-center">
-      <Image src="/logo.png" alt="Sunny Foods" width={160} height={80} className="mx-auto" />
-      <div className="card">
-        <div className="text-5xl">📧</div>
-        <h1 className="mt-2 text-2xl font-bold">{t("doneTitle")}</h1>
-        <p className="mt-2 text-brown/80">{t("doneText")}</p>
-        <Link href="/portal/login" className="btn-primary mt-4 w-full">{t("goLogin")}</Link>
-      </div>
-    </main>
-  );
 
   return (
     <main className="mx-auto max-w-xl p-4 pb-16 sm:p-6">
@@ -38,14 +31,20 @@ export function SignupForm({ refCode }: { refCode?: string }) {
         e.preventDefault();
         setBusy(true); setErrors([]);
         const fd = new FormData(e.currentTarget);
-        const r = await api<{ ok: boolean; errors?: string[] }>("/api/portal/signup", { method: "POST", body: fd });
+        const r = await api<{ ok: boolean; errors?: string[] }>("/api/portal/onboard", { method: "POST", body: fd });
+        if (r.ok) {
+          const a = await afterLogin("portal");
+          router.replace(a.ok ? "/portal" : "/portal/login");
+          router.refresh();
+          return;
+        }
         setBusy(false);
-        if (r.ok) { setDone(true); return; }
         const errs = (r.data as { errors?: string[] } | undefined)?.errors;
+        if (errs?.includes("login_again")) { router.replace("/portal/login"); return; }
         setErrors(errs?.length ? errs : [r.error === "offline" ? "offline" : "signup_failed"]);
       }}>
-        <h1 className="text-2xl font-bold">{t("title")}</h1>
-        <p className="text-sm text-brown/70">{t("intro")}</p>
+        <h1 className="text-2xl font-bold">{t("welcomeTitle")}</h1>
+        <p className="text-sm text-brown/70">{t("welcomeIntro")}</p>
         {/* honeypot: hidden from people, bots fill it */}
         <input type="text" name="website" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />
         <label><span className="label">{t("businessName")} *</span><input name="business_name" required className="input" /></label>
@@ -54,11 +53,11 @@ export function SignupForm({ refCode }: { refCode?: string }) {
             {["restaurant", "cafe", "retailer", "distributor", "private_label", "other"].map((b) => <option key={b} value={b}>{t(`type_${b}`)}</option>)}
           </select></label>
         <div className="grid gap-4 sm:grid-cols-2">
-          <label><span className="label">{t("contactPerson")} *</span><input name="contact_person" required className="input" autoComplete="name" /></label>
-          <label><span className="label">{t("phone")} *</span><input name="phone" required className="input" type="tel" autoComplete="tel" /></label>
-          <label><span className="label">{t("email")} *</span><input name="email" required className="input" type="email" autoComplete="email" /></label>
-          <label><span className="label">{t("password")} *</span><input name="password" required minLength={8} className="input" type="password" autoComplete="new-password" />
-            <span className="mt-1 block text-xs text-brown/60">{t("passwordHint")}</span></label>
+          <label><span className="label">{t("contactPerson")} *</span><input name="contact_person" required defaultValue={name ?? ""} className="input" autoComplete="name" /></label>
+          <label><span className="label">{t("phone")} *</span><input name="phone" required defaultValue={phone ?? ""} readOnly={Boolean(phone)} className="input" type="tel" autoComplete="tel" /></label>
+          {email
+            ? <div><span className="label">{t("email")}</span><div className="input flex items-center bg-cream-light">{email}</div></div>
+            : <label><span className="label">{t("emailOptional")}</span><input name="email" className="input" type="email" autoComplete="email" /></label>}
         </div>
         <label><span className="label">{t("address")} *</span><textarea name="address" required rows={2} className="input py-3" autoComplete="street-address" /></label>
         <div className="flex flex-wrap items-center gap-3">
@@ -76,7 +75,6 @@ export function SignupForm({ refCode }: { refCode?: string }) {
         </label>
         {errors.length > 0 && <ul className="rounded-lg bg-st-problem/10 p-3 text-sm text-st-problem">{errors.map((e) => <li key={e}>• {t.has(`errors.${e}`) ? t(`errors.${e}`) : t("errors.signup_failed")}</li>)}</ul>}
         <button className="btn-primary" disabled={busy}>{busy ? "…" : t("submit")}</button>
-        <p className="text-center text-sm">{t("haveAccount")} <Link href="/portal/login" className="font-semibold text-sunny">{t("goLogin")}</Link></p>
       </form>
     </main>
   );

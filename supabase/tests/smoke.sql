@@ -101,3 +101,21 @@ select set_config('request.jwt.claims','{"sub":"00000000-0000-0000-0000-00000000
 select (app.place_order(jsonb_build_object('customer_id','c0000000-0000-0000-0000-000000000002','delivery_method','pickup',
   'payment_method','cash','items', jsonb_build_array(jsonb_build_object('product_id',:'ribeye','qty',1)))) - 'quote') as no_voucher_order;
 reset role;
+-- self sign-up (0017): staff + agent requests, confirm once, who can see/decide
+insert into auth.users (id, email) values ('00000000-0000-0000-0000-000000000011','newstaff@test'),('00000000-0000-0000-0000-000000000012','newagent@test');
+insert into app.signup_requests (user_id, area, full_name, email, note) values ('00000000-0000-0000-0000-000000000011','internal','New Staff','newstaff@test','warehouse');
+insert into app.signup_requests (user_id, area, full_name, email, agent_type) values ('00000000-0000-0000-0000-000000000012','agent','New Agent','newagent@test','broker');
+select app.signup_confirmed('00000000-0000-0000-0000-000000000011') as staff_req_status, app.signup_confirmed('00000000-0000-0000-0000-000000000011') as again_no_second_notice;
+select app.signup_confirmed('00000000-0000-0000-0000-000000000012') as agent_req_status, app.signup_confirmed('00000000-0000-0000-0000-000000000099') is null as unknown_is_null;
+select kind, count(*) from app.notifications where kind = 'signup_request' group by kind;
+set role authenticated;
+select set_config('request.jwt.claims','{"sub":"00000000-0000-0000-0000-000000000001"}',false);
+select count(*) as owner_sees_requests from app.signup_requests;
+select set_config('request.jwt.claims','{"sub":"00000000-0000-0000-0000-000000000003"}',false);
+select count(*) as warehouse_sees_requests from app.signup_requests;
+select set_config('request.jwt.claims','{"sub":"00000000-0000-0000-0000-000000000011"}',false);
+select count(*) as pending_person_sees_own from app.signup_requests;
+select set_config('request.jwt.claims','{"sub":"00000000-0000-0000-0000-000000000006"}',false);
+update app.signup_requests set status = 'approved';
+select count(*) as agent_cannot_approve from app.signup_requests where status = 'approved';
+reset role;

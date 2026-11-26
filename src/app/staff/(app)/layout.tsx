@@ -24,6 +24,7 @@ export default async function StaffLayout({ children }: LayoutProps<"/staff">) {
     can(p, "agents") && { href: "/staff/agents", label: t("agents"), icon: "🤝" },
     can(p, "reports") && { href: "/staff/reports", label: t("reports"), icon: "📊" },
     can(p, "trash") && { href: "/staff/trash", label: t("trash"), icon: "🗑️" },
+    (can(p, "settings", 3) || can(p, "agents", 5)) && { href: "/staff/signup-requests", label: t("signupRequests"), icon: "🙋" },
     can(p, "settings") && { href: "/staff/settings", label: t("settings"), icon: "⚙️" },
   ].filter(Boolean) as NavItem[];
   return <AppShell area="internal" user={user} nav={nav}>{children}</AppShell>;

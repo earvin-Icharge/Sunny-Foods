@@ -68,6 +68,21 @@ async function verifiedUserId(): Promise<string | null> {
   return (data?.claims?.sub as string) ?? null;
 }
 
+/**
+ * The signed-in login itself (even before it has a Sunny Foods profile):
+ * used by sign-up steps — the customer "business details" form and the
+ * staff/agent "waiting for approval" check.
+ */
+export async function getAuthClaims(): Promise<{ id: string; email: string | null; phone: string | null; name: string | null } | null> {
+  const supabase = await supabaseServer();
+  const { data } = await supabase.auth.getClaims();
+  const c = data?.claims as Record<string, unknown> | undefined;
+  if (!c?.sub) return null;
+  const meta = (c.user_metadata ?? {}) as Record<string, unknown>;
+  const name = (meta.full_name ?? meta.name ?? null) as string | null;
+  return { id: String(c.sub), email: (c.email as string) || null, phone: (c.phone as string) || null, name };
+}
+
 /** The current user (cached per request). Handles the owner's "View as" preview. */
 export const getSession = cache(async (): Promise<SessionUser | null> => {
   const realId = await verifiedUserId();

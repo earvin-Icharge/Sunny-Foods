@@ -22,7 +22,7 @@ A simple web app (works on computer + phone) that replaces manual order and stoc
 | Address | `app.sunnyfoods.com.ph` | `order.sunnyfoods.com.ph` | `agent.sunnyfoods.com.ph` |
 | Who | Boss, office staff, warehouse, drivers | Business customers + employees buying for themselves | Brokers and sales agents |
 | Purpose | Inventory, packing, deliveries, payments, vouchers, commissions, reports | Place orders, use vouchers, track orders, see balance | Track own customers, sales and commissions; order for own customers |
-| Login | Staff accounts made by boss | Sign up → boss/staff approves | Boss creates agent account |
+| Login | Sign up (email + 6-digit code) → boss approves and picks the role; boss can also create accounts | Google, Facebook, mobile number (SMS code) or email (code) — customer's choice; business details once → boss/staff approves | Sign up (email + 6-digit code) → boss approves; boss can also create agent accounts |
 - All are PWAs (own home-screen icon and name: "Sunny Foods Staff", "Sunny Foods Order", "Sunny Foods Agent").
 - Customers and agents can NEVER open internal pages. Each user sees only their own area.
 - Area folders: `app/staff/...`, `app/portal/...`, `app/agent/...`; `proxy.ts` (Next.js 16 name for middleware) sends each subdomain to its folder and blocks the other areas; each area's layout checks the role.
@@ -370,7 +370,7 @@ English, 简体中文, 繁體中文, Tagalog. One-tap switcher in the header.
 ## 14. Decisions log
 | # | Decision | Status (2026-11-25) |
 |---|---|---|
-| D1 | Login method | **Decided**: email + password for v1. Phone login can be added later with an SMS provider. |
+| D1 | Login method | **Changed 2026-11-26 (Earvin)**: Customers log in their own way — Google, Facebook, mobile number (SMS code) or email (code); old email + password logins still work. Staff and agents sign up with email + 6-digit code and stay locked until the boss approves and picks their role. |
 | D2 | Supabase plan | **Decided**: Free while building, upgrade to Pro before go-live. |
 | D3 | Domain / DNS for sunnyfoods.com.ph | **Corrected 2026-11-26**: DNS is in Cloudflare, in the website builder's account (not Earvin's). The builder adds the records (app./order./agent. CNAMEs requested 2026-11-26; email-sender records in Phase 10), or invites Earvin as a Cloudflare member. |
 | D4 | VAT | **Partly decided**: Sunny Foods is VAT-registered; all products are VATable **except Yakiniku** (VAT-exempt). Still open: are prices shown VAT-inclusive, and is the discount taken before or after VAT. Owner: Earvin (ask accountant). Needed before Phase 5. |

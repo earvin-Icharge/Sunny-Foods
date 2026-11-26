@@ -8,26 +8,40 @@ import { supabaseBrowser } from "@/lib/supabase/client";
 import { afterLogin } from "@/app/actions/auth";
 import { AREAS, type Area } from "@/lib/areas";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
+import { CodeForm } from "./CodeForm";
 
-/** Email + password login (decision D1). */
-export function LoginForm({ area, title, footer }: { area: Area; title: string; footer?: React.ReactNode }) {
+/** Email + password login (staff, agents, and customers who prefer a password). */
+export function LoginForm({ area, title, footer, error }: { area: Area; title: string; footer?: React.ReactNode; error?: string }) {
   const t = useTranslations("auth");
   const router = useRouter();
   const prefix = AREAS[area].prefix;
-  const [mode, setMode] = useState<"login" | "forgot">("login");
+  const [mode, setMode] = useState<"login" | "forgot" | "code">("login");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [msg, setMsg] = useState<{ tone: "error" | "ok"; text: string } | null>(null);
+  // ?error=… from an email link or the after-login check (e.g. "awaiting_approval")
+  const [msg, setMsg] = useState<{ tone: "error" | "ok"; text: string } | null>(
+    error ? { tone: error === "awaiting_approval" ? "ok" : "error", text: t.has(error) ? t(error) : t("loginFailed") } : null);
   const [busy, setBusy] = useState(false);
 
   async function login(e: React.FormEvent) {
     e.preventDefault();
     setBusy(true); setMsg(null);
     const { error } = await supabaseBrowser().auth.signInWithPassword({ email: email.trim(), password });
-    if (error) { setBusy(false); setMsg({ tone: "error", text: t(error.message.includes("confirm") ? "emailNotConfirmed" : "wrongPassword") }); return; }
+    if (error) {
+      setBusy(false);
+      // Signed up but never typed the email code: ask for it here (with "send again").
+      if (error.code === "email_not_confirmed" || error.message.includes("confirm")) { setMode("code"); return; }
+      setMsg({ tone: "error", text: t("wrongPassword") });
+      return;
+    }
+    await finish();
+  }
+
+  async function finish() {
     const r = await afterLogin(area);
     setBusy(false);
-    if (!r.ok) { setMsg({ tone: "error", text: t(r.error ?? "wrongApp") }); return; }
+    if (r.next) { router.replace(r.next); return; }
+    if (!r.ok) { setMode("login"); setMsg({ tone: r.error === "awaiting_approval" ? "ok" : "error", text: t(r.error ?? "wrongApp") }); return; }
     router.replace(r.mustChangePassword ? `${prefix}/reset-password?first=1` : prefix);
     router.refresh();
   }
@@ -48,6 +62,7 @@ export function LoginForm({ area, title, footer }: { area: Area; title: string; 
         <Image src="/logo.png" alt="Sunny Foods" width={160} height={80} priority />
         <LanguageSwitcher />
       </div>
+      {mode === "code" ? <div className="card"><CodeForm email={email.trim()} type="signup" onVerified={finish} onBack={() => setMode("login")} /></div> : (
       <div className="card">
         <h1 className="mb-4 text-2xl font-bold">{mode === "login" ? title : t("forgotTitle")}</h1>
         <form onSubmit={mode === "login" ? login : forgot} className="grid gap-3">
@@ -63,7 +78,7 @@ export function LoginForm({ area, title, footer }: { area: Area; title: string; 
         <button className="mt-3 text-sm font-semibold text-sunny" onClick={() => { setMode(mode === "login" ? "forgot" : "login"); setMsg(null); }}>
           {mode === "login" ? t("forgotPassword") : t("backToLogin")}
         </button>
-      </div>
+      </div>)}
       {footer}
       <p className="text-center text-xs text-brown/60">
         <Link href={`${prefix}/privacy`} className="underline">{t("privacy")}</Link> · <Link href={`${prefix}/terms`} className="underline">{t("terms")}</Link>

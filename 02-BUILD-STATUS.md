@@ -12,9 +12,9 @@ Last updated: 2026-11-26 · build v0.2.0 · branch `build/v1`
 | Supabase project "Sunny Foods" (Singapore) | All 15 database files loaded; security check clean; Supabase Cron jobs running. |
 | Vercel project `sunny-foods` | Live test address `sunny-foods-git-build-v1-icharge1.vercel.app` (Vercel login protected). Database + secret key connected. |
 | Screens in a browser / real logins | Owner login checked in a real browser. Full acceptance checks (spec 13) next. |
-| Test logins | 9 accounts `test+<role>@sunnyfoods.com.ph` (passwords given to Earvin in chat). Delete before go-live. |
+| Test logins | 11 accounts `test+<role>@sunnyfoods.com.ph` (incl. `test+signup-staff` / `test+signup-agent`, used to test approvals). Delete before go-live. |
 | Languages | English, 简体中文, 繁體中文, Tagalog — all screens. |
-| Sign-up & login (D1, changed 2026-11-26) | **Built**. Customers: Google, Facebook, mobile (SMS code), email (code), or old password login; business details once (`/portal/welcome`). Staff/agents: sign up with email + 6-digit code, locked until approved on **Sign-up requests** (`/staff/signup-requests`). Needs setup before it works live — see G8. |
+| Sign-up & login (D1, changed 2026-11-26) | **Built**. Customers: Google, Facebook, mobile (SMS code), email (code), or old password login; business details once (`/portal/welcome`). Staff/agents: sign up with email + 6-digit code, locked until approved on **Sign-up requests** (`/staff/signup-requests`). Browser-tested on the test address (17/17): pending people blocked, boss approves, they log in. Google / Facebook / SMS / email codes need setup first — see G8. |
 
 ## Screens
 | Area | Address | Screens |
@@ -39,6 +39,7 @@ Last updated: 2026-11-26 · build v0.2.0 · branch `build/v1`
 | G5 | Store app: accounts (D6), Firebase for phone push, base-path for links | Earvin, then Claude | Phase 18 |
 | G6 | Privacy policy & terms reviewed by a lawyer; record-keeping period from accountant | Earvin | Before go-live |
 | G8 | Login setup: email sender (Resend + DNS records from the builder), email templates with the 6-digit code, Google login key, Facebook app, SMS (Semaphore account + key in Vercel, Supabase SMS hook), Supabase redirect URLs. Google/Facebook inside the APKs need the new APK build. | Earvin (accounts), Claude (steps + checks) | Before go-live |
+| G9 | Two older screens save in two steps and will fail like L-010: Agents → new agent **with** login; Customers → create employee buyer. Fix = one database step. | Claude (after Earvin OKs) | Next |
 | G7 | Supabase Pro + Vercel Pro, spend alerts, Point-in-Time Recovery. On Vercel Pro, add back the 5-minute push job in `vercel.json` (`/api/cron/push`, `*/5 * * * *`) so scheduled alerts reach phones quickly | Earvin, then Claude | Go-live |
 
 ## Checking the database on this computer

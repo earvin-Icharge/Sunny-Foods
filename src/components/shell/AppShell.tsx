@@ -28,20 +28,20 @@ export async function AppShell({ area, user, nav, children }: { area: Area; user
           <button className="rounded-lg bg-charcoal px-3 py-1 text-white">{t("stopViewAs")}</button>
         </form>
       )}
-      <header className="no-print sticky top-0 z-30 bg-charcoal text-white">
+      <header className="no-print sticky top-0 z-30 border-b border-brown/10 bg-white text-brown shadow-sm">
         <div className="flex h-20 items-center gap-3 px-4">
           <Link href={prefix} className="flex items-center gap-2">
-            <span className="block rounded-lg bg-white px-2 py-1 md:px-3">
-              {/* phone: stacked logo; tablet / computer: long logo across the top bar */}
+            <span className="block">
+              {/* white top bar (Earvin, 2026-11-26) — phone: stacked logo; tablet / computer: long logo */}
               <Image src="/logo.png" alt="Sunny Foods" width={1200} height={615} priority className="h-16 w-auto md:hidden" />
               <Image src="/logo-wide.png" alt="Sunny Foods" width={1833} height={240} priority className="hidden h-12 w-auto md:block lg:h-16" />
             </span>
           </Link>
           <div className="ml-auto flex items-center gap-2">
-            <LanguageSwitcher dark />
-            <NotificationBell userId={user.id} prefix={prefix} dark />
+            <LanguageSwitcher />
+            <NotificationBell userId={user.id} prefix={prefix} />
             <form action={signOut.bind(null, area)} className="hidden sm:block">
-              <button className="rounded-lg px-3 py-2 text-sm font-semibold hover:bg-white/10">{t("signOut")}</button>
+              <button className="rounded-lg px-3 py-2 text-sm font-semibold hover:bg-cream">{t("signOut")}</button>
             </form>
           </div>
         </div>

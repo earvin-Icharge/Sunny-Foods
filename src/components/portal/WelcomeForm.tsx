@@ -1,12 +1,11 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { api } from "@/lib/portal-client";
 import { afterLogin } from "@/app/actions/auth";
-import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
+import { AuthHeader } from "@/components/auth/AuthHeader";
 import { PhotoInput } from "@/components/ui/PhotoInput";
 
 /**
@@ -23,10 +22,7 @@ export function WelcomeForm({ name, email, phone, refCode }: { name?: string; em
 
   return (
     <main className="mx-auto max-w-xl p-4 pb-16 sm:p-6">
-      <div className="mb-4 flex items-center justify-between">
-        <Image src="/logo.png" alt="Sunny Foods" width={140} height={70} priority />
-        <LanguageSwitcher />
-      </div>
+      <div className="mb-4"><AuthHeader /></div>
       <form className="card grid gap-4" onSubmit={async (e) => {
         e.preventDefault();
         setBusy(true); setErrors([]);

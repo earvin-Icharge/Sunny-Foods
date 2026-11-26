@@ -1,13 +1,12 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { supabaseBrowser } from "@/lib/supabase/client";
 import { afterLogin } from "@/app/actions/auth";
 import { AREAS, type Area } from "@/lib/areas";
-import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
+import { AuthHeader } from "@/components/auth/AuthHeader";
 import { CodeForm } from "./CodeForm";
 
 /** Email + password login (staff, agents, and customers who prefer a password). */
@@ -58,10 +57,7 @@ export function LoginForm({ area, title, footer, error }: { area: Area; title: s
 
   return (
     <main className="mx-auto flex min-h-screen max-w-md flex-col justify-center gap-5 p-6">
-      <div className="flex items-center justify-between">
-        <Image src="/logo.png" alt="Sunny Foods" width={160} height={80} priority />
-        <LanguageSwitcher />
-      </div>
+      <AuthHeader />
       {mode === "code" ? <div className="card"><CodeForm email={email.trim()} type="signup" onVerified={finish} onBack={() => setMode("login")} /></div> : (
       <div className="card">
         <h1 className="mb-4 text-2xl font-bold">{mode === "login" ? title : t("forgotTitle")}</h1>

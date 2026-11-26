@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
@@ -8,7 +7,7 @@ import { supabaseBrowser } from "@/lib/supabase/client";
 import { isNativeApp } from "@/lib/portal-client";
 import { afterLogin } from "@/app/actions/auth";
 import { APP_SCHEME_BY_HOST } from "@/components/NativeBridge";
-import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
+import { AuthHeader } from "@/components/auth/AuthHeader";
 import { CodeForm } from "@/components/auth/CodeForm";
 
 type Mode = "choose" | "phone" | "email" | "code-sms" | "code-email";
@@ -98,10 +97,7 @@ export function PortalLoginForm({ signup, refCode, error }: { signup?: boolean; 
 
   return (
     <main className="mx-auto flex min-h-screen max-w-md flex-col justify-center gap-5 p-6">
-      <div className="flex items-center justify-between">
-        <Image src="/logo.png" alt="Sunny Foods" width={160} height={80} priority />
-        <LanguageSwitcher />
-      </div>
+      <AuthHeader />
       <div className="card grid gap-3">
         {mode === "code-sms" || mode === "code-email" ? (
           <CodeForm type={mode === "code-sms" ? "sms" : "email"} phone={phone} email={email} onBack={back}

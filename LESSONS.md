@@ -89,6 +89,12 @@ Never put passwords, API keys, or customer data in this file.
 - Rule: ALWAYS read the status rules (set_order_status / mark_delivered) before scripting order steps, and run the script on the local test database first.
 - Check: The script runs with "Sample data loaded." locally before it touches the live database.
 
+### L-012 · 2026-11-26 · Account screens test · [testing]
+- What happened: My browser test could not find the "Save" button and stopped.
+- Root cause: The test owner's language had been switched to Chinese; the test looked for English words.
+- Rule: ALWAYS find buttons and fields in browser tests by form position, name or class, never by English text (users switch languages).
+- Check: The test passes whatever language the test login uses.
+
 ## Archive
 
 (none yet)

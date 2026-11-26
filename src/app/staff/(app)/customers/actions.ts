@@ -88,8 +88,8 @@ function tempPassword() {
   return `${words[randomInt(words.length)]}-${randomInt(1000, 9999)}-${randomInt(100, 999)}`;
 }
 
-/** Create a login (auth user + profile). Returns the temporary password (shown once). */
-async function createLogin(opts: { email: string; fullName: string; role: "customer" | "employee"; customerId: string; isEmployee?: boolean; staffProfileId?: string | null; primary?: boolean }) {
+/** Create a login (auth user + profile, in the caller's transaction). Returns the temporary password (shown once). */
+async function createLogin(tx: Tx, opts: { email: string; fullName: string; role: "customer" | "employee"; customerId: string; isEmployee?: boolean; staffProfileId?: string | null; primary?: boolean }) {
   const password = tempPassword();
   const { data, error } = await supabaseAdmin().auth.admin.createUser({
     email: opts.email, password, email_confirm: true, user_metadata: { full_name: opts.fullName },
@@ -97,11 +97,9 @@ async function createLogin(opts: { email: string; fullName: string; role: "custo
   if (error || !data.user) throw new UserError(error?.message?.includes("already") ? "This email already has an account." : "Could not create the login: " + (error?.message ?? ""));
   const uid = data.user.id;
   try {
-    await asSystem(async (sys) => {
-      await sys`insert into app.profiles (id, full_name, email, role_key, customer_id, is_employee, staff_profile_id, must_change_password)
-        values (${uid}, ${opts.fullName}, ${opts.email}, ${opts.role}, ${opts.customerId}, ${opts.isEmployee ?? false}, ${opts.staffProfileId ?? null}, true)`;
-      await sys`insert into app.customer_users (customer_id, profile_id, is_primary) values (${opts.customerId}, ${uid}, ${opts.primary ?? false})`;
-    });
+    // same transaction as the caller (L-010): the customer may have been created a moment ago
+    await tx`select app.create_portal_profile(${uid}::uuid, ${opts.customerId}::uuid, ${opts.fullName}, ${opts.email}, ${opts.role},
+      ${opts.isEmployee ?? false}, ${opts.staffProfileId ?? null}::uuid, ${opts.primary ?? false})`;
   } catch (e) {
     await supabaseAdmin().auth.admin.deleteUser(uid);
     throw e;
@@ -118,7 +116,7 @@ export async function addPortalUser(customerId: string, fd: FormData) {
     const [c] = await tx`select id, is_employee_account from app.customers where id = ${customerId}`;
     if (!c) throw new UserError("Customer not found.");
     const [n] = await tx`select count(*)::int as n from app.customer_users where customer_id = ${customerId} and deleted_at is null`;
-    const password = await createLogin({ email, fullName: name, role: c.is_employee_account ? "employee" : "customer", customerId, primary: Number(n.n) === 0 });
+    const password = await createLogin(tx, { email, fullName: name, role: c.is_employee_account ? "employee" : "customer", customerId, primary: Number(n.n) === 0 });
     return { email, password };
   });
 }
@@ -153,7 +151,7 @@ export async function createEmployeeBuyer(fd: FormData) {
     const customerId = String(c.id);
     const amount = num(fd, "monthly_amount");
     if (amount) await tx`insert into app.employee_limits (customer_id, monthly_amount) values (${customerId}, ${amount})`;
-    const password = await createLogin({ email, fullName: String(staff.full_name), role: "employee", customerId, isEmployee: true, staffProfileId: staffId, primary: true });
+    const password = await createLogin(tx, { email, fullName: String(staff.full_name), role: "employee", customerId, isEmployee: true, staffProfileId: staffId, primary: true });
     return { customerId, email, password };
   });
 }

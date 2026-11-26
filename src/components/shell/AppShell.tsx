@@ -31,7 +31,7 @@ export async function AppShell({ area, user, nav, children }: { area: Area; user
       <header className="no-print sticky top-0 z-30 bg-charcoal text-white">
         <div className="flex h-16 items-center gap-3 px-4">
           <Link href={prefix} className="flex items-center gap-2">
-            <span className="rounded-lg bg-white p-1"><Image src="/logo.png" alt="Sunny Foods" width={96} height={48} className="h-8 w-auto" /></span>
+            <span className="rounded-lg bg-white px-2 py-1"><Image src="/logo-header.png" alt="Sunny Foods" width={329} height={118} priority className="h-10 w-auto sm:h-11" /></span>
           </Link>
           <div className="ml-auto flex items-center gap-2">
             <LanguageSwitcher dark />

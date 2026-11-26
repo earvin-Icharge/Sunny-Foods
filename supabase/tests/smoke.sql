@@ -133,3 +133,21 @@ reset role;
 select p.full_name, p.role_key, a.referral_code, a.default_rate, (select count(*) from app.privacy_consents c where c.profile_id = p.id) as consents
   from app.profiles p left join app.agents a on a.id = p.agent_id where p.id in ('00000000-0000-0000-0000-000000000011','00000000-0000-0000-0000-000000000012');
 select full_name, status from app.signup_requests order by area;
+-- 0019: login profiles in the SAME transaction as the new agent / employee customer (L-010)
+insert into auth.users (id, email) values ('00000000-0000-0000-0000-000000000021','newagent2@test'),('00000000-0000-0000-0000-000000000022','emp2@test'),('00000000-0000-0000-0000-000000000023','hacker@test');
+set role authenticated;
+select set_config('request.jwt.claims','{"sub":"00000000-0000-0000-0000-000000000001"}',false);
+begin;
+insert into app.agents (id, name, email, referral_code) values ('a0000000-0000-0000-0000-000000000021','Pedro','newagent2@test','AG-PEDRO');
+select app.create_agent_profile('00000000-0000-0000-0000-000000000021','a0000000-0000-0000-0000-000000000021');
+insert into app.customers (id, name, status, is_employee_account) values ('c0000000-0000-0000-0000-000000000022','Emp (employee)','approved',true);
+select app.create_portal_profile('00000000-0000-0000-0000-000000000022','c0000000-0000-0000-0000-000000000022','Emp','emp2@test','employee',true,'00000000-0000-0000-0000-000000000003',true);
+commit;
+select set_config('request.jwt.claims','{"sub":"00000000-0000-0000-0000-000000000005"}',false);
+do $$ begin perform app.create_portal_profile('00000000-0000-0000-0000-000000000023','c0000000-0000-0000-0000-000000000001','X','hacker@test','customer');
+  exception when others then raise notice 'customer cannot create logins: %', sqlerrm; end $$;
+reset role;
+select p.full_name, p.role_key, p.agent_id is not null as has_agent, p.customer_id is not null as has_customer, p.must_change_password,
+  (select profile_id from app.agents where id = 'a0000000-0000-0000-0000-000000000021') = p.id as agent_linked,
+  exists (select 1 from app.customer_users cu where cu.profile_id = p.id) as company_linked
+from app.profiles p where p.id in ('00000000-0000-0000-0000-000000000021','00000000-0000-0000-0000-000000000022','00000000-0000-0000-0000-000000000023');

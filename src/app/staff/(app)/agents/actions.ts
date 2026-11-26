@@ -1,7 +1,6 @@
 "use server";
 import { randomBytes } from "node:crypto";
 import { runAction, UserError } from "@/lib/actions";
-import { asSystem } from "@/lib/db";
 import { supabaseAdmin } from "@/lib/supabase/admin";
 import { uploadFile } from "@/lib/storage";
 
@@ -44,15 +43,12 @@ export async function saveAgent(id: string | null, fd: FormData) {
       if (error || !data.user) throw new UserError("Could not create login: " + (error?.message ?? "unknown error"));
       const uid = data.user.id;
       try {
-        await asSystem(async (s) => {
-          await s`insert into app.profiles (id, full_name, email, phone, role_key, agent_id, must_change_password)
-                  values (${uid}, ${row.name as string}, ${email}, ${row.phone as string | null}, ${row.role_key as string}, ${agentId}, true)`;
-        });
+        // same transaction as the new agent row (L-010): profile + link in one step
+        await tx`select app.create_agent_profile(${uid}::uuid, ${agentId}::uuid)`;
       } catch (e) {
         await supabaseAdmin().auth.admin.deleteUser(uid);
         throw e;
       }
-      await tx`update app.agents set profile_id = ${uid} where id = ${agentId}`;
     }
     return { id: agentId, password, email };
   });
@@ -69,13 +65,11 @@ export async function createAgentLogin(agentId: string) {
     if (error || !data.user) throw new UserError("Could not create login: " + (error?.message ?? "unknown error"));
     const uid = data.user.id;
     try {
-      await asSystem((s) => s`insert into app.profiles (id, full_name, email, phone, role_key, agent_id, must_change_password)
-        values (${uid}, ${String(a.name)}, ${String(a.email)}, ${(a.phone as string) ?? null}, ${String(a.role_key)}, ${agentId}, true)`);
+      await tx`select app.create_agent_profile(${uid}::uuid, ${agentId}::uuid)`;
     } catch (e) {
       await supabaseAdmin().auth.admin.deleteUser(uid);
       throw e;
     }
-    await tx`update app.agents set profile_id = ${uid} where id = ${agentId}`;
     return { password, email: String(a.email) };
   });
 }

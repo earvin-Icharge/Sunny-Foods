@@ -42,7 +42,7 @@ export async function DeliveryReceipt({ user, orderId, kind }: { user: SessionUs
       <div className="no-print mb-4 flex justify-end"><PrintButton /></div>
       <div className="flex items-start justify-between gap-4 border-b-2 border-black pb-3">
         <div>
-          <Image src="/logo.png" alt="Sunny Foods" width={1200} height={614} className="h-auto w-40" />
+          <Image src="/logo.png" alt="Sunny Foods" width={1200} height={615} className="h-auto w-40" />
           <div className="mt-1 text-xs">{company.name} · {company.address}{company.tin ? ` · TIN ${company.tin}` : ""}{company.phone ? ` · ${company.phone}` : ""}</div>
         </div>
         <div className="text-right">

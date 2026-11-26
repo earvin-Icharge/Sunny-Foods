@@ -9,8 +9,9 @@ Last updated: 2026-11-25 · build v0.1.0 · branch `build/v1`
 | Phase 18 (store app) | **Scaffold only** in `/mobile` — needs Apple/Google accounts (D6) and Firebase for phone push. |
 | Database logic | Checked on a local test database (`supabase/tests/smoke.sql`). |
 | Supabase project "Sunny Foods" (Singapore) | All 15 database files loaded; security check clean; Supabase Cron jobs running. |
-| Vercel project `sunny-foods` | Created, linked to GitHub, settings added. Needs `SUPABASE_SECRET_KEY` + `DATABASE_URL` from Earvin. |
-| Screens in a browser / real logins | **Not tested yet** — next step. |
+| Vercel project `sunny-foods` | Live test address `sunny-foods-git-build-v1-icharge1.vercel.app` (Vercel login protected). Database + secret key connected. |
+| Screens in a browser / real logins | Owner login checked in a real browser. Full acceptance checks (spec 13) next. |
+| Test logins | 9 accounts `test+<role>@sunnyfoods.com.ph` (passwords given to Earvin in chat). Delete before go-live. |
 | Languages | English, 简体中文, 繁體中文, Tagalog — all screens. |
 
 ## Screens

@@ -35,7 +35,7 @@ Last updated: 2026-11-26 · build v0.2.0 · branch `build/v1`
 |---|---|---|---|
 | G1 | Test every screen with real logins (acceptance checks, spec 13) | Claude | Next |
 | G2 | D4 VAT answers (prices VAT-inclusive? discount before VAT?) — switches ready in Settings | Earvin + accountant | Before go-live |
-| G3 | Real logo, product prices, pack sizes, Yakiniku names | Boss | Before go-live |
+| G3 | ~~Real logo~~ (website logo in use since 2026-11-26) and ~~product photos~~ (12 photos from sunnyfoods.com.ph; Yakiniku = Samgyup Cut photo, per Earvin). Still needed: real product prices, pack sizes, Yakiniku name. App icons (home screen / APK) still show the old sun — redo with the new logo. | Boss (prices, sizes, name); Claude (icons) | Before go-live |
 | G4 | Email sender (custom SMTP) + DNS for `app.` / `order.` / `agent.` (D3) | Earvin, then Claude | Phase 10 / 17 |
 | G5 | Store app: accounts (D6), Firebase for phone push, base-path for links | Earvin, then Claude | Phase 18 |
 | G6 | Privacy policy & terms reviewed by a lawyer; record-keeping period from accountant | Earvin | Before go-live |

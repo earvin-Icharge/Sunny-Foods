@@ -95,6 +95,12 @@ Never put passwords, API keys, or customer data in this file.
 - Rule: ALWAYS find buttons and fields in browser tests by form position, name or class, never by English text (users switch languages).
 - Check: The test passes whatever language the test login uses.
 
+### L-013 · 2026-11-26 · Logo + photos check · [testing]
+- What happened: A browser check said "PASS customer catalog", but it was looking at the login page.
+- Root cause: The customer login page changed (password moved to ?password=1); my test helper still used the old page and the check did not confirm the address.
+- Rule: ALWAYS make each browser check confirm it reached the intended page (address + something only that page has) before judging it.
+- Check: Catalog check requires the /portal address and at least 8 loaded product photos.
+
 ## Archive
 
 (none yet)

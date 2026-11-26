@@ -119,3 +119,17 @@ select set_config('request.jwt.claims','{"sub":"00000000-0000-0000-0000-00000000
 update app.signup_requests set status = 'approved';
 select count(*) as agent_cannot_approve from app.signup_requests where status = 'approved';
 reset role;
+-- approve_signup (0018): one step, owner approves staff (warehouse) + agent (broker); agent cannot
+set role authenticated;
+select set_config('request.jwt.claims','{"sub":"00000000-0000-0000-0000-000000000006"}',false);
+do $$ begin perform app.approve_signup((select id from app.signup_requests where area='agent'), 'broker');
+  exception when others then raise notice 'agent cannot approve: %', sqlerrm; end $$;
+select set_config('request.jwt.claims','{"sub":"00000000-0000-0000-0000-000000000001"}',false);
+select app.approve_signup((select id from app.signup_requests where area='internal'), 'warehouse') is not null as staff_approved;
+select app.approve_signup((select id from app.signup_requests where area='agent'), 'broker', null, 'percent', 3) is not null as agent_approved;
+do $$ begin perform app.approve_signup((select id from app.signup_requests where area='agent'), 'broker');
+  exception when others then raise notice 'second approve refused: %', sqlerrm; end $$;
+reset role;
+select p.full_name, p.role_key, a.referral_code, a.default_rate, (select count(*) from app.privacy_consents c where c.profile_id = p.id) as consents
+  from app.profiles p left join app.agents a on a.id = p.agent_id where p.id in ('00000000-0000-0000-0000-000000000011','00000000-0000-0000-0000-000000000012');
+select full_name, status from app.signup_requests order by area;

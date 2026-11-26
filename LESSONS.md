@@ -77,6 +77,12 @@ Never put passwords, API keys, or customer data in this file.
 - Rule: NEVER edit 01-SPEC.md unless Earvin asks or a fact in it is wrong; put build notes in 02-BUILD-STATUS.md.
 - Check: git diff shows no 01-SPEC.md change unless asked.
 
+### L-010 · 2026-11-26 · Sign-up approval · [database]
+- What happened: "Approve" on Sign-up requests failed ("linked to other records") on the test address.
+- Root cause: The profile was saved inside the boss's open transaction, then the privacy consent was saved through a second connection (asSystem) that could not see the unsaved profile yet.
+- Rule: NEVER save rows through asSystem that point to rows made earlier in the same runAction; do the whole job in one transaction (a security-definer SQL function when extra rights are needed).
+- Check: smoke.sql runs the function; the browser test approves a request and the person then logs in.
+
 ## Archive
 
 (none yet)

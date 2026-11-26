@@ -29,9 +29,9 @@ export async function AppShell({ area, user, nav, children }: { area: Area; user
         </form>
       )}
       <header className="no-print sticky top-0 z-30 bg-charcoal text-white">
-        <div className="flex h-16 items-center gap-3 px-4">
+        <div className="flex h-20 items-center gap-3 px-4">
           <Link href={prefix} className="flex items-center gap-2">
-            <span className="rounded-lg bg-white px-2 py-1"><Image src="/logo-header.png" alt="Sunny Foods" width={329} height={118} priority className="h-10 w-auto sm:h-11" /></span>
+            <span className="block rounded-lg bg-white px-2 py-1"><Image src="/logo.png" alt="Sunny Foods" width={1200} height={614} priority className="h-16 w-auto" /></span>
           </Link>
           <div className="ml-auto flex items-center gap-2">
             <LanguageSwitcher dark />
@@ -43,7 +43,7 @@ export async function AppShell({ area, user, nav, children }: { area: Area; user
         </div>
       </header>
       <div className="flex">
-        <aside className="no-print sticky top-16 hidden h-[calc(100vh-4rem)] w-60 shrink-0 overflow-y-auto border-r border-brown/10 bg-white p-3 md:block">
+        <aside className="no-print sticky top-20 hidden h-[calc(100vh-5rem)] w-60 shrink-0 overflow-y-auto border-r border-brown/10 bg-white p-3 md:block">
           <div className="mb-3 rounded-xl bg-cream px-3 py-2 text-sm">
             <div className="font-bold">{user.fullName}</div>
             <div className="text-brown/60">{user.roleName}</div>

@@ -10,7 +10,7 @@ export default function BrowsePage() {
     <SampleNotice />
     <main className="mx-auto max-w-6xl p-4">
       <div className="mb-4 flex items-center justify-between">
-        <Image src="/logo.png" alt="Sunny Foods" width={140} height={70} priority />
+        <Image src="/logo.png" alt="Sunny Foods" width={1200} height={614} priority className="h-auto w-40" />
         <LanguageSwitcher />
       </div>
       <CatalogView mode="public" cartHref="/portal/login" loginHref="/portal/login" />

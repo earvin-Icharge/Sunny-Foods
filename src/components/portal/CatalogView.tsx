@@ -80,7 +80,7 @@ export function CatalogView({ mode, customerId, cartHref, loginHref }: {
           {loginHref && <Link href={loginHref} className="btn-primary btn-sm">{t("loginToOrder")}</Link>}
         </div>
       )}
-      <div className="sticky top-16 z-20 -mx-4 bg-cream-light/95 px-4 pb-3 pt-1 backdrop-blur md:static md:mx-0 md:px-0">
+      <div className="sticky top-20 z-20 -mx-4 bg-cream-light/95 px-4 pb-3 pt-1 backdrop-blur md:static md:mx-0 md:px-0">
         <input className="input" type="search" placeholder={t("searchProducts")} value={q} onChange={(e) => setQ(e.target.value)} />
         <div className="mt-2 flex gap-2 overflow-x-auto pb-1">
           <button onClick={() => setCat("")} className={`shrink-0 rounded-full px-4 py-2 text-sm font-semibold ${!cat ? "bg-sunny text-white" : "bg-white ring-1 ring-brown/10"}`}>{t("allProducts")}</button>

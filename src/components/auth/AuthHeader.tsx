@@ -6,7 +6,7 @@ export function AuthHeader() {
   return (
     <div className="grid gap-2">
       <div className="flex justify-end"><LanguageSwitcher /></div>
-      <Image src="/logo-header.png" alt="Sunny Foods" width={329} height={118} priority className="mx-auto h-auto w-80 sm:w-96" />
+      <Image src="/logo.png" alt="Sunny Foods" width={1200} height={614} priority className="mx-auto h-auto w-80 sm:w-96" />
     </div>
   );
 }

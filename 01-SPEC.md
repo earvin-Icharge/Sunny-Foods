@@ -372,7 +372,7 @@ English, 简体中文, 繁體中文, Tagalog. One-tap switcher in the header.
 |---|---|---|
 | D1 | Login method | **Decided**: email + password for v1. Phone login can be added later with an SMS provider. |
 | D2 | Supabase plan | **Decided**: Free while building, upgrade to Pro before go-live. |
-| D3 | Domain / DNS for sunnyfoods.com.ph | **Decided**: Earvin controls it; he adds the subdomain and email-sender records when asked (Phases 10 and 17). |
+| D3 | Domain / DNS for sunnyfoods.com.ph | **Corrected 2026-11-26**: DNS is in Cloudflare, in the website builder's account (not Earvin's). The builder adds the records (app./order./agent. CNAMEs requested 2026-11-26; email-sender records in Phase 10), or invites Earvin as a Cloudflare member. |
 | D4 | VAT | **Partly decided**: Sunny Foods is VAT-registered; all products are VATable **except Yakiniku** (VAT-exempt). Still open: are prices shown VAT-inclusive, and is the discount taken before or after VAT. Owner: Earvin (ask accountant). Needed before Phase 5. |
 | D5 | BIR invoicing system | **Skipped for now**: app keeps the "not a BIR invoice" line on delivery receipts; revisit before go-live. |
 | D6 | Apple / Google developer accounts | **Deferred** until Phase 18. |

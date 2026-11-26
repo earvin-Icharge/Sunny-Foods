@@ -1,5 +1,7 @@
 # SPEC.md — Sunny Foods Order & Inventory App
 
+**Version 2.3 — 2026-11-26.** Changes since v2.2: all three apps also as Android APKs (decision D7).
+
 **Version 2.2 — 2026-11-25.** Changes since v2.1: build details — area folders, message files per section, private `app` database schema, weekly backup + push sending via Vercel Cron, store app reads data through the server API.
 
 **Version 2.1 — 2026-11-25.** Changes since v2: data-deletion rule (8.13), email-only login lines, Node.js 24, backup not emailed, 6 new tables, deletion acceptance check.
@@ -284,7 +286,8 @@ English, 简体中文, 繁體中文, Tagalog. One-tap switcher in the header.
 - Deploy: push to GitHub `main` → Vercel builds → all users get it. Use a `staging` branch to test first.
 
 ## 9a. App Store & Google Play (customer portal only)
-- Only the **Customer portal** ("Sunny Foods Order") goes on the public stores. Staff and Agent apps stay as installable PWAs (home-screen icon from the browser link) — no store review needed. Optional later: Agent app as an Apple **Unlisted** app.
+- **Android APKs (decision D7)**: all three apps — "Sunny Foods Staff", "Sunny Foods Order", "Sunny Foods Agent" — are built as APK files by GitHub (`mobile/apk/`, workflow `android-apk.yml`) and posted on the repo's Releases page (`android-latest`). Each opens its live address (app./order./agent.sunnyfoods.com.ph), so screen updates need no reinstall; offline screen, camera and location included.
+- Only the **Customer portal** ("Sunny Foods Order") goes on the public stores. Staff and Agent apps are installed from the APK (Android) or as PWAs (iPhone) — no store review needed. Optional later: Agent app as an Apple **Unlisted** app.
 - Wrap the customer portal with **Capacitor** (iOS + Android) — same code as the web app.
 - **Build approach**: the store app must contain its own screens (bundled build), not just open the website — Capacitor says loading the live site (`server.url`) is for development only, and Apple may reject it. So build the customer portal screens (Phases 10–11) so they can be exported as a static bundle: they read and write data only through the server API routes on `order.sunnyfoods.com.ph` (which apply RLS + portal-safe views), including prices, vouchers and checkout.
 - **Updates for the store app**: Vercel deploys do not update the bundled app. Use store updates for native changes, plus a Capacitor live-update service for screen changes (choose in Phase 18).
@@ -373,3 +376,4 @@ English, 简体中文, 繁體中文, Tagalog. One-tap switcher in the header.
 | D4 | VAT | **Partly decided**: Sunny Foods is VAT-registered; all products are VATable **except Yakiniku** (VAT-exempt). Still open: are prices shown VAT-inclusive, and is the discount taken before or after VAT. Owner: Earvin (ask accountant). Needed before Phase 5. |
 | D5 | BIR invoicing system | **Skipped for now**: app keeps the "not a BIR invoice" line on delivery receipts; revisit before go-live. |
 | D6 | Apple / Google developer accounts | **Deferred** until Phase 18. |
+| D7 | Android APKs | **Decided (2026-11-26)**: all three apps as APKs, using the real sunnyfoods.com.ph addresses. Test builds use a new signing key each time; a permanent key is set before go-live. |

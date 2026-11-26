@@ -6,6 +6,7 @@ Last updated: 2026-11-25 · build v0.1.0 · branch `build/v1`
 | Item | Status |
 |---|---|
 | Phases 1–17 (all app features) | **Built**. Code checks pass, full production build passes (112 routes). |
+| Android APKs (D7) | Built by GitHub: Staff, Order, Agent — https://github.com/earvin-Icharge/Sunny-Foods/releases/tag/android-latest . They open app./order./agent.sunnyfoods.com.ph, so they work once those addresses are connected (DNS). |
 | Phase 18 (store app) | **Scaffold only** in `/mobile` — needs Apple/Google accounts (D6) and Firebase for phone push. |
 | Database logic | Checked on a local test database (`supabase/tests/smoke.sql`). |
 | Supabase project "Sunny Foods" (Singapore) | All 15 database files loaded; security check clean; Supabase Cron jobs running. |

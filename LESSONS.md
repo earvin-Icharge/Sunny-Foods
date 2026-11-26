@@ -83,6 +83,12 @@ Never put passwords, API keys, or customer data in this file.
 - Rule: NEVER save rows through asSystem that point to rows made earlier in the same runAction; do the whole job in one transaction (a security-definer SQL function when extra rights are needed).
 - Check: smoke.sql runs the function; the browser test approves a request and the person then logs in.
 
+### L-011 · 2026-11-26 · Sample data · [database]
+- What happened: The sample-data script stopped on its first local run ("Cannot complete").
+- Root cause: I assumed a delivered + fully paid order stays "Delivered"; the app completes it by itself.
+- Rule: ALWAYS read the status rules (set_order_status / mark_delivered) before scripting order steps, and run the script on the local test database first.
+- Check: The script runs with "Sample data loaded." locally before it touches the live database.
+
 ## Archive
 
 (none yet)

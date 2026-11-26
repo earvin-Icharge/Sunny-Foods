@@ -24,41 +24,17 @@ jobs:
     env:
       APP_VERSION: "0.1.${{ github.run_number }}"
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with: { node-version: 22 }
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with: { distribution: temurin, java-version: 21 }
       - uses: android-actions/setup-android@v3
 
-      - name: Create Capacitor project
-        run: |
-          node mobile/apk/make.mjs ${{ matrix.app.key }} build/${{ matrix.app.key }}
-          cd build/${{ matrix.app.key }}
-          npm install --no-audit --no-fund @capacitor/core@8 @capacitor/cli@8 @capacitor/android@8
-          npx cap add android
-          npx cap sync android
+      - name: Build signed APK
+        run: mobile/apk/build-one.sh ${{ matrix.app.key }} ${{ matrix.app.file }} ${{ github.run_number }} "$APP_VERSION"
 
-      - name: Icons, permissions, version
-        run: mobile/apk/patch-android.sh build/${{ matrix.app.key }} mobile/apk/icons/${{ matrix.app.key }}.png ${{ github.run_number }} "$APP_VERSION"
-
-      - name: Build release APK
-        working-directory: build/${{ matrix.app.key }}/android
-        run: ./gradlew --no-daemon assembleRelease
-
-      - name: Sign APK
-        # Test-phase signing key, made fresh for each build (see mobile/apk/README.md).
-        run: |
-          BT=$(ls -d $ANDROID_HOME/build-tools/* | sort -V | tail -1)
-          keytool -genkeypair -keystore k.jks -storepass sunnytest -keypass sunnytest -alias sf -keyalg RSA -keysize 2048 \
-            -validity 3650 -dname "CN=Sunny Foods Inc., O=Sunny Foods Inc., L=Carmona, C=PH" >/dev/null
-          IN=$(ls build/${{ matrix.app.key }}/android/app/build/outputs/apk/release/*.apk | head -1)
-          $BT/zipalign -f -p 4 "$IN" aligned.apk
-          $BT/apksigner sign --ks k.jks --ks-pass pass:sunnytest --out "${{ matrix.app.file }}" aligned.apk
-          $BT/apksigner verify "${{ matrix.app.file }}"
-          rm -f k.jks
-
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v5
         with:
           name: ${{ matrix.app.key }}
           path: ${{ matrix.app.file }}
@@ -67,7 +43,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v5
         with: { path: apks, merge-multiple: true }
       - name: Publish on the Releases page
         env:

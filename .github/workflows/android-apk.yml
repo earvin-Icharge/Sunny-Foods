@@ -24,15 +24,24 @@ jobs:
     env:
       APP_VERSION: "0.1.${{ github.run_number }}"
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - id: checkout
+        uses: actions/checkout@v5
+      - id: node
+        uses: actions/setup-node@v5
         with: { node-version: 22 }
-      - uses: actions/setup-java@v5
+      - id: java
+        uses: actions/setup-java@v5
         with: { distribution: temurin, java-version: 21 }
-      - uses: android-actions/setup-android@v3
-
-      - name: Build signed APK
-        run: mobile/apk/build-one.sh ${{ matrix.app.key }} ${{ matrix.app.file }} ${{ github.run_number }} "$APP_VERSION"
+      # GitHub's Ubuntu machines already include the Android SDK ($ANDROID_HOME).
+      - id: apk
+        name: Build signed APK
+        run: |
+          echo "ANDROID_HOME=$ANDROID_HOME"; ls "$ANDROID_HOME/build-tools" | tail -3
+          bash mobile/apk/build-one.sh ${{ matrix.app.key }} ${{ matrix.app.file }} ${{ github.run_number }} "$APP_VERSION"
+      - name: Report failed step
+        if: failure()
+        run: |
+          echo "::error title=Step results::checkout=${{ steps.checkout.outcome }} node=${{ steps.node.outcome }} java=${{ steps.java.outcome }} apk=${{ steps.apk.outcome }}"
 
       - uses: actions/upload-artifact@v5
         with:

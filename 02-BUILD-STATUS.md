@@ -12,7 +12,7 @@ Last updated: 2026-11-26 · build v0.2.0 · branch `build/v1`
 | Supabase project "Sunny Foods" (Singapore) | All 15 database files loaded; security check clean; Supabase Cron jobs running. |
 | Vercel project `sunny-foods` | Live test address `sunny-foods-git-build-v1-icharge1.vercel.app` (Vercel login protected). Database + secret key connected. |
 | Screens in a browser / real logins | Owner login checked in a real browser. Full acceptance checks (spec 13) next. |
-| Test logins | 11 accounts `test+<role>@sunnyfoods.com.ph` (incl. `test+signup-staff` / `test+signup-agent`, used to test approvals). Delete before go-live. |
+| Test logins | 12 accounts `test+<role>@sunnyfoods.com.ph` (incl. `test+boss` — Owner login for the boss to look around, and `test+signup-staff` / `test+signup-agent`, used to test approvals). Delete before go-live. |
 | Languages | English, 简体中文, 繁體中文, Tagalog — all screens. |
 | Sign-up & login (D1, changed 2026-11-26) | **Built**. Customers: Google, Facebook, mobile (SMS code), email (code), or old password login; business details once (`/portal/welcome`). Staff/agents: sign up with email + 6-digit code, locked until approved on **Sign-up requests** (`/staff/signup-requests`). Browser-tested on the test address (17/17): pending people blocked, boss approves, they log in. Google / Facebook / SMS / email codes need setup first — see G8. |
 

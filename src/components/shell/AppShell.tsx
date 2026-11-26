@@ -8,6 +8,7 @@ import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { ToastProvider } from "@/components/ui/Toast";
 import { NotificationBell } from "./NotificationBell";
 import { UpdateBanner } from "./UpdateBanner";
+import { SampleNotice } from "./SampleNotice";
 import { NavLinks, type NavItem } from "./NavLinks";
 import { signOut, stopViewAs } from "@/app/actions/common";
 
@@ -20,6 +21,7 @@ export async function AppShell({ area, user, nav, children }: { area: Area; user
   return (
     <ToastProvider>
       <UpdateBanner />
+      <SampleNotice />
       {user.viewAs && (
         <form action={stopViewAs} className="no-print sticky top-0 z-40 flex items-center justify-center gap-3 bg-gold px-4 py-2 text-sm font-bold text-charcoal">
           {t("viewingAs", { name: user.fullName, role: user.roleName })}

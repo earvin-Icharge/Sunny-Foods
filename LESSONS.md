@@ -8,7 +8,7 @@ Never put passwords, API keys, or customer data in this file.
 - NEVER put the Supabase service_role key, or any secret, in front-end code or in a NEXT_PUBLIC_ variable.
 - ALWAYS turn on RLS and write its policies in the same migration for every new table.
 - ALWAYS run the Done Check (LESSONS-SPEC.md Section 5) before saying "done".
-- NEVER rewrite 01-SPEC.md / SPEC.md. Edit in place, and only when asked.
+- NEVER rewrite 01-SPEC.md / SPEC.md. Edit in place, and only when asked. Build notes go in 02-BUILD-STATUS.md (merged L-009).
 - ALWAYS open the page under test by its exact address (openExact) in browser checks, and confirm the page before judging it (L-013, repeated).
 
 ## Starter Rules (Next.js + Supabase + Vercel)
@@ -20,7 +20,6 @@ Never put passwords, API keys, or customer data in this file.
 - ALWAYS check what a file does before changing it. NEVER change files outside the current task without asking.
 - ALWAYS add new text to every app language file (no hard-coded English in screens).
 - ALWAYS ask Earvin when the spec is unclear. NEVER guess a business rule.
-- NEVER mark a task done because the code "looks right". Run it.
 
 ## Rules from Earvin's other apps (imported 2026-11-27, trimmed)
 
@@ -33,7 +32,7 @@ From the pack "Earvin-App-Lessons-2026-11-28" (≈190 lessons from 15 apps). Kep
 - ALWAYS search the app for a word before using it as a new screen or button name. [#189]
 
 ### Proving it works
-- ALWAYS show Earvin real screenshots and click the whole flow, last button included, before saying done or building an APK. If it cannot be seen, say "unverified" and why. [#125]
+- ALWAYS run it, show Earvin real screenshots and click the whole flow, last button included, before saying done or building an APK; code that "looks right" is not done. If it cannot be seen, say "unverified" and why. [#125, merged with the old starter rule]
 - ALWAYS prove which part failed (browser, server, database, network) before changing anything. [#147]
 - ALWAYS stop explaining when the same bug comes back twice; read the code, data and logs instead. [#136]
 - ALWAYS query the real table before claiming something ran, saved or exists. [#71, #72]
@@ -130,12 +129,6 @@ From the pack "Earvin-App-Lessons-2026-11-28" (≈190 lessons from 15 apps). Kep
 - Rule: ALWAYS give CI jobs a step that reports the failing step as an error note; ALWAYS use the runner's preinstalled Android SDK.
 - Check: Check runs for the commit show success, and the Releases page lists 3 APKs.
 
-### L-009 · 2026-11-26 · Process · [spec]
-- What happened: I edited 01-SPEC.md for build notes (v2.2, v2.3) without being asked.
-- Root cause: The LESSONS-SPEC rule (spec edits only when asked or to fix a wrong fact) did not exist yet.
-- Rule: NEVER edit 01-SPEC.md unless Earvin asks or a fact in it is wrong; put build notes in 02-BUILD-STATUS.md.
-- Check: git diff shows no 01-SPEC.md change unless asked.
-
 ### L-010 · 2026-11-26 · Sign-up approval · [database]
 - What happened: "Approve" on Sign-up requests failed ("linked to other records") on the test address.
 - Root cause: The profile was saved inside the boss's open transaction, then the privacy consent was saved through a second connection (asSystem) that could not see the unsaved profile yet.
@@ -166,8 +159,13 @@ From the pack "Earvin-App-Lessons-2026-11-28" (≈190 lessons from 15 apps). Kep
 - Root cause: Password login ran in the phone's browser and depended on the page script and browser-saved cookies; his phone did not keep the login, and the page gave no message. I only ever tested on a desktop test browser.
 - Rule: ALWAYS run password login on the server (Server Action), and ALWAYS show a clear message when a phone does not keep the login (proxy ?li=1 check).
 - Check: Browser test logs in with the page script OFF, and "/staff?li=1" without a login shows the "did not keep the login" message.
-- Confirmed 2026-11-27: the boss's computer opens links in Internet Explorer (no page script, no modern styling). Guard added: proxy shows a plain "use Chrome or Edge" page (4 languages, Open-in-Edge button) to Internet Explorer. ALWAYS ask which browser/device when a user-only bug cannot be reproduced.
+- Confirmed 2026-11-27: the boss's computer opens links in Internet Explorer (no page script, no modern styling). Guard added: proxy shows a plain "use Chrome or Edge" page (4 languages, Open-in-Edge button) to Internet Explorer. Asking for a screenshot of his browser/phone: see the "Working with Earvin" rules.
 
 ## Archive
 
-(none yet)
+### L-009 · 2026-11-26 · Process · [spec]
+- What happened: I edited 01-SPEC.md for build notes (v2.2, v2.3) without being asked.
+- Root cause: The LESSONS-SPEC rule (spec edits only when asked or to fix a wrong fact) did not exist yet.
+- Rule: NEVER edit 01-SPEC.md unless Earvin asks or a fact in it is wrong; put build notes in 02-BUILD-STATUS.md.
+- Check: git diff shows no 01-SPEC.md change unless asked.
+- Archived 2026-11-27: merged into Top Rule 4 (same rule).

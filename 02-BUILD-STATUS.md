@@ -32,6 +32,23 @@ Last updated: 2026-11-26 · build v0.2.0 · branch `build/v1`
 - **Private data**: tables sit in a private database area (`app`) that the internet cannot reach. Only the app server reads it, as the logged-in person, so each person sees only what they are allowed to.
 - **Screen text**: `messages/<language>/<section>.json`.
 
+## Go-live plan (proposed 2026-11-27, target Mon 2026-12-07)
+| # | Task | Owner | Due | Output |
+|---|---|---|---|---|
+| 1 | Get email-sender records; one message for the website builder with all 6 DNS records (app./order./agent. + 3 email) | Claude (Earvin approves 1 pop-up) | Fri 27 Nov | Message ready to send |
+| 2 | Send message; builder adds the records | Earvin → website builder | Tue 1 Dec | 3 addresses show "Valid" in Vercel |
+| 3 | Paid plans: Vercel Pro (Hobby is non-commercial only) + Supabase Pro (daily backups, no pausing) | Earvin | Tue 1 Dec | Both on Pro |
+| 4 | VAT answers (D4) | Earvin + accountant | Wed 2 Dec | 2 yes/no answers |
+| 5 | Real price list, pack sizes, Yakiniku name | Boss | Wed 2 Dec | Price list (Excel or photo) |
+| 6 | Privacy policy + terms check; record-keeping period | Earvin (lawyer, accountant) | Thu 3 Dec | OK or edits |
+| 7 | Email sender + 6-digit email codes live; full acceptance test of every screen (spec 13) + fixes | Claude | Thu 3 Dec | Test report, all passed |
+| 8 | Permanent APK signing key; app icons with the new logo; final APKs | Claude | Thu 3 Dec | APKs that update without reinstalling |
+| 9 | Switch to live: remove sample data + test logins, enter real prices, live on the real addresses, backups + alerts on | Claude (with Earvin's OK) | Fri 4 Dec | Clean live app |
+| 10 | Opening stock count entered; real staff + agents sign up, boss approves | Boss + warehouse | Sat 5 Dec | Stock and accounts ready |
+| 11 | Go live: first real orders | Boss + team | Mon 7 Dec | First orders in the app |
+
+After go-live (not blocking): Google / Facebook / SMS login for customers (G8), store app (G5), phone push via Firebase.
+
 ## Known gaps (to do before go-live)
 | # | Gap | Owner | When |
 |---|---|---|---|

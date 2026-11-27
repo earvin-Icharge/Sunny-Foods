@@ -108,6 +108,7 @@ Never put passwords, API keys, or customer data in this file.
 - Root cause: Password login ran in the phone's browser and depended on the page script and browser-saved cookies; his phone did not keep the login, and the page gave no message. I only ever tested on a desktop test browser.
 - Rule: ALWAYS run password login on the server (Server Action), and ALWAYS show a clear message when a phone does not keep the login (proxy ?li=1 check).
 - Check: Browser test logs in with the page script OFF, and "/staff?li=1" without a login shows the "did not keep the login" message.
+- Confirmed 2026-11-27: the boss's computer opens links in Internet Explorer (no page script, no modern styling). Guard added: proxy shows a plain "use Chrome or Edge" page (4 languages, Open-in-Edge button) to Internet Explorer. ALWAYS ask which browser/device when a user-only bug cannot be reproduced.
 
 ## Archive
 

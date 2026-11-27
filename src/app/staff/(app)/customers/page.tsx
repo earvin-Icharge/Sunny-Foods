@@ -35,7 +35,7 @@ export default async function CustomersPage({ searchParams }: PageProps<"/staff/
         {can(user.perms, "customers", 5) && <Link className="btn-secondary" href="/staff/customers/new-employee">+ {t("addEmployee")}</Link>}
         {can(user.perms, "customers", 2) && <Link className="btn-primary" href="/staff/customers/new">+ {t("add")}</Link>}
       </>} />
-      {data.pending > 0 && status !== "pending" && (
+      {data.pending > 0 && status !== "pending" && can(user.perms, "customers", 3) && (
         <Link href="/staff/customers?status=pending" className="card mb-4 flex items-center justify-between ring-2 ring-gold">
           <b>{t("pendingBanner", { n: data.pending })}</b><span className="text-sunny">→</span>
         </Link>

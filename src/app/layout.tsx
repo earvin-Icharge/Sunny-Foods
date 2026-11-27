@@ -3,6 +3,7 @@ import { Lora, Nunito_Sans, Noto_Sans_SC, Noto_Sans_TC } from "next/font/google"
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale } from "next-intl/server";
 import { NativeBridge } from "@/components/NativeBridge";
+import { CleanUrl } from "@/components/CleanUrl";
 import "./globals.css";
 
 const lora = Lora({ variable: "--font-lora", subsets: ["latin"] });
@@ -30,6 +31,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full">
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
         <NativeBridge />
+        <CleanUrl />
       </body>
     </html>
   );

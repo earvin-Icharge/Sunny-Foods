@@ -22,6 +22,64 @@ Never put passwords, API keys, or customer data in this file.
 - ALWAYS ask Earvin when the spec is unclear. NEVER guess a business rule.
 - NEVER mark a task done because the code "looks right". Run it.
 
+## Rules from Earvin's other apps (imported 2026-11-27, trimmed)
+
+From the pack "Earvin-App-Lessons-2026-11-28" (≈190 lessons from 15 apps). Kept only what fits Next.js + Supabase + Vercel + the Capacitor Android app. Left out: Expo/EAS/OTA, React Native, Windows laptop setup, Game Night and quiz content. Archive numbers (#) are in brackets.
+
+### Before building
+- ALWAYS search for an existing app, page or feature before making a new one. [#154]
+- ALWAYS ask these in one message before the first code of a new app: phone app or website; exact phone (photo of Settings → About phone); one or several devices; logo and exact app name; push notifications; paid APIs (cost per run). [pre-flight, #151, #156, #157]
+- ALWAYS map every numbered spec section to a build phase, and name any section no phase covers. [#152]
+- ALWAYS search the app for a word before using it as a new screen or button name. [#189]
+
+### Proving it works
+- ALWAYS show Earvin real screenshots and click the whole flow, last button included, before saying done or building an APK. If it cannot be seen, say "unverified" and why. [#125]
+- ALWAYS prove which part failed (browser, server, database, network) before changing anything. [#147]
+- ALWAYS stop explaining when the same bug comes back twice; read the code, data and logs instead. [#136]
+- ALWAYS query the real table before claiming something ran, saved or exists. [#71, #72]
+- ALWAYS watch a new test fail on the old code before trusting it, and assert exact numbers away from limits. [#129–#134, #187]
+- ALWAYS fix the test clock where the code actually reads the date, and check the test setting really arrives. [#182]
+
+### Silent failures
+- NEVER write a silent try/catch; show or log every error. Every await that blocks a screen gets a timeout and a fallback. [#120]
+- ALWAYS finish the file upload and check the file exists before saving the row that points to it. [#117, #163]
+- ALWAYS read back any file you create (export, backup, APK): size above 0 and it opens. [#83, #118]
+- ALWAYS show a setup message naming the missing setting, never a blank screen, when an env variable is missing. [#121]
+- NEVER use the browser's confirm() or alert() for real choices (they fail in the Android app); use an in-app dialog. [#119]
+
+### Data
+- ALWAYS make saves safe against double taps: disable the button while saving and use a unique key. [#67, #85]
+- ALWAYS refresh the page data after a save, so changes show without logging out. [#86]
+- ALWAYS give a new column a DEFAULT, fill old rows, and fix the insert path; test a row made after the migration. [#77, #78]
+- ALWAYS update every check rule and every reader of a field in the same commit when its list of values changes; search for each field name. [#65, #89, #92]
+- ALWAYS page past 1,000 rows when reading from Supabase (it stops at 1,000 by default). [#69]
+- ALWAYS give bulk imports a result per row, so one bad row does not undo the rest. [#70]
+- ALWAYS save the unit (₱, kg, pcs) with the value and use one formatter per unit. [#66, #90]
+- ALWAYS check "overwrite or merge?" before re-running a script on live data. [#75]
+- NEVER let a script or test act as a real user; use the marked test accounts. [#36, #73]
+- ALWAYS use one shared Manila-date helper for "today" and "this week"; NEVER take the date from an ISO string. State whether the boundary day is in or out and test it. [#56, #57, #59]
+- ALWAYS keep "0" and "nothing" apart: show "—" for no value and test both cases. [#79, #170]
+- ALWAYS compare item counts before and after a change that filters or splits a list. [#39]
+
+### Screens
+- ALWAYS check on a phone-size screenshot that every page scrolls and bottom buttons are not hidden under the Android navigation bar; NEVER hardcode bottom heights. [#37]
+- ALWAYS autosave long text fields as drafts, so typing survives leaving the page. [#40]
+- NEVER call router.back() alone; give a fallback page for when there is no history. [#41]
+
+### Android app
+- ALWAYS raise the version on every APK and show the version and build date in the app. [#11, #19]
+- ALWAYS sign with the same key (backed up off this computer); a new key forces an uninstall and data loss. [#12]
+- ALWAYS read permissions and version from the built APK, not from the config. [#13]
+- ALWAYS say for each change: "website only, the app updates by itself" or "needs a new APK". [#18]
+- ALWAYS read the full build log from the first warning before retrying a failed build. [#5]
+- NEVER hand-edit files a tool generates (android/ folder); change the config and re-run the sync. [#21]
+
+### Working with Earvin
+- ALWAYS give the exact link, exact menu path, and what success looks like. [#150]
+- ALWAYS ask for a screenshot or photo (browser, phone model) when a bug happens only on his device. [#43, #151]
+- ALWAYS say where a new password or key is saved in the same message, and tell him to store it in his password manager. [#155]
+- ALWAYS keep the build status file current, so "continue" resumes cleanly. [#148, #159]
+
 ## All Lessons
 
 ### L-001 · 2026-11-25 · Phase 2 · [database]

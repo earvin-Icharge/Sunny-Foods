@@ -10,6 +10,7 @@ Never put passwords, API keys, or customer data in this file.
 - ALWAYS run the Done Check (LESSONS-SPEC.md Section 5) before saying "done".
 - NEVER rewrite 01-SPEC.md / SPEC.md. Edit in place, and only when asked. Build notes go in 02-BUILD-STATUS.md (merged L-009).
 - ALWAYS open the page under test by its exact address (openExact) in browser checks, and confirm the page before judging it (L-013, repeated).
+- ALWAYS screenshot every changed page at 360 px before saying done (phone layouts broke 4 times in Office Hub: OH-002, OH-010, OH-011, OH-013).
 
 ## Starter Rules (Next.js + Supabase + Vercel)
 
@@ -160,6 +161,88 @@ From the pack "Earvin-App-Lessons-2026-11-28" (≈190 lessons from 15 apps). Kep
 - Rule: ALWAYS run password login on the server (Server Action), and ALWAYS show a clear message when a phone does not keep the login (proxy ?li=1 check).
 - Check: Browser test logs in with the page script OFF, and "/staff?li=1" without a login shows the "did not keep the login" message.
 - Confirmed 2026-11-27: the boss's computer opens links in Internet Explorer (no page script, no modern styling). Guard added: proxy shows a plain "use Chrome or Edge" page (4 languages, Open-in-Edge button) to Internet Explorer. Asking for a screenshot of his browser/phone: see the "Working with Earvin" rules.
+
+## Lessons from Office Hub (imported 2026-11-27)
+
+Same stack (Next.js + Supabase + Vercel + Capacitor), so these mistakes can happen here too. IDs keep the Office Hub number (OH-xxx). Office Hub L-012 was merged into OH-010 and is not copied.
+
+### OH-001 · 2026-11-25 · Go-live · [server]
+- What happened: Reminders and app emails were never sent after go-live.
+- Root cause: The sign-in gate redirected the database's /api/cron calls to the login page.
+- Rule: ALWAYS add every route called without a user (cron, webhooks, health check, /.well-known, downloads) to the public paths in src/proxy.ts.
+- Check: Call the route without cookies; it must answer itself (JSON/403), not show the login page.
+
+### OH-002 · 2026-11-25 · Phone UI · [ui]
+- What happened: On phones most pages could not be reached; the top bar grew huge on short pages; the ☰ sheet sat under the bottom bar.
+- Root cause: No full menu on phones; wrapping flex rows stretch to min-h-screen; an overlay inside the sticky header was trapped in its layer.
+- Rule: ALWAYS give phones a ☰ menu to every page, use content-start on wrapping layouts, and portal full-screen overlays to document.body.
+- Check: At 320 and 360 px, screenshot short pages and tap every ☰ item.
+
+### OH-003 · 2026-11-26 · Phone UI · [ui]
+- What happened: React error #418 (hydration) on a profile page.
+- Root cause: Read navigator (browser-only) while rendering, so the server and the phone rendered different text.
+- Rule: NEVER read window/navigator during render; read them in useEffect and keep the result in state.
+- Check: Open the page and confirm no page errors in the browser console.
+
+### OH-004 · 2026-11-26 · Android app · [deploy]
+- What happened: Office Hub app 1.0 opened Firefox; app 2.0 could drop sign-in cookies.
+- Root cause: 1.0 handed the page to a browser (Trusted Web Activity); 2.0 used Capacitor server.url, whose local relay loses Set-Cookie on redirects.
+- Rule: NEVER use a browser hand-off, Capacitor server.url or allowNavigation for the live site; load it directly in the WebView (Office Hub mobile/README.md shows how). Sunny's APKs still use server.url (mobile/apk/make.mjs): check with Earvin before go-live.
+- Check: Log in inside the built APK, close and reopen it: still logged in.
+
+### OH-005 · 2026-11-26 · Android app · [deploy]
+- What happened: Phones kept reinstalling the old app.
+- Root cause: Every release had the same file name; phones keep app.apk, app(1).apk… and the oldest was opened.
+- Rule: ALWAYS put the version in the APK file name (e.g. SunnyFoods-Staff-0.1.N.apk) and show the version on the download page.
+- Check: Download link, file name and versionName all match.
+
+### OH-006 · 2026-11-26 · Android app · [login]
+- What happened: Fingerprint set-up in the app always said "Cancelled".
+- Root cause: Browser passkeys are unreliable inside an Android WebView, and every error was shown as "Cancelled".
+- Rule: ALWAYS use the phone's own fingerprint prompt in the app (not browser passkeys), and NEVER show one message for every kind of failure.
+- Check: Set up, wrong fingerprint refused, right one unlocks, on a real phone.
+
+### OH-007 · 2026-11-26 · Testing · [testing]
+- What happened: A browser test failed although the app was right.
+- Root cause: [role="alert"] also matches Next.js's empty route announcer, and fixed pauses raced the server.
+- Rule: ALWAYS target the app's own element (p[role="alert"]) and wait for the result, never a fixed pause.
+- Check: Run the test twice; both runs must pass.
+
+### OH-008 · 2026-11-25 · Database · [database]
+- What happened: Several SQL functions failed when first applied.
+- Root cause: Set-returning functions inside CASE; `text[] || 'x'` read as an array; a security_invoker view could not read hidden columns.
+- Rule: ALWAYS use `union all … where` instead of CASE around set-returning functions, array_append for one item, and a definer security_barrier view with an explicit access filter for masked data.
+- Check: Apply the migration, then call each function as a test user (smoke.sql).
+
+### OH-009 · 2026-11-25 · Security · [security]
+- What happened: The server trusted a photo path sent by the phone.
+- Root cause: The server did not check the file really existed in storage.
+- Rule: NEVER trust a file path from the browser; check it in storage.objects (owner and folder) on the server.
+- Check: Try a fake path as a test user; it must be refused.
+
+### OH-010 · 2026-11-26 · Settings screens · [ui]
+- What happened: Times showed "08:00 AN" (cut off), a dropdown ran past its card, long names were cut in phone dropdowns; a text-fit scan alone missed some.
+- Root cause: Time boxes too narrow for 16 px phone text; field rows with no wrap; long option text in a native dropdown on a 360 px screen.
+- Rule: ALWAYS give time boxes at least 9.5rem, let field rows wrap, and NEVER put long text in a phone dropdown (use wrapping choice buttons).
+- Check: Look at 360 px screenshots of every changed page, including open Edit sections.
+
+### OH-011 · 2026-11-26 · Settings screens · [ui]
+- What happened: An empty gap appeared under every settings card title.
+- Root cause: Hidden inputs were wrapped in <span>s inside a flex column with gap, so each empty span added a gap.
+- Rule: ALWAYS put hidden inputs directly in the form (or a Fragment), NEVER inside an element in a gap layout.
+- Check: Screenshot the form and look for blank space under the title.
+
+### OH-013 · 2026-11-26 · Calendar · [ui]
+- What happened: On phones a new calendar grid was invisible (zero height).
+- Root cause: flex-[3_1_0] (basis 0) meant for the side-by-side computer layout also applied in the stacked phone column.
+- Rule: ALWAYS put flex sizes for side-by-side layouts behind the same breakpoint as the row (e.g. min-[1100px]:flex-[3_1_0]).
+- Check: Screenshot the page at 360 px and confirm every section has height.
+
+### OH-014 · 2026-11-26 · Sign-in links · [login]
+- What happened: One-time sign-in links said "expired or already used" in Chrome.
+- Root cause: The link signed in on a plain visit (GET); Chrome and chat apps load links in advance, which used up the link first.
+- Rule: NEVER use up a one-time token on a GET; show a page with a Continue button and sign in on the POST.
+- Check: Open the link twice with a plain request, then tap Continue: it must still sign in.
 
 ## Archive
 

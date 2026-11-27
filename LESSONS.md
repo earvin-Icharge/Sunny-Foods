@@ -9,6 +9,7 @@ Never put passwords, API keys, or customer data in this file.
 - ALWAYS turn on RLS and write its policies in the same migration for every new table.
 - ALWAYS run the Done Check (LESSONS-SPEC.md Section 5) before saying "done".
 - NEVER rewrite 01-SPEC.md / SPEC.md. Edit in place, and only when asked.
+- ALWAYS open the page under test by its exact address (openExact) in browser checks, and confirm the page before judging it (L-013, repeated).
 
 ## Starter Rules (Next.js + Supabase + Vercel)
 
@@ -95,11 +96,12 @@ Never put passwords, API keys, or customer data in this file.
 - Rule: ALWAYS find buttons and fields in browser tests by form position, name or class, never by English text (users switch languages).
 - Check: The test passes whatever language the test login uses.
 
-### L-013 · 2026-11-26 · Logo + photos check · [testing]
+### L-013 · 2026-11-26 · Logo + photos check · [testing] · REPEATED x2
 - What happened: A browser check said "PASS customer catalog", but it was looking at the login page.
 - Root cause: The customer login page changed (password moved to ?password=1); my test helper still used the old page and the check did not confirm the address.
-- Rule: ALWAYS make each browser check confirm it reached the intended page (address + something only that page has) before judging it.
+- Rule: ALWAYS open the page under test by its exact address with openExact() (never "click the first matching link"), and confirm something only that page has before judging it.
 - Check: Catalog check requires the /portal address and at least 8 loaded product photos.
+- Repeat 2026-11-27 (staff access test): clicked the first customer link, landed on the wrong page (the check caught it). Guard added: openExact() in the browser test helper stops the test if the address differs.
 
 ## Archive
 

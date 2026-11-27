@@ -9,7 +9,7 @@ export default async function StaffLayout({ children }: LayoutProps<"/staff">) {
   const user = await requireArea("internal");
   const t = await getTranslations("nav");
   const p = user.perms;
-  const isDriver = p.modules.deliveries?.scope === "own";
+  const isDriver = can(p, "deliveries") && p.modules.deliveries?.scope === "own"; // no deliveries right = not a driver
   const nav: NavItem[] = [
     { href: "/staff", label: t("dashboard"), icon: "🏠", tab: true },
     can(p, "orders") && !isDriver && { href: "/staff/orders", label: t("orders"), icon: "🧾", tab: true },

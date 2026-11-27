@@ -151,3 +151,14 @@ select p.full_name, p.role_key, p.agent_id is not null as has_agent, p.customer_
   (select profile_id from app.agents where id = 'a0000000-0000-0000-0000-000000000021') = p.id as agent_linked,
   exists (select 1 from app.customer_users cu where cu.profile_id = p.id) as company_linked
 from app.profiles p where p.id in ('00000000-0000-0000-0000-000000000021','00000000-0000-0000-0000-000000000022','00000000-0000-0000-0000-000000000023');
+-- 0020: Home data per role — staff get stock alerts only, no money stats; warehouse is not a driver
+set role authenticated;
+select set_config('request.jwt.claims','{"sub":"00000000-0000-0000-0000-000000000001"}',false);
+select 'owner' as who, d->'driver' as driver, d->'new_orders' is not null and d->>'new_orders' is not null as overview, d->>'unpaid_amount' is not null as money from (select app.dashboard() d) x;
+select set_config('request.jwt.claims','{"sub":"00000000-0000-0000-0000-000000000002"}',false);
+select 'office' as who, d->'driver' as driver, d->>'new_orders' is not null as overview, d->>'unpaid_amount' is not null as money, d->>'overdue' is not null as overdue, d->>'to_pack' is not null as to_pack, app.can('vouchers', 1::smallint) as vouchers, app.can('agents', 1::smallint) as agents from (select app.dashboard() d) x;
+select set_config('request.jwt.claims','{"sub":"00000000-0000-0000-0000-000000000003"}',false);
+select 'warehouse' as who, d->'driver' as driver, d->>'new_orders' is not null as overview, d->>'unpaid_amount' is not null as money, d->>'to_pack' is not null as to_pack, app.can('customers', 1::smallint) as sees_customers, app.can('deliveries', 1::smallint) as sees_deliveries, app.field_on('price') as prices from (select app.dashboard() d) x;
+select set_config('request.jwt.claims','{"sub":"00000000-0000-0000-0000-000000000004"}',false);
+select 'driver' as who, d->'driver' as driver, d->>'to_deliver' is not null as my_deliveries, d->>'unpaid_amount' is not null as money from (select app.dashboard() d) x;
+reset role;

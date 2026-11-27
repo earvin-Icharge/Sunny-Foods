@@ -47,8 +47,8 @@ A simple web app (works on computer + phone) that replaces manual order and stoc
 |---|---|
 | Boss (owner) | Everything. Approves deletes. Sees reports, prices, costs. Restores from Trash. Only role that opens Master Control. |
 | Admin (optional) | Trusted manager the owner appoints. Same as owner except: cannot change owner accounts or give themselves more access. |
-| Office/sales staff | Create/edit orders, customers, payments. Edit products (no delete). |
-| Warehouse/packing worker | See orders to pack, follow packing checklist, adjust stock (with reason). No prices shown. |
+| Office/sales staff | Create/edit orders, customers, payments, deliveries. Edit products (no delete). Inventory and packing. **No vouchers, no agents, no money stats** (no sales totals, unpaid totals or customer balances). Home shows orders to pack + stock alerts only. *(Earvin, 2026-11-27)* |
+| Warehouse/packing worker | See orders to pack, follow packing checklist, adjust stock (with reason). **View** orders, customers (name, address, contact) and deliveries — to know who and where to deliver. No prices, no money stats. Home shows orders to pack + stock alerts only. *(Earvin, 2026-11-27)* |
 | Delivery driver | See own deliveries, mark delivered, upload proof photo, record cash/COD collected. |
 | Customer (portal only) | Order, see own orders, own prices, own balance. Nothing else. |
 | Employee buyer (portal only) | Same as customer, but gets employee rates; linked to their staff profile. |

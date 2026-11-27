@@ -9,7 +9,7 @@ import { PushOptIn } from "@/components/shell/PushOptIn";
 export const metadata = { title: "Home" };
 
 type Dash = {
-  to_pack: number; new_orders: number; to_deliver: number; unpaid_amount: number | null; today_sales: number | null;
+  driver: boolean; to_pack: number | null; new_orders: number | null; to_deliver: number | null; unpaid_amount: number | null; today_sales: number | null;
   low_stock: { type: string; id: string; name: string; qty: number | null; level: number }[] | null;
   expiring: { batch_id: string; batch_no: string; product: string; expiry_date: string; qty: number | null; location: string }[] | null;
   overdue: { order_id: string; order_no: string; customer: string; due_date: string; balance: number | null }[] | null;
@@ -25,7 +25,8 @@ export default async function Dashboard() {
     const [r] = await tx`select app.dashboard() as d`;
     return r.d as Dash;
   });
-  const isDriver = user.perms.modules.deliveries?.scope === "own";
+  // Driver = may see only their own deliveries (decided in the database; staff with no deliveries right are not drivers)
+  const isDriver = d.driver;
   const approvals = [
     d.pending_customers ? { n: d.pending_customers, label: t("pendingCustomers"), href: "/staff/customers?status=pending" } : null,
     d.pending_proofs ? { n: d.pending_proofs, label: t("pendingProofs"), href: "/staff/payments" } : null,
@@ -38,13 +39,14 @@ export default async function Dashboard() {
       <PageHeader title={t("hello", { name: user.fullName.split(" ")[0] || user.roleName })} subtitle={date(new Date(), locale)} actions={<PushOptIn />} />
       {isDriver ? (
         <div className="grid gap-3 sm:grid-cols-2">
-          <Stat label={t("myDeliveries")} value={d.to_deliver} href="/staff/deliveries" tone={d.to_deliver ? "orange" : undefined} />
+          <Stat label={t("myDeliveries")} value={d.to_deliver ?? 0} href="/staff/deliveries" tone={d.to_deliver ? "orange" : undefined} />
         </div>
       ) : (
         <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
-          <Stat label={t("newOrders")} value={d.new_orders} href="/staff/orders?status=new" tone={d.new_orders ? "orange" : undefined} />
-          <Stat label={t("toPack")} value={d.to_pack} href="/staff/packing" />
-          <Stat label={t("toDeliver")} value={d.to_deliver} href="/staff/deliveries" />
+          {/* Staff (Home = View): orders to pack + stock alerts only. Boss / Admin: full overview + money stats. */}
+          {d.new_orders !== null && <Stat label={t("newOrders")} value={d.new_orders} href="/staff/orders?status=new" tone={d.new_orders ? "orange" : undefined} />}
+          {d.to_pack !== null && <Stat label={t("toPack")} value={d.to_pack} href="/staff/packing" tone={d.to_pack ? "orange" : undefined} />}
+          {d.to_deliver !== null && <Stat label={t("toDeliver")} value={d.to_deliver} href="/staff/deliveries" />}
           {d.unpaid_amount !== null && <Stat label={t("unpaid")} value={peso(d.unpaid_amount)} tone={d.unpaid_amount ? "red" : "green"} href="/staff/payments" />}
           {d.today_sales !== null && <Stat label={t("todaySales")} value={peso(d.today_sales)} tone="green" href="/staff/reports" />}
         </div>

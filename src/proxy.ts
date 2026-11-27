@@ -19,6 +19,16 @@ export async function proxy(request: NextRequest) {
 
   let response: NextResponse;
 
+  // Just logged in on the server (passwordLogin adds ?li=1): did the phone keep the login cookie?
+  // If not, say so on the login page instead of silently showing the login again.
+  if (url.searchParams.get("li") === "1") {
+    const kept = request.cookies.getAll().some((c) => c.name.startsWith("sb-") && c.name.includes("-auth-token"));
+    const area = hostArea ?? pathArea ?? "internal";
+    if (kept) url.searchParams.delete("li");
+    else { url.pathname = `${AREAS[area].prefix}/login`; url.search = "?error=cookies_blocked"; }
+    return NextResponse.redirect(url);
+  }
+
   if (hostArea) {
     const prefix = AREAS[hostArea].prefix;
     // Owner's read-only "View as…" preview (Master Control): on the staff subdomain only,

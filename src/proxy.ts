@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createServerClient } from "@supabase/ssr";
 import { AREAS, areaFromPath, areaFromSubdomain } from "@/lib/areas";
+import { isOldBrowser, oldBrowserPage } from "@/lib/old-browser";
 
 /**
  * Proxy (Next.js 16 name for middleware) — Spec 1a.
@@ -18,6 +19,11 @@ export async function proxy(request: NextRequest) {
   const pathArea = areaFromPath(path);
 
   let response: NextResponse;
+
+  // Internet Explorer cannot run this app: show a plain "use Chrome or Edge" page instead of a broken one.
+  if (isOldBrowser(request.headers.get("user-agent") ?? "") && !path.startsWith("/api/")) {
+    return new NextResponse(oldBrowserPage(request.nextUrl.href), { status: 200, headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" } });
+  }
 
   // Just logged in on the server (passwordLogin adds ?li=1): did the phone keep the login cookie?
   // If not, say so on the login page instead of silently showing the login again.

@@ -68,5 +68,9 @@
   "qty": "Qty",
   "price": "Price",
   "amount": "Amount",
-  "sampleNotice": "SAMPLE DATA — prices, stock, customers and orders are examples for testing only."
+  "sampleNotice": "SAMPLE DATA — prices, stock, customers and orders are examples for testing only.",
+  "oldBrowserTitle": "Please use Google Chrome or Microsoft Edge",
+  "oldBrowserText": "This is Internet Explorer, which Microsoft no longer supports. The Sunny Foods app cannot work in it.",
+  "openInEdge": "Open in Microsoft Edge",
+  "orChrome": "Or open Google Chrome and go to:"
 }

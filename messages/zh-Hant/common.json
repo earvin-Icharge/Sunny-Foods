@@ -68,5 +68,9 @@
   "qty": "數量",
   "price": "價格",
   "amount": "金額",
-  "sampleNotice": "範例資料——價格、庫存、客戶和訂單僅為測試範例。"
+  "sampleNotice": "範例資料——價格、庫存、客戶和訂單僅為測試範例。",
+  "oldBrowserTitle": "請使用 Google Chrome 或 Microsoft Edge 瀏覽器",
+  "oldBrowserText": "這是 Internet Explorer，微軟已停止支援。Sunny Foods 應用程式無法在其中正常使用。",
+  "openInEdge": "用 Microsoft Edge 開啟",
+  "orChrome": "或開啟 Google Chrome 並前往："
 }

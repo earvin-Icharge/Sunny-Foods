@@ -68,5 +68,9 @@
   "qty": "Dami",
   "price": "Presyo",
   "amount": "Halaga",
-  "sampleNotice": "SAMPLE DATA — halimbawa lang para sa testing ang mga presyo, stock, customer at order."
+  "sampleNotice": "SAMPLE DATA — halimbawa lang para sa testing ang mga presyo, stock, customer at order.",
+  "oldBrowserTitle": "Pakigamit ang Google Chrome o Microsoft Edge",
+  "oldBrowserText": "Internet Explorer ito, na hindi na sinusuportahan ng Microsoft. Hindi gagana rito ang Sunny Foods app.",
+  "openInEdge": "Buksan sa Microsoft Edge",
+  "orChrome": "O buksan ang Google Chrome at pumunta sa:"
 }

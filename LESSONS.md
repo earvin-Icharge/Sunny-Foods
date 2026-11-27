@@ -103,6 +103,12 @@ Never put passwords, API keys, or customer data in this file.
 - Check: Catalog check requires the /portal address and at least 8 loaded product photos.
 - Repeat 2026-11-27 (staff access test): clicked the first customer link, landed on the wrong page (the check caught it). Guard added: openExact() in the browser test helper stops the test if the address differs.
 
+### L-014 · 2026-11-27 · Boss login · [login]
+- What happened: The boss's login succeeded at Supabase, but his phone went straight back to the login page (reported by Earvin with a video).
+- Root cause: Password login ran in the phone's browser and depended on the page script and browser-saved cookies; his phone did not keep the login, and the page gave no message. I only ever tested on a desktop test browser.
+- Rule: ALWAYS run password login on the server (Server Action), and ALWAYS show a clear message when a phone does not keep the login (proxy ?li=1 check).
+- Check: Browser test logs in with the page script OFF, and "/staff?li=1" without a login shows the "did not keep the login" message.
+
 ## Archive
 
 (none yet)
